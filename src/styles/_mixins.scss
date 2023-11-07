@@ -1,0 +1,27 @@
+@mixin text-outrange-hidden {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+@mixin use-icon($icon-code) {
+    content: $icon-code;
+    font-family: "icomoon" !important;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin generateStyleByBreakpoint($break-point: "md") {
+    @media screen and (min-width: map-get($grid-breakpoints, $break-point)) {
+        @content;
+    }
+}
+
+@mixin generateStyleByMaxBreakpoint($break-point: "md") {
+    @media screen and (max-width: calc(map-get($grid-breakpoints, $break-point) - 1px)) {
+        @content;
+    }
+}

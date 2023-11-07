@@ -1,0 +1,215 @@
+@mixin generateStyleByPseudoElement {
+  @each $pseudo-element in "before", "after", "placeholder" {
+    &__#{$pseudo-element} {
+      &::#{$pseudo-element} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin generateStyleByPseudoClass {
+  @each $class in $pseudo-class {
+    &--#{$class}:#{$class} {
+      @content;
+    }
+  }
+}
+
+@mixin generateStyleByPseudoClassAndPseudoElement {
+  @each $pseudo-element in "before", "after" {
+    @each $class in "hover", "disabled" {
+      &--#{$class}__#{$pseudo-element}:#{$class}::#{$pseudo-element} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin generateBaseStyle($break-point: "") {
+  @if ($break-point == "") {
+    @include generateText();
+    @include generateBorder();
+    @include generateLayer();
+    @include generateCursor();
+    @include generateAnimation();
+  } @else {
+    @include generateTextByBreakpoint($break-point);
+    @include generateBorderByBreakpoint($break-point);
+  }
+}
+
+@mixin generateThemeColor($theme) {
+  @each $type, $map in $theme {
+    @each $level, $color in $map {
+      @each $usage, $prop in $color-usages {
+        .#{$usage}-#{$type}-#{$level} {
+          #{$prop}: $color !important;
+          @include generateOpacityStyle($prop, $color);
+          @include generateStyleByPseudoClass {
+            #{$prop}: $color !important;
+          }
+          @include generateStyleByPseudoElement {
+            #{$prop}: $color !important;
+          }
+          @include generateStyleByPseudoClassAndPseudoElement {
+            #{$prop}: $color !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin generateOpacityStyle($prop, $color) {
+  @each $opacity in $opacity-code {
+    $alphaCode: rgba($color, $opacity * 1%);
+    &_#{$opacity} {
+      #{$prop}: $alphaCode !important;
+      @include generateStyleByPseudoClass {
+        #{$prop}: $alphaCode !important;
+      }
+      @include generateStyleByPseudoElement {
+        #{$prop}: $alphaCode !important;
+      }
+    }
+  }
+}
+
+@mixin generateText {
+  // title and content label setting
+  @each $key, $value in $text-level {
+    #{$key} {
+      font-size: $value !important;
+      @if ($key != "p" and $key != "small" and $key != "button") {
+        font-weight: bold !important;
+      }
+    }
+  }
+
+  @each $key, $value in $font-level {
+    .font-#{$key} {
+      font-size: $value !important;
+    }
+  }
+}
+
+@mixin generateTextByBreakpoint($break-point) {
+  @each $key, $value in $font-level {
+    .font-#{$break-point}-#{$key} {
+      font-size: $value !important;
+    }
+  }
+}
+
+@mixin generateLayer {
+  .layer {
+    @each $key, $value in $layer-level {
+      &-#{$key} {
+        position: relative;
+        z-index: $value !important;
+      }
+    }
+  }
+}
+
+@mixin generateBorder {
+  .border {
+    @each $key, $value in $border-radius-map {
+      &-radius-#{$key} {
+        border-radius: $value !important;
+      }
+    }
+
+    @for $width from 0 to $max-number {
+      &-#{$width} {
+        border-style: solid;
+        border-width: #{$width}px !important;
+      }
+      @each $position in $positions {
+        &-#{$position}-#{$width} {
+          border-#{$position}: #{$width}px solid !important;
+        }
+      }
+    }
+  }
+}
+
+@mixin generateBorderByBreakpoint($break-point) {
+  .border {
+    @each $key, $value in $border-radius-map {
+      &-radius-#{$break-point}-#{$key} {
+        border-radius: $value !important;
+      }
+    }
+
+    @for $width from 0 to $max-number {
+      &-#{$break-point}-#{$width} {
+        border-style: solid;
+        border-width: #{$width}px !important;
+      }
+      @each $position in $positions {
+        &-#{$position}-#{$break-point}-#{$width} {
+          border-#{$position}: #{$width}px solid !important;
+        }
+      }
+    }
+  }
+}
+
+@mixin generateCursor {
+  .cursor {
+    &-default {
+      cursor: default;
+    }
+    @each $key, $file in $cursors {
+      &-#{$key} {
+        cursor: #{$key};
+      }
+    }
+  }
+}
+
+@mixin generateShadow($map) {
+  .shadow {
+    @each $level, $value in $map {
+      &-#{$level} {
+        box-shadow: $value;
+      }
+    }
+  }
+}
+
+@mixin generateAnimation() {
+  .animation {
+    @each $animation in $animations {
+      &-#{$animation} {
+        animation: #{$animation} 0.5s forwards;
+      }
+    }
+  }
+}
+
+@mixin generateScrollBar($bg-color, $hover-color) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $bg-color;
+    border-radius: 100px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    min-height: 100px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    border: 0;
+    background: $hover-color;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
