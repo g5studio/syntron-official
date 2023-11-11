@@ -1,186 +1,63 @@
-$main-colors-light: (
-  1: #f7f9f8,
-  2: #1e1e1e,
+$primary-light: (
+  // highlight
+  1: #1b76ff,
+  // active
+  2: #1091da,
+  // 主色
+  3: #43b1ef,
+  // hover
+  4: #7dcffd,
+  // bg hover
+  5: #d9f1fe
 );
 
-$main-colors-dark: (
-  2: #f7f9f8,
-  1: #1e1e1e,
+$secondary-light: (
+  // 內容文字
+  1: #4b4b4b
 );
 
-$orange-light: (
-  primary: #ff7a00,
-  secondary: #ff4f03,
-  hover: #ff8617,
-  active: #eb7000,
+$black-light: (
+  // title
+  1: #101010,
+  // 內容文字
+  2: #4b4b4b,
+  // hover
+  3: #848484,
+  // loading , hover text
+  4: #cccccc,
+  // active bg
+  5: #e8e8e8,
+  // btn-hover
+  6: #f6f6f6,
+  // bg-hover
+  7: #f3f0eb,
+  // btn-active
+  8: #f4eee5,
+  // bg
+  9: #f7f5f2
 );
 
+$azure-light: (
+  1: #608ee8,
+  2: #a3bcec,
+);
+
+$cyan-light: (
+  1: #08b9ae,
+  2: #b0f1ed,
+);
 $green-light: (
-  primary: #0aa03d,
-  secondary: #77b867,
-);
-
-$red-light: (
-  primary: #c01818,
-  secondary: #e14b51,
-  stock: #e94d37,
-  chat: #fc5b00,
-  main: #ff2800,
-);
-
-$yellow-light: (
-  light: #fdecc1,
-);
-
-$gray-light: (
-  light: #d9d9d9,
-);
-
-$blue-light: (
-  primary: #43b1ef,
-  secondary: #56a9d5,
-  active: #1091da,
-  hover: #43b1ef,
-);
-
-$orange-dark: (
-  primary: #e66e00,
-  secondary: #ffc896,
-  hover: #df5c00,
-  active: #eb7000,
-);
-
-$green-dark: (
-  primary: #77b867,
-  secondary: #8dd37b,
-);
-
-$red-dark: (
-  primary: #e14b51,
-  secondary: #c01818,
-  stock: #e94d37,
-  chat: #fc5b00,
-);
-
-$yellow-dark: (
-  light: #e7c265,
-);
-
-$gray-dark: (
-  light: #bbbbbb,
-);
-
-$blue-dark: (
-  primary: #37bafb,
-  secondary: #53a2cd,
-  light: #caecf1,
-  active: #35a5f6,
-  stock: #097ab7,
-);
-
-$fill-colors-light: (
-  0: #000000,
-  1: #ffffff,
-  2: #f9f9f9,
-  3: #f4f4f4,
-  4: #eeeeee,
-  5: #dddddd,
-  6: #d8d8d8,
-  7: #cccccc,
-);
-
-$fill-colors-dark: (
-  7: #68696d,
-  6: #545859,
-  5: #484b4d,
-  4: #3c3f40,
-  3: #22292e,
-  2: #1a2227,
-  1: #2a3033,
-  0: #ffffff,
-);
-
-$line-colors-light: (
-  4: #999999,
-  3: #d8d8d8,
-  2: #f2f2f2,
-  1: #f4f4f4,
-);
-
-$line-colors-dark: (
-  4: #999999,
-  3: #666666,
-  2: #555555,
-  1: #444444,
-);
-
-$text-colors-light: (
-  7: #333333,
-  6: #454545,
-  5: #666666,
-  4: #999999,
-  3: #bbbbbb,
-  2: #c9c9c9,
-  1: #ffffff,
-);
-
-$text-colors-dark: (
-  7: #f0f3f4,
-  6: #dddddd,
-  5: #a5aeb0,
-  4: #8d9496,
-  3: #686e71,
-  2: #40464a,
-  1: #1a2227,
-);
-
-$icon-colors-light: (
-  3: #333333,
-  2: #666666,
-  1: #c3c3c3,
-);
-
-$icon-colors-dark: (
-  3: #fafafa,
-  2: #b0b0b0,
-  1: #8c8c8c,
-);
-
-$box-shadow-light: (
-  1: 0px 8px 12px rgba(0, 0, 0, 0.03),
-  2: 0px 4px 20px rgba(0, 0, 0, 0.1),
-);
-
-$box-shadow-dark: (
-  2: 0px 4px 20px rgba(0, 0, 0, 0.9),
+  1: #99c028,
+  2: #ddf2a0,
 );
 
 $light-theme: (
-  main: $main-colors-light,
-  fill: $fill-colors-light,
-  line: $line-colors-light,
-  text: $text-colors-light,
-  icon: $icon-colors-light,
+  "primary": $primary-light,
+  "secondary": $secondary-light,
+  "black": $grey-light,
+  "azure": $azure-light,
+  "cyan": $cyan-light,
   "green": $green-light,
-  "blue": $blue-light,
-  "orange": $orange-light,
-  "yellow": $yellow-light,
-  "gray": $gray-light,
-  "red": $red-light,
-);
-
-$dark-theme: (
-  main: $main-colors-dark,
-  fill: $fill-colors-dark,
-  line: $line-colors-dark,
-  text: $text-colors-dark,
-  icon: $icon-colors-dark,
-  "green": $green-dark,
-  "blue": $blue-dark,
-  "orange": $orange-dark,
-  "yellow": $yellow-dark,
-  "gray": $gray-dark,
-  "red": $red-dark,
 );
 
 $opacity-code: 5, 10, 11, 15, 20, 25, 30, 40, 50, 70, 85;

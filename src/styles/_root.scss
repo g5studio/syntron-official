@@ -1,83 +1,66 @@
 // 全局設定
 
 * {
-    padding: 0;
-    margin: 0;
-    transition: 0.25s;
-    word-break: break-all;
-    line-height: 1.5em !important;
-    [data-required]:empty:before {
-        content: "-";
-    }
-    [data-static] {
-        transition: 0s !important;
-    }
-    &:disabled {
-        cursor: not-allowed !important;
-    }
+  padding: 0;
+  margin: 0;
+  transition: 0.25s;
+  word-break: break-all;
+  line-height: 1.5em !important;
+  [data-required]:empty:before {
+    content: "-";
+  }
+  [data-static] {
+    transition: 0s !important;
+  }
+  &:disabled {
+    cursor: not-allowed !important;
+  }
 }
 
 fieldset {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 ul,
 ol {
-    list-style-position: inside;
+  list-style-position: inside;
 }
 
 ol {
-    list-style-type: decimal;
+  list-style-type: decimal;
 }
 
 //擋掉原本chrome內建的date picker
 input::-webkit-calendar-picker-indicator {
-    display: none;
+  display: none;
 }
 
 html {
-    font-size: 16px; //1rem
-    &[theme="dark"] body {
-        color: map-get(map-get($dark-theme, main), 2);
-        background-color: map-get(map-get($dark-theme, main), 1);
-        @include generateThemeColor($dark-theme);
-        @include generateShadow($box-shadow-dark);
-        @include generateScrollBar(map-get(map-get($dark-theme, fill), 5), map-get(map-get($dark-theme, fill), 7));
-    }
-    &[theme="light"] body {
-        color: map-get(map-get($light-theme, main), 2);
-        background-color: map-get(map-get($light-theme, main), 1);
-        @include generateThemeColor($light-theme);
-        @include generateShadow($box-shadow-light);
-        @include generateScrollBar(map-get(map-get($light-theme, fill), 5), map-get(map-get($light-theme, fill), 7));
-    }
+  font-size: 16px; //1rem
+  @include generateThemeColor($light-theme);
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    overflow-anchor: none;
+  padding: 0;
+  margin: 0;
+  overflow-anchor: none;
+  overflow: hidden;
+  font-family: "g5-customize" !important;
+  color: map-get($secondary-light, "main");
+  background-color: white;
+  #root {
     overflow: hidden;
-    font-family: "Open sans", "SF pro" !important;
-    &:lang(cn) {
-        font-family: "customize-simplified-zh" !important;
-    }
-    &:lang(tw) {
-        font-family: "customize-traditional-zh" !important;
-    }
-    #root {
-        overflow: hidden;
-    }
+  }
 }
 
 input {
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-        appearance: none;
-    }
-    &[type="number"] {
-        -moz-appearance: textfield;
-    }
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+  }
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
 }
 
 // @include generateStyleByBreakpoint("lg") {
@@ -95,12 +78,12 @@ input {
 @include generateBaseStyle();
 
 @each $level in map-keys($grid-breakpoints) {
-    @include generateStyleByBreakpoint($level) {
-        main {
-            box-sizing: content-box;
-            max-width: getContainerWidth($level);
-            margin: 0 auto;
-        }
-        @include generateBaseStyle($level);
+  @include generateStyleByBreakpoint($level) {
+    main {
+      box-sizing: content-box;
+      max-width: getContainerWidth($level);
+      margin: 0 auto;
     }
+    @include generateBaseStyle($level);
+  }
 }

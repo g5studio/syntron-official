@@ -1,23 +1,11 @@
 @font-face {
-    font-family: "customize-simplified-zh";
-    src: local("Noto Sans SC"), local("PingFang SC"), local("Microsoft YaHei");
-    unicode-range: U+4E00-9FFF;
+  font-family: "g5-customize";
+  src: local("Noto Sans TC"), local("PingFang SC"), local("Microsoft YaHei");
+  unicode-range: U+4E00-9FFF;
 }
 
 @font-face {
-    font-family: "customize-simplified-zh";
-    src: local("Open sans"), local("SF pro");
-    unicode-range: U+00-024F;
-}
-
-@font-face {
-    font-family: "customize-traditional-zh";
-    src: local("Noto Sans TC"), local("PingFang TC"), local("Microsoft jhenghei");
-    unicode-range: U+4E00-9FFF;
-}
-
-@font-face {
-    font-family: "customize-traditional-zh";
-    src: local("Open sans"), local("SF pro");
-    unicode-range: U+00-024F;
+  font-family: "g5-customize";
+  src: local("Noto Sans"), local("SF pro");
+  unicode-range: U+00-024F;
 }

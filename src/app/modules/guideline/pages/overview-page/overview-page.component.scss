@@ -1,0 +1,7 @@
+.overview-page {
+  &__test {
+    &::before {
+      content: "123";
+    }
+  }
+}
