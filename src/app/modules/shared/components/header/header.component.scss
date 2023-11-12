@@ -4,10 +4,20 @@
   height: 5.625rem;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
   border-bottom-left-radius: 3rem;
-}
 
-@include generateStyleByMaxBreakpoint("md") {
-  .component-header {
+  @include generateStyleByMaxBreakpoint("sm") {
     height: 3.125rem;
+    border-bottom-left-radius: 2rem;
   }
 }
+
+.menu {
+  &__buttons {
+    display: flex;
+    @include generateStyleByMaxBreakpoint("md") {
+      display: none;
+    }
+  }
+}
+
+
