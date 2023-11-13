@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BorderlessButtonComponent } from './components/borderless-button/borderless-button.component';
 import { MainLogoComponent } from './components/main-logo/main-logo.component';
+import { NewsComponent } from './components/news/news.component';
 
 
 
@@ -12,7 +13,8 @@ import { MainLogoComponent } from './components/main-logo/main-logo.component';
     HeaderComponent,
     FooterComponent,
     BorderlessButtonComponent,
-    MainLogoComponent
+    MainLogoComponent,
+    NewsComponent
   ],
   imports: [
     CommonModule
@@ -20,7 +22,8 @@ import { MainLogoComponent } from './components/main-logo/main-logo.component';
   exports: [
     HeaderComponent,
     FooterComponent,
-    BorderlessButtonComponent
+    BorderlessButtonComponent,
+    NewsComponent
   ]
 })
 export class SharedModule { }
