@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BorderlessButtonComponent } from './components/borderless-button/borderless-button.component';
 import { MainLogoComponent } from './components/main-logo/main-logo.component';
 import { NewsComponent } from './components/news/news.component';
+import { IconButtonComponent } from './components/icon-button/icon-button.component';
 
 
 
@@ -14,7 +15,8 @@ import { NewsComponent } from './components/news/news.component';
     FooterComponent,
     BorderlessButtonComponent,
     MainLogoComponent,
-    NewsComponent
+    NewsComponent,
+    IconButtonComponent
   ],
   imports: [
     CommonModule
