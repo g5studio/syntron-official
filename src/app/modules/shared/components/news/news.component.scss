@@ -2,33 +2,24 @@
 
 .component-news {
   &__list {
-    max-width: calc(100% - 70px);
-    width: max-content;
-    max-height: 2.5rem;
-
-    // TODO remove
-    background-color: #61627922;
+    max-width: calc(100vw - 4.375rem);
+    width: 26.5rem;
+    max-height: 3rem;
+    border-top-left-radius: 1rem;
   }
 
-  &__playing-animation {
-    animation: infinite news-fade-out 15s linear;
+  &__news {
+    animation: infinite playing-news 15s linear;
+    height: 3rem;
   }
 
   &__divider-colored {
     height: 2px;
     background: linear-gradient(90deg, map-get($azure-light, 2) 0%, map-get($cyan-light, 2) 16.5%, map-get($green-light, 2) 33%, #FFFb9D 50%, map-get($black-light, 4) 50.1%, map-get($black-light, 4) 100%);
   }
-
-  &__title {
-    margin-right: 3rem;
-  }
-
-  &__icon {
-    right: 0;
-  }
 }
 
-@keyframes news-fade-out {
+@keyframes playing-news {
   0% {
     transform: translateY(0%);
   }
@@ -36,16 +27,16 @@
     transform: translateY(0%);
   }
   33% {
-    transform: translateY(-32px);
+    transform: translateY(-3rem);
   }
   65% {
-    transform: translateY(-32px);
+    transform: translateY(-3rem);
   }
   66% {
-    transform: translateY(-64px);
+    transform: translateY(-6rem);
   }
   99% {
-    transform: translateY(-64px);
+    transform: translateY(-6rem);
   }
   100% {
     transform: translateY(0%);

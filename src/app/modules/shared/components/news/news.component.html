@@ -1,17 +1,17 @@
 <article class="component-news">
-  <ul class="component-news__list overflow-hidden">
+  <ul class="component-news__list overflow-hidden bg-white">
     <li *ngFor="let news of news"
-        class="d-flex justify-content-between align-items-center my-2 position-relative component-news__playing-animation">
+        class="d-flex justify-content-between align-items-center position-relative component-news__news">
       <div class="d-flex align-items-center">
         <div class="mx-4 text-nowrap">
           <h6>{{news.date}}</h6>
           <hr class="component-news__divider-colored border-0 my-0_5 opacity-100">
         </div>
-        <h6 class="component-news__title">{{news.title}}</h6>
+        <h6 class="me-12">{{news.title}}</h6>
       </div>
 
       <!-- TODO 等換 Icon-->
-      <p class="component-news__icon position-absolute mx-4">></p>
+      <p class="position-absolute end-0 mx-4">></p>
     </li>
   </ul>
 </article>
