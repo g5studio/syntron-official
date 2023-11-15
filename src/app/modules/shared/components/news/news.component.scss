@@ -2,6 +2,12 @@
 @import "mixins";
 
 .component-news {
+  &__round-out {
+    height: 2rem;
+    width: 2rem;
+    left: -2rem;
+  }
+
   &__tab {
     max-width: calc(100vw - 4.375rem);
     width: 26.5rem;
@@ -13,7 +19,7 @@
   }
 
   &__content {
-    animation: infinite playing-news 15s linear;
+    animation: playing-news 15s linear infinite, fade-out 5s linear 4.8s infinite;
     height: 3rem;
   }
 
@@ -50,6 +56,21 @@
   }
   100% {
     transform: translateY(0%);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 0.2;
+  }
+  2% {
+    opacity: 0.2;
+  }
+  3% {
+    opacity: 1;
   }
 }
 
