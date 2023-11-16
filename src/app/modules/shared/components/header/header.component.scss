@@ -9,6 +9,11 @@
     height: 3.125rem;
     border-bottom-left-radius: 2rem;
   }
+
+  &__container {
+    width: 100%;
+    max-width: calc(9.375rem + 21.719rem + 34.295rem);
+  }
 }
 
 .menu {
