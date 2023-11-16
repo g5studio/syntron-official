@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { BorderlessButtonComponent } from './components/borderless-button/borderless-button.component';
-import { MainLogoComponent } from './components/main-logo/main-logo.component';
-import { NewsComponent } from './components/news/news.component';
-import { IconButtonComponent } from './components/icon-button/icon-button.component';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {HeaderComponent} from './components/header/header.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {BorderlessButtonComponent} from './components/borderless-button/borderless-button.component';
+import {MainLogoComponent} from './components/main-logo/main-logo.component';
+import {NewsComponent} from './components/news/news.component';
+import {
+  ArrowForwardIconButtonComponent
+} from "./components/arrow-forward-icon-button/arrow-forward-icon-button.component";
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { IconButtonComponent } from './components/icon-button/icon-button.compon
     BorderlessButtonComponent,
     MainLogoComponent,
     NewsComponent,
-    IconButtonComponent
+    ArrowForwardIconButtonComponent,
   ],
   imports: [
     CommonModule
@@ -28,4 +29,5 @@ import { IconButtonComponent } from './components/icon-button/icon-button.compon
     NewsComponent
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

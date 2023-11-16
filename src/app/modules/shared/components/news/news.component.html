@@ -3,18 +3,17 @@
 
   <ul class="component-news__tab overflow-hidden bg-white">
     <li *ngFor="let news of news"
-        class="d-flex justify-content-between align-items-center position-relative component-news__content">
-      <div class="d-flex align-items-center">
-        <div class="mx-4 text-nowrap">
+        class="d-flex justify-content-between align-items-center position-relative component-news__content cursor-pointer">
+      <div class="h-100 d-flex align-items-center">
+        <div class="mx-5 text-nowrap">
           <h6>{{news.date}}</h6>
           <hr class="component-news__divider-colored border-0 my-0_5 opacity-100">
         </div>
-        <h6 class="me-2 me-sm-12">{{news.title}}</h6>
+        <h6 class="me-2 me-sm-14 component-news__content-title">{{news.title}}</h6>
       </div>
 
-      <app-icon-button class="position-absolute end-0 mx-4 component-news__icon-button">
-        <img src="assets/img/icon/arrow_forward.svg" alt="arrow-forward-icon-button">
-      </app-icon-button>
+      <app-arrow-forward-icon-button
+        class="position-absolute end-0 mx-5 component-news__icon-button"></app-arrow-forward-icon-button>
     </li>
   </ul>
 </article>
