@@ -8,6 +8,7 @@ import {NewsComponent} from './components/news/news.component';
 import {
   ArrowForwardIconButtonComponent
 } from "./components/arrow-forward-icon-button/arrow-forward-icon-button.component";
+import {TextButtonComponent} from './components/text-button/text-button.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import {
     MainLogoComponent,
     NewsComponent,
     ArrowForwardIconButtonComponent,
+    TextButtonComponent,
   ],
   imports: [
     CommonModule
@@ -26,7 +28,9 @@ import {
     HeaderComponent,
     FooterComponent,
     BorderlessButtonComponent,
-    NewsComponent
+    NewsComponent,
+    TextButtonComponent,
+    ArrowForwardIconButtonComponent,
   ]
 })
 export class SharedModule {

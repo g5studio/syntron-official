@@ -7,6 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewPageComponent implements OnInit {
 
+  readonly news: {date: string, title: string}[] = [
+    {
+      date: '2014 06 19',
+      title: "喬遷快報：伈創資訊要搬家囉！"
+    },
+    {
+      date: '2014 06 19',
+      title: "喬遷快報：伈創資訊要搬家囉！"
+    },
+    {
+      date: '2014 06 19',
+      title: "喬遷快報：伈創資訊要搬家囉！"
+    },
+  ];
+
+
   constructor() { }
 
   ngOnInit(): void {

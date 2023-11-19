@@ -15,14 +15,3 @@
     max-width: calc(9.375rem + 21.719rem + 34.295rem);
   }
 }
-
-.menu {
-  &__buttons {
-    display: flex;
-    @include generateStyleByMaxBreakpoint("md") {
-      display: none;
-    }
-  }
-}
-
-

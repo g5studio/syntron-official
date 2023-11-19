@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class BorderlessButtonComponent implements OnInit {
 
-  readonly id = Math.random().toString(36).substring(2);
+  readonly id = `borderless-button-${Math.random().toString(36).substring(2)}`;
 
   constructor() {
   }

@@ -1,5 +1,10 @@
 @import "colors";
 
 .component-arrow-forward-icon-button {
-  fill: #1C1B1F;
+  width: 24px;
+  height: 25px;
+
+  &__path {
+    fill: #1C1B1F;
+  }
 }
