@@ -40,20 +40,20 @@
 
   &__view-all-button::ng-deep {
     &:hover {
-      .component-arrow-forward-icon-button__path {
+      .component-arrow-forward-icon__path {
         fill: map-get($primary-light, 4);
       }
     }
 
     &:active {
-      .component-arrow-forward-icon-button__path {
+      .component-arrow-forward-icon__path {
         fill: map-get($primary-light, 2);
       }
     }
   }
 
   &__view-all-arrow-forward-icon::ng-deep {
-    .component-arrow-forward-icon-button {
+    .component-arrow-forward-icon {
       height: 1.375rem;
       width: 1.375rem;
 
@@ -82,7 +82,7 @@
         color: map-get($primary-light, 4) !important;
       }
 
-      .component-arrow-forward-icon-button__path {
+      .component-arrow-forward-icon__path {
         fill: map-get($primary-light, 4);
       }
     }
@@ -92,7 +92,7 @@
         color: map-get($primary-light, 2) !important;
       }
 
-      .component-arrow-forward-icon-button__path {
+      .component-arrow-forward-icon__path {
         fill: map-get($primary-light, 2);
       }
     }
@@ -107,7 +107,7 @@
     height: 2.25rem;
     width: 2.25rem;
 
-    .component-arrow-forward-icon-button {
+    .component-arrow-forward-icon {
       height: 1.875rem;
       width: 1.875rem;
     }
@@ -115,7 +115,6 @@
 }
 
 .product {
-
   &__img {
     width: 145rem;
     height: 11.44rem;
@@ -123,13 +122,24 @@
     background-repeat: space;
     z-index: -1;
     @include generateStyleByMaxBreakpoint("md") {
-      width: 100%;
       background-image: url(~src/assets/img/homepage_pad/image_product_pad.png);
-      background-size: contain;
-      background-repeat: no-repeat;
     }
     @include generateStyleByMaxBreakpoint("sm") {
       display: none;
     }
+  }
+
+  &__titles {
+    height: 11.44rem;
+    animation: fade-in-right 1s ease-in-out, twink 1s ease-in-out;
+  }
+
+  &__gradient-bg {
+    background:
+      linear-gradient(0deg, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%),
+      linear-gradient(90deg, map-get($azure-light, 2) 0%, map-get($cyan-light, 2) 33.3%, map-get($green-light, 2) 66.6%, #FFFb9D 100%);
+
+    // TODO remove
+    height: 500px;
   }
 }

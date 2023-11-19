@@ -1,0 +1,50 @@
+@import "colors";
+
+.component-product-card {
+  width: 18.625rem;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.1);
+  min-height: 10rem;
+  overflow: hidden;
+
+  // TODO remove
+  transform: translateX(100px);
+
+  &__container {
+    transform: translateY(-1rem);
+  }
+
+  &__button {
+    &:hover {
+      &:before {
+        transform: translate(-50%, -50%) scale(6.5);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+
+    &:before {
+      content: "";
+      width: 8.125rem;
+      height: 8.125rem;
+      z-index: -1;
+      transform: translate(-50%, -50%) scale(0);
+
+      display: flex;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 100%;
+      background-color: #7dcffd;
+    }
+  }
+
+  &__icon::ng-deep {
+    .component-healthcare-icon {
+      width: 2.75rem;
+      height: 2.75rem;
+
+      &__path {
+        fill: map-get($black-light, 2);
+      }
+    }
+  }
+}

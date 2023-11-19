@@ -23,7 +23,7 @@
     height: 3rem;
 
     &:hover::ng-deep {
-      .component-arrow-forward-icon-button__path {
+      .component-arrow-forward-icon__path {
         fill: map-get($primary-light, 4);
       }
       .component-news__content-title {
@@ -32,7 +32,7 @@
     }
 
     &:active::ng-deep {
-      .component-arrow-forward-icon-button__path {
+      .component-arrow-forward-icon__path {
         fill: map-get($primary-light, 2);
       }
       .component-news__content-title {

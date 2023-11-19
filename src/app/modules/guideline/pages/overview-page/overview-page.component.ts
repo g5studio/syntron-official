@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-overview-page',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewPageComponent implements OnInit {
 
-  readonly news: {date: string, title: string}[] = [
+  scrollTop = 0;
+  readonly news: { date: string, title: string }[] = [
     {
       date: '2014 06 19',
       title: "喬遷快報：伈創資訊要搬家囉！"
@@ -22,10 +23,19 @@ export class OverviewPageComponent implements OnInit {
     },
   ];
 
+  get scrollTransformStyle() {
+    return {transform: `translateX(-${this.scrollTop}px)`};
+  }
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  @HostListener('wheel', ['$event'])
+  onWheelScroll() {
+    let scrollTop = document.querySelector('.overview-page')?.scrollTop;
+    this.scrollTop = !!scrollTop ? scrollTop : 0;
+  }
 }

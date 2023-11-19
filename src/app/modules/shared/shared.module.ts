@@ -6,9 +6,11 @@ import {BorderlessButtonComponent} from './components/borderless-button/borderle
 import {MainLogoComponent} from './components/main-logo/main-logo.component';
 import {NewsComponent} from './components/news/news.component';
 import {
-  ArrowForwardIconButtonComponent
-} from "./components/arrow-forward-icon-button/arrow-forward-icon-button.component";
+  ArrowForwardIconComponent
+} from "./components/arrow-forward-icon/arrow-forward-icon.component";
 import {TextButtonComponent} from './components/text-button/text-button.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { HealthcareIconComponent } from './components/healthcare-icon/healthcare-icon.component';
 
 
 @NgModule({
@@ -18,8 +20,10 @@ import {TextButtonComponent} from './components/text-button/text-button.componen
     BorderlessButtonComponent,
     MainLogoComponent,
     NewsComponent,
-    ArrowForwardIconButtonComponent,
+    ArrowForwardIconComponent,
     TextButtonComponent,
+    ProductCardComponent,
+    HealthcareIconComponent,
   ],
   imports: [
     CommonModule
@@ -30,7 +34,8 @@ import {TextButtonComponent} from './components/text-button/text-button.componen
     BorderlessButtonComponent,
     NewsComponent,
     TextButtonComponent,
-    ArrowForwardIconButtonComponent,
+    ArrowForwardIconComponent,
+    ProductCardComponent,
   ]
 })
 export class SharedModule {
