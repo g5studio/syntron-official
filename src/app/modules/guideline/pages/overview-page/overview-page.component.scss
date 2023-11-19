@@ -33,6 +33,7 @@
 }
 
 .news {
+  animation: fade-in-right 1s ease-in-out, twink 1s ease-in-out;
   @include generateStyleByMaxBreakpoint("md") {
     display: none !important;
   }
@@ -65,12 +66,16 @@
 
 .news-list {
   width: 65%;
+  animation: fade-in-right 1s ease-in-out, twink 1s ease-in-out;
   @include generateStyleByMaxBreakpoint("md") {
     width: 100%;
   }
 
   &__content {
-    height: 3.125rem;
+    height: 6rem;
+    @include generateStyleByBreakpoint("sm") {
+      height: 3.125rem;
+    }
 
     &:hover::ng-deep {
       .news-list__date, .news-list__title {
