@@ -113,3 +113,23 @@
     }
   }
 }
+
+.product {
+
+  &__img {
+    width: 145rem;
+    height: 11.44rem;
+    background-image: url(~src/assets/img/homepage_pc/image_product_pc.png);
+    background-repeat: space;
+    z-index: -1;
+    @include generateStyleByMaxBreakpoint("md") {
+      width: 100%;
+      background-image: url(~src/assets/img/homepage_pad/image_product_pad.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    @include generateStyleByMaxBreakpoint("sm") {
+      display: none;
+    }
+  }
+}
