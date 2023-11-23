@@ -1,43 +1,83 @@
 @import "colors";
 
 .component-product-card {
-  width: 18.625rem;
-  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.1);
-  min-height: 10rem;
-  overflow: hidden;
-
-  // TODO remove
+  width: fit-content;
   transform: translateX(100px);
 
-  &__container {
-    transform: translateY(-1rem);
-  }
+  &:hover {
+    .component-product-card__text-animation {
+      color: white !important;
+    }
 
-  &__button {
-    &:hover {
+    .component-product-card__content {
       &:before {
         transform: translate(-50%, -50%) scale(6.5);
         transition: transform 0.3s ease-in-out;
       }
+
+      &:after {
+        transform: translate(-50%, -50%) scale(6.5);
+        transition: transform 0.3s ease-in-out;
+        transition-delay: 0.3s;
+      }
     }
 
-    &:before {
+    .component-product-card__button {
+      &:before {
+        transform: translate(-50%, -50%) scale(1);
+        transition: transform 0.3s ease-in-out;
+        transition-delay: 0.6s;
+      }
+    }
+  }
+
+  &__spacing {
+    height: 1rem;
+    width: 18.625rem;
+  }
+
+  &__content {
+    width: 18.625rem;
+    min-height: 10rem;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.1);
+
+    &::before,
+    &::after {
       content: "";
       width: 8.125rem;
       height: 8.125rem;
-      z-index: -1;
-      transform: translate(-50%, -50%) scale(0);
+      transform: translate(-22%, 13%) scale(0);
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-radius: 100%;
+    }
+  }
 
+  &__img {
+    width: 17.125rem;
+    left: 0.875rem;
+  }
+
+  &__button {
+    &::before {
+      content: "";
+      width: 8.125rem;
+      height: 8.125rem;
+      transform: translate(-50%, -50%) scale(0);
       display: flex;
       position: absolute;
       top: 50%;
       left: 50%;
       border-radius: 100%;
-      background-color: #7dcffd;
+      background-color: white;
     }
   }
 
   &__icon::ng-deep {
+    position: inherit;
+
     .component-healthcare-icon {
       width: 2.75rem;
       height: 2.75rem;

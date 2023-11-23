@@ -1,14 +1,18 @@
-<div class="component-product-card bg-white border-radius-xl px-3_5">
-  <div class="component-product-card__container">
-    <img src="assets/img/logo/logo_chengkung_university.png" alt="product-card-img"
-         class="border-radius-xl bg-black component-product-card__img">
-    <div class="d-flex flex-column align-items-center my-5">
-      <p class="font-xl text-black-1 mb-2">照護服務</p>
-      <p class="font-sm text-black-2 text-sm-center text-md-start">以「人」為主軸的系統，評估未來可能發生風險，與後勤照護者及器療團隊建立一套彼此溝通、紀缺照護、用藥的共通乎台</p>
+<div class="position-relative component-product-card cursor-pointer">
+  <span class="d-block component-product-card__spacing"></span>
+
+  <img src="assets/img/logo/logo_chengkung_university.png" alt="product-card-img"
+       class="border-radius-xl bg-black component-product-card__img position-absolute top-0 z-2">
+
+  <div class="component-product-card__content bg-white border-radius-xl px-3_5 pb-5 bg-primary-4__before bg-primary-3__after overflow-hidden position-relative">
+    <div class="d-flex flex-column align-items-center mb-15 mt-40 position-relative z-2">
+      <p class="font-xl text-black-1 mb-2 component-product-card__text-animation">照護服務</p>
+      <p class="font-sm text-black-2 text-sm-center text-md-start component-product-card__text-animation">
+        以「人」為主軸的系統，評估未來可能發生風險，與後勤照護者及器療團隊建立一套彼此溝通、紀缺照護、用藥的共通乎台</p>
     </div>
 
     <button type="button"
-            class="component-product-card__button position-relative bg-primary-4__before">
+            class="component-product-card__button position-relative z-2">
       <app-healthcare-icon class="component-product-card__icon d-flex"></app-healthcare-icon>
     </button>
   </div>
