@@ -138,8 +138,9 @@
     background:
       linear-gradient(0deg, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%),
       linear-gradient(90deg, map-get($azure-light, 2) 0%, map-get($cyan-light, 2) 33.3%, map-get($green-light, 2) 66.6%, #FFFb9D 100%);
+  }
 
-    // TODO remove
-    height: 500px;
+  &__cards {
+    transform: translateY(-6rem);
   }
 }
