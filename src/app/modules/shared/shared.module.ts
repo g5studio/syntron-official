@@ -11,6 +11,9 @@ import {
 import {TextButtonComponent} from './components/text-button/text-button.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { HealthcareIconComponent } from './components/healthcare-icon/healthcare-icon.component';
+import { PillIconComponent } from './components/pill-icon/pill-icon.component';
+import { DnsIconComponent } from './components/dns-icon/dns-icon.component';
+import { BackupIconComponent } from './components/backup-icon/backup-icon.component';
 
 
 @NgModule({
@@ -24,6 +27,9 @@ import { HealthcareIconComponent } from './components/healthcare-icon/healthcare
     TextButtonComponent,
     ProductCardComponent,
     HealthcareIconComponent,
+    PillIconComponent,
+    DnsIconComponent,
+    BackupIconComponent,
   ],
   imports: [
     CommonModule

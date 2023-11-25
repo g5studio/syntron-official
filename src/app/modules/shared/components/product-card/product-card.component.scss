@@ -4,7 +4,7 @@
 .component-product-card {
   width: fit-content;
 
-  &:hover {
+  &:hover::ng-deep {
     @include generateStyleByBreakpoint("md") {
       .component-product-card__text-animation {
         color: white !important;
@@ -30,6 +30,30 @@
           transition: transform 0.8s ease-in-out;
           transition-delay: 0.2s;
         }
+      }
+
+      .component-healthcare-icon__path {
+        fill: map-get($primary-light, 3);
+        transition: fill 1s ease-in-out;
+        transition-delay: 0.2s;
+      }
+
+      .component-pill-icon__path {
+        fill: map-get($azure-light, 1);
+        transition: fill 1s ease-in-out;
+        transition-delay: 0.2s;
+      }
+
+      .component-dns-icon__path {
+        fill: map-get($cyan-light, 1);
+        transition: fill 1s ease-in-out;
+        transition-delay: 0.2s;
+      }
+
+      .component-backup-icon__path {
+        fill: map-get($green-light, 1);
+        transition: fill 1s ease-in-out;
+        transition-delay: 0.2s;
       }
     }
   }
@@ -95,7 +119,7 @@
   &__icon::ng-deep {
     position: inherit;
 
-    .component-healthcare-icon {
+    .component-healthcare-icon, .component-pill-icon, .component-dns-icon, .component-backup-icon, {
       width: 2.75rem;
       height: 2.75rem;
 
