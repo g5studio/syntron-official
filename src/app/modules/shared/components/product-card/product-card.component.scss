@@ -68,7 +68,7 @@
 
   &__content {
     width: 20.875rem;
-    min-height: 10rem;
+    min-height: 24.375rem;
     box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.1);
 
     @include generateStyleByBreakpoint("md") {
@@ -97,9 +97,7 @@
   }
 
   &__button {
-    margin-top: 2.25rem;
     @include generateStyleByBreakpoint("md") {
-      margin-top: 3.75rem;
 
       &::before {
         content: "";

@@ -1,16 +1,8 @@
 @import "colors";
 @import "mixins";
 
-.header-background {
-  background: map-get($azure-light, 2);
-  height: 5.625rem;
-  width: 5.625rem;
-  z-index: -1;
-}
-
 .overview-page {
-  max-height: 100vh;
-  overflow-y: auto;
+  max-height: 80vh;
 }
 
 .main-img-container {
@@ -116,7 +108,7 @@
 
 .product {
   &__img {
-    width: 145rem;
+    width: 300rem;
     height: 11.44rem;
     background-image: url(~src/assets/img/homepage_pc/image_product_pc.png);
     background-repeat: space;
@@ -142,5 +134,36 @@
 
   &__cards {
     transform: translateY(-6rem);
+  }
+}
+
+.exclusive {
+  &__img {
+    width: 500rem;
+    height: 11.69rem;
+    background-image: url(~src/assets/img/homepage_pc/image_exclusive_pc.png);
+    background-repeat: space;
+    z-index: -1;
+    @include generateStyleByMaxBreakpoint("md") {
+      background-image: url(~src/assets/img/homepage_pad/image_exclusive_pad.png);
+    }
+    @include generateStyleByMaxBreakpoint("sm") {
+      display: none;
+    }
+  }
+
+  &__content {
+    height: fit-content;
+    @include generateStyleByBreakpoint("md") {
+      background-color: map-get($black-light, 9);
+    }
+  }
+
+  &__illustration {
+    top: -3rem;
+    right: -1.5rem;
+    @include generateStyleByBreakpoint("md") {
+      right: -3.5rem;
+    }
   }
 }

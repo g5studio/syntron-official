@@ -1,11 +1,9 @@
-<span class="header-background position-absolute top-0 start-0"></span>
-
-<section class="overview-page" id="test">
+<section class="overview-page overflow-y-auto overflow-x-hidden">
   <section class="main-img-container position-relative">
     <div class="d-flex main-img-container__gradient-bg">
       <p class="main-img-container__syntron-text text-white d-flex justify-content-center align-items-center">
         SYNTRON</p>
-      <img src="" alt="" class="h-100 main-img-container__img">
+      <img src="assets/img/logo/logo_chengkung_university.png" alt="" class="h-100 bg-black main-img-container__img">
     </div>
 
     <app-news class="position-absolute bottom-0 end-0"></app-news>
@@ -42,7 +40,7 @@
     </div>
   </section>
 
-  <section class="my-5 position-relative product overflow-x-hidden">
+  <section class="my-5 position-relative product">
     <div class="product__img position-absolute top-0 d-none d-sm-block"
          [ngStyle]="scrollTransformStyle"></div>
     <div class="d-flex flex-column align-items-center product__titles">
@@ -69,4 +67,25 @@
     </div>
   </section>
 
+  <section class="position-relative">
+    <div class="exclusive__img position-absolute top-0 d-none d-sm-block"
+         [ngStyle]="scrollTransformStyle"></div>
+    <div class="px-4 px-sm-8 px-md-12 py-25 align-items-center row flex-column-reverse flex-md-row">
+      <div class="position-relative col-12 col-md-7 pe-0">
+        <img src="assets/img/logo/logo_chengkung_university.png" alt="exclusive-img"
+             class="bg-black border-radius-xl component-product-card__img"
+             style="height: 500px">
+        <img src="assets/img/illustration/molecular_chain_a.svg" alt="illustration-chain-a"
+             class="position-absolute d-none d-sm-block exclusive__illustration">
+      </div>
+      <div class="exclusive__content border-radius-xl px-md-10 py-md-25 col-12 col-md-5 text-center text-md-start mb-7_5 mb-md-0">
+        <h2>優勢</h2>
+        <h3 class="my-2_5">EXCLUSIVE</h3>
+        <p class="font-sm">
+          伈創資訊期望以提供客戶驚豔且創新的產品技術為出發點，不斷開創同業之先例，而經營面則持續投注新穎、國際化的概念。本公司目前在台灣、中國都有相關業務進行，近年更預計將業務擴大到周邊國家。</p>
+      </div>
+    </div>
+  </section>
+
+  
 </section>
