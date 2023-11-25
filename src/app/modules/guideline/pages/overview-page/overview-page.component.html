@@ -67,11 +67,11 @@
     </div>
   </section>
 
-  <section class="position-relative">
+  <section class="position-relative exclusive">
     <div class="exclusive__img position-absolute top-0 d-none d-sm-block"
          [ngStyle]="scrollTransformStyle"></div>
-    <div class="px-4 px-sm-8 px-md-12 py-25 align-items-center row flex-column-reverse flex-md-row">
-      <div class="position-relative col-12 col-md-7 pe-0">
+    <div class="px-4 px-sm-8 px-md-12 pt-25 align-items-center row flex-column-reverse flex-md-row">
+      <div class="position-relative col-12 col-md-7 pe-0 exclusive__img-animation">
         <img src="assets/img/logo/logo_chengkung_university.png" alt="exclusive-img"
              class="bg-black border-radius-xl component-product-card__img"
              style="height: 500px">
@@ -79,13 +79,33 @@
              class="position-absolute d-none d-sm-block exclusive__illustration">
       </div>
       <div class="exclusive__content border-radius-xl px-md-10 py-md-25 col-12 col-md-5 text-center text-md-start mb-7_5 mb-md-0">
-        <h2>優勢</h2>
-        <h3 class="my-2_5">EXCLUSIVE</h3>
-        <p class="font-sm">
+        <h2 class="exclusive__text-animation">優勢</h2>
+        <h3 class="my-2_5 exclusive__text-animation">EXCLUSIVE</h3>
+        <p class="font-sm exclusive__text-animation">
           伈創資訊期望以提供客戶驚豔且創新的產品技術為出發點，不斷開創同業之先例，而經營面則持續投注新穎、國際化的概念。本公司目前在台灣、中國都有相關業務進行，近年更預計將業務擴大到周邊國家。</p>
       </div>
     </div>
   </section>
 
-  
+  <section class="successful-case my-25 text-center pt-15 position-relative">
+    <h2 class="successful-case__text-animation">成功案例</h2>
+    <h3 class="successful-case__text-animation">SUCCESSFUL CASE</h3>
+    <div class="d-inline-block d-sm-flex successful-case__playing-animation mt-5">
+      <ng-container *ngFor="let successfulCase of successfulCases">
+        <app-successful-case class="my-2 mx-1 my-sm-0 mx-sm-2 d-inline-block">
+          <img src="assets/img/logo/logo_{{successfulCase}}.png" alt="successful-case-{{successfulCase}}">
+        </app-successful-case>
+      </ng-container>
+    </div>
+    <div class="d-none d-sm-flex d-md-none successful-case__playing-animation-reverse mt-4">
+      <ng-container *ngFor="let reverseSuccessfulCase of reverseSuccessfulCases">
+        <app-successful-case class="mx-sm-2">
+          <img src="assets/img/logo/logo_{{reverseSuccessfulCase}}.png" alt="reverse-successful-case-{{reverseSuccessfulCase}}">
+        </app-successful-case>
+      </ng-container>
+    </div>
+
+    <img src="assets/img/illustration/molecular_chain_b.svg" alt="illustration-chain-b"
+         class="position-absolute d-none d-sm-block successful-case__illustration">
+  </section>
 </section>

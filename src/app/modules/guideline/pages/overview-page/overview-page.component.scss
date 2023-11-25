@@ -127,9 +127,8 @@
   }
 
   &__gradient-bg {
-    background:
-      linear-gradient(0deg, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%),
-      linear-gradient(90deg, map-get($azure-light, 2) 0%, map-get($cyan-light, 2) 33.3%, map-get($green-light, 2) 66.6%, #FFFb9D 100%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%),
+    linear-gradient(90deg, map-get($azure-light, 2) 0%, map-get($cyan-light, 2) 33.3%, map-get($green-light, 2) 66.6%, #FFFb9D 100%);
   }
 
   &__cards {
@@ -154,6 +153,7 @@
 
   &__content {
     height: fit-content;
+
     @include generateStyleByBreakpoint("md") {
       background-color: map-get($black-light, 9);
     }
@@ -165,5 +165,65 @@
     @include generateStyleByBreakpoint("md") {
       right: -3.5rem;
     }
+  }
+
+  &__img-animation {
+    animation: fade-in-left-top 1s ease-in-out, twink 1s ease-in-out;
+  }
+
+  &__text-animation {
+    animation: fade-in-right 1s ease-in-out, twink 1s ease-in-out;
+  }
+}
+
+.successful-case {
+  @include generateStyleByBreakpoint("sm") {
+    background-color: map-get($black-light, 9);
+    &__playing-animation {
+      animation: infinite successful-case-animation linear 1200s;
+    }
+
+    &__playing-animation-reverse {
+      animation: infinite successful-case-animation-reverse linear 1200s;
+    }
+  }
+
+  &__illustration {
+    height: 5rem;
+    top: 1rem;
+    left: 30%;
+  }
+
+  &__text-animation {
+    animation: fade-in-right 1s ease-in-out, twink 1s ease-in-out;
+  }
+}
+
+
+@keyframes fade-in-left-top {
+  from {
+    transform: translate(-100%, -100%);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes successful-case-animation {
+  from {
+    transform: translate(0, 2.5rem);
+  }
+  to {
+    transform: translate(-4730px, 2.5rem);
+  }
+}
+
+@keyframes successful-case-animation-reverse {
+  from {
+    transform: translate(-150px, 2.5rem);
+  }
+  to {
+    transform: translate(-4880px, 2.5rem);
   }
 }

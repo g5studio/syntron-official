@@ -14,6 +14,7 @@ import { HealthcareIconComponent } from './components/healthcare-icon/healthcare
 import { PillIconComponent } from './components/pill-icon/pill-icon.component';
 import { DnsIconComponent } from './components/dns-icon/dns-icon.component';
 import { BackupIconComponent } from './components/backup-icon/backup-icon.component';
+import { SuccessfulCaseComponent } from './components/successful-case/successful-case.component';
 
 
 @NgModule({
@@ -30,19 +31,21 @@ import { BackupIconComponent } from './components/backup-icon/backup-icon.compon
     PillIconComponent,
     DnsIconComponent,
     BackupIconComponent,
+    SuccessfulCaseComponent,
   ],
   imports: [
     CommonModule
   ],
-  exports: [
-    HeaderComponent,
-    FooterComponent,
-    BorderlessButtonComponent,
-    NewsComponent,
-    TextButtonComponent,
-    ArrowForwardIconComponent,
-    ProductCardComponent,
-  ]
+    exports: [
+        HeaderComponent,
+        FooterComponent,
+        BorderlessButtonComponent,
+        NewsComponent,
+        TextButtonComponent,
+        ArrowForwardIconComponent,
+        ProductCardComponent,
+        SuccessfulCaseComponent,
+    ]
 })
 export class SharedModule {
 }

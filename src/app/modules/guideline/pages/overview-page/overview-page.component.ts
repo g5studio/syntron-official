@@ -23,6 +23,25 @@ export class OverviewPageComponent implements OnInit {
     },
   ];
 
+  readonly successfulCases: string[] = [
+    'ntuh',
+    'twpower',
+    'narlabs',
+    'vetern',
+    'chiayi_health',
+    'carrefour',
+    'chengkung_university',
+    'cjcu',
+    'culture',
+    'esun_bank',
+    'huafan',
+    'kinmen',
+    'new_taipei_gov',
+    'taipei_city_hospital',
+    'taiwan_oil',
+  ]
+  readonly reverseSuccessfulCases: string[] = [...this.successfulCases].reverse();
+
   get scrollTransformStyle() {
     return {transform: `translateX(-${this.scrollTop}px)`};
   }
