@@ -1,2 +1,19 @@
+@import "mixins";
+
 .component-footer {
+  border-bottom-left-radius: 3rem;
+
+  &__logo {
+    width: 10.911rem;
+    height: 3.125rem;
+  }
+
+  &__map {
+    height: 15rem;
+    width: 15rem;
+    @include generateStyleByBreakpoint("sm") {
+      height: 17.75rem;
+      width: 17.75rem;
+    }
+  }
 }
