@@ -11,7 +11,20 @@
   }
 
   &__container {
-    width: 100%;
     max-width: calc(9.375rem + 21.719rem + 34.295rem);
+  }
+
+  &__menu-icon::ng-deep {
+    .component-menu-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 1.25rem;
+
+      @include generateStyleByBreakpoint("sm") {
+        width: 2.25rem;
+        height: 2.25rem;
+        margin-right: 2.5rem;
+      }
+    }
   }
 }

@@ -16,4 +16,8 @@
       width: 17.75rem;
     }
   }
+
+  &__text-animation {
+    animation: fade-in-right 1s ease-in-out, twink 1s ease-in-out;
+  }
 }

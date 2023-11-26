@@ -15,6 +15,16 @@ import { PillIconComponent } from './components/pill-icon/pill-icon.component';
 import { DnsIconComponent } from './components/dns-icon/dns-icon.component';
 import { BackupIconComponent } from './components/backup-icon/backup-icon.component';
 import { SuccessfulCaseComponent } from './components/successful-case/successful-case.component';
+import {MenuIconComponent} from "./components/menu-icon/menu-icon.component";
+import {MenuComponent} from "./components/menu/menu.component";
+import { MenuMainButtonComponent } from './components/menu-main-button/menu-main-button.component';
+import { HeaderSpacingComponent } from './components/header-spacing/header-spacing.component';
+import { MenuSubButtonComponent } from './components/menu-sub-button/menu-sub-button.component';
+import { AddIconComponent } from './components/add-icon/add-icon.component';
+import { ArrowRightIconComponent } from './components/arrow-right-icon/arrow-right-icon.component';
+import { RemoveIconComponent } from './components/remove-icon/remove-icon.component';
+import { CloseIconComponent } from './components/close-icon/close-icon.component';
+import { ItemPointGrayIconComponent } from './components/item-point-gray-icon/item-point-gray-icon.component';
 
 
 @NgModule({
@@ -32,20 +42,31 @@ import { SuccessfulCaseComponent } from './components/successful-case/successful
     DnsIconComponent,
     BackupIconComponent,
     SuccessfulCaseComponent,
+    MenuIconComponent,
+    MenuComponent,
+    MenuMainButtonComponent,
+    HeaderSpacingComponent,
+    MenuSubButtonComponent,
+    AddIconComponent,
+    ArrowRightIconComponent,
+    RemoveIconComponent,
+    CloseIconComponent,
+    ItemPointGrayIconComponent,
   ],
   imports: [
     CommonModule
   ],
-    exports: [
-        HeaderComponent,
-        FooterComponent,
-        BorderlessButtonComponent,
-        NewsComponent,
-        TextButtonComponent,
-        ArrowForwardIconComponent,
-        ProductCardComponent,
-        SuccessfulCaseComponent,
-    ]
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    BorderlessButtonComponent,
+    NewsComponent,
+    TextButtonComponent,
+    ArrowForwardIconComponent,
+    ProductCardComponent,
+    SuccessfulCaseComponent,
+    HeaderSpacingComponent,
+  ]
 })
 export class SharedModule {
 }

@@ -1,5 +1,5 @@
-<header class="component-header bg-white">
-  <div class="h-100 d-flex justify-content-between align-items-center component-header__container">
+<header class="component-header bg-white position-absolute top-0 start-0 end-0 z-3 bg-azure">
+  <div class="h-100 d-flex justify-content-between align-items-center w-100 component-header__container">
     <app-main-logo class="h-100"></app-main-logo>
     <div class="d-flex">
       <ul class="h-100 align-items-center d-none d-md-flex">
@@ -16,6 +16,13 @@
           <app-borderless-button>聯絡我們</app-borderless-button>
         </li>
       </ul>
+
+      <app-menu-icon
+        class="d-flex d-md-none cursor-pointer component-header__menu-icon"
+        (click)="isMenuOpen = !isMenuOpen"></app-menu-icon>
     </div>
   </div>
 </header>
+
+<app-menu *ngIf="isMenuOpen" class="d-md-none position-absolute"></app-menu>
+
