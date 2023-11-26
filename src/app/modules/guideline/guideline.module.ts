@@ -4,11 +4,15 @@ import { CommonModule } from '@angular/common';
 import { GuidelineRoutingModule } from './guideline-routing.module';
 import { OverviewPageComponent } from './pages/overview-page/overview-page.component';
 import {SharedModule} from "../shared/shared.module";
+import { NewsPageComponent } from './pages/news-page/news-page.component';
+import { NewsDetailPageComponent } from './pages/news-detail-page/news-detail-page.component';
 
 
 @NgModule({
   declarations: [
-    OverviewPageComponent
+    OverviewPageComponent,
+    NewsPageComponent,
+    NewsDetailPageComponent
   ],
     imports: [
         CommonModule,

@@ -14,8 +14,8 @@
     max-width: calc(9.375rem + 21.719rem + 34.295rem);
   }
 
-  &__menu-icon::ng-deep {
-    .component-menu-icon {
+  &__icon::ng-deep {
+    .component-menu-icon, .component-close-icon, {
       width: 1.5rem;
       height: 1.5rem;
       margin-right: 1.25rem;

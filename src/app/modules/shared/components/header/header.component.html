@@ -18,8 +18,13 @@
       </ul>
 
       <app-menu-icon
-        class="d-flex d-md-none cursor-pointer component-header__menu-icon"
-        (click)="isMenuOpen = !isMenuOpen"></app-menu-icon>
+        class="d-flex d-md-none cursor-pointer component-header__icon"
+        *ngIf="!isMenuOpen"
+        (click)="isMenuOpen = true"></app-menu-icon>
+      <app-close-icon
+        class="d-flex d-md-none cursor-pointer component-header__icon"
+        *ngIf="isMenuOpen"
+        (click)="isMenuOpen = false"></app-close-icon>
     </div>
   </div>
 </header>

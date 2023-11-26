@@ -25,6 +25,8 @@ import { ArrowRightIconComponent } from './components/arrow-right-icon/arrow-rig
 import { RemoveIconComponent } from './components/remove-icon/remove-icon.component';
 import { CloseIconComponent } from './components/close-icon/close-icon.component';
 import { ItemPointGrayIconComponent } from './components/item-point-gray-icon/item-point-gray-icon.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { ArrowForwardIosIconComponent } from './components/arrow-forward-ios-icon/arrow-forward-ios-icon.component';
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { ItemPointGrayIconComponent } from './components/item-point-gray-icon/it
     RemoveIconComponent,
     CloseIconComponent,
     ItemPointGrayIconComponent,
+    BreadcrumbComponent,
+    ArrowForwardIosIconComponent,
   ],
   imports: [
     CommonModule
@@ -66,6 +70,7 @@ import { ItemPointGrayIconComponent } from './components/item-point-gray-icon/it
     ProductCardComponent,
     SuccessfulCaseComponent,
     HeaderSpacingComponent,
+    BreadcrumbComponent,
   ]
 })
 export class SharedModule {
