@@ -54,7 +54,7 @@ export class OverviewPageComponent implements OnInit {
 
   @HostListener('wheel', ['$event'])
   onWheelScroll() {
-    let scrollTop = document.querySelector('.overview-page')?.scrollTop;
+    let scrollTop = document.querySelector('.container')?.scrollTop;
     this.scrollTop = !!scrollTop ? scrollTop : 0;
   }
 }

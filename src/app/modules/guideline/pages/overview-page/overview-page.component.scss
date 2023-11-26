@@ -1,10 +1,6 @@
 @import "colors";
 @import "mixins";
 
-.overview-page {
-  max-height: 30vh;
-}
-
 .main-img-container {
   &__gradient-bg {
     background: linear-gradient(180deg, map-get($azure-light, 2) 0%, map-get($cyan-light, 2) 33.3%, map-get($green-light, 2) 66.6%, #FFFb9D 100%);

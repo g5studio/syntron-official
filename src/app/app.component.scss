@@ -1,0 +1,8 @@
+@import "mixins";
+
+.container {
+  max-height: calc(100vh - 3.125rem);
+  @include generateStyleByBreakpoint("sm") {
+    max-height: calc(100vh - 5.625rem);
+  }
+}
