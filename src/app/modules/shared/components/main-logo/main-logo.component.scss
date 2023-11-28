@@ -1,0 +1,20 @@
+@import "mixins";
+
+.component-main-logo {
+  width: 9.375rem;
+  padding: 1.5rem 0px;
+  margin-left: 2.5rem;
+}
+
+@include generateStyleByMaxBreakpoint("md") {
+  .component-main-logo {
+    width: 8.75rem;
+  }
+}
+
+@include generateStyleByMaxBreakpoint("sm") {
+  .component-main-logo {
+    width: 6.562rem;
+    padding: 0.625rem 0px;
+  }
+}

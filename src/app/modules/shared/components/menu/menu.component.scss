@@ -1,0 +1,31 @@
+@import "mixins";
+
+.component-menu {
+  &__mask {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  &__container {
+    height: 100vh;
+    width: 100vw;
+
+    @include generateStyleByBreakpoint("sm") {
+      width: 33.75rem !important;
+      left: calc(100vw - 33.75rem) !important;
+    }
+  }
+
+  &__divider {
+    height: 2px;
+  }
+
+  &__map {
+    height: 16.146rem;
+    width: 16.146rem;
+    @include generateStyleByBreakpoint("sm") {
+      height: 10rem;
+      width: 10rem;
+    }
+  }
+}
