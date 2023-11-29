@@ -4,10 +4,27 @@
   height: 5.625rem;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
   border-bottom-left-radius: 3rem;
-}
 
-@include generateStyleByMaxBreakpoint("md") {
-  .component-header {
+  @include generateStyleByMaxBreakpoint("sm") {
     height: 3.125rem;
+    border-bottom-left-radius: 2rem;
+  }
+
+  &__container {
+    max-width: calc(9.375rem + 21.719rem + 34.295rem);
+  }
+
+  &__icon::ng-deep {
+    .component-menu-icon, .component-close-icon, {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 1.25rem;
+
+      @include generateStyleByBreakpoint("sm") {
+        width: 2.25rem;
+        height: 2.25rem;
+        margin-right: 2.5rem;
+      }
+    }
   }
 }

@@ -1,0 +1,12 @@
+@import "mixins";
+
+.component-successful-case {
+  width: 10.125rem;
+  height: 7rem;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.1);
+
+  @include generateStyleByBreakpoint("sm") {
+    width: 18.75rem;
+    height: 10rem;
+  }
+}

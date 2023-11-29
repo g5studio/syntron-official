@@ -1,0 +1,9 @@
+<div class="component-breadcrumb w-100 d-flex align-items-center px-5 px-sm-10">
+  <ng-container *ngFor="let breadcrumb of breadcrumbs;let i = index">
+    <p class="font-sm cursor-pointer text-primary-4--hover"
+       [ngClass]="i === breadcrumbs.length - 1 ? 'text-primary-2' : 'text-black-2'">{{breadcrumb}}</p>
+    <app-arrow-forward-ios-icon
+      *ngIf="i !== breadcrumbs.length - 1"
+      class="component-breadcrumb__icon d-flex justify-content-center align-items-center mx-2_5"></app-arrow-forward-ios-icon>
+  </ng-container>
+</div>
