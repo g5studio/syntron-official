@@ -1,0 +1,8 @@
+<ul class="d-flex">
+  <li *ngFor="let tab of this.tabs;let index = index">
+    <input type="radio" class="d-none" [value]="index" id="product-tabset">
+    <label for="product-tabset" class="my-6 mx-7_5 cursor-pointer">
+      {{tab}}
+    </label>
+  </li>
+</ul>

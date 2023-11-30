@@ -1,0 +1,11 @@
+@import"colors";
+input[type="radio"] {
+  &:checked {
+    label {
+      color: map-get( $primary-light , '2') ;
+      &::after {
+        content: '';
+      }
+    }
+  }
+}
