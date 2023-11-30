@@ -24,9 +24,10 @@ import { AddIconComponent } from './components/add-icon/add-icon.component';
 import { ArrowRightIconComponent } from './components/arrow-right-icon/arrow-right-icon.component';
 import { RemoveIconComponent } from './components/remove-icon/remove-icon.component';
 import { CloseIconComponent } from './components/close-icon/close-icon.component';
-import { ItemPointGrayIconComponent } from './components/item-point-gray-icon/item-point-gray-icon.component';
+import { ItemPointIconComponent } from './components/item-point-icon/item-point-icon.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { ArrowForwardIosIconComponent } from './components/arrow-forward-ios-icon/arrow-forward-ios-icon.component';
+import { TabListComponent } from './components/tab-list/tab-list.component';
 
 
 @NgModule({
@@ -53,9 +54,10 @@ import { ArrowForwardIosIconComponent } from './components/arrow-forward-ios-ico
     ArrowRightIconComponent,
     RemoveIconComponent,
     CloseIconComponent,
-    ItemPointGrayIconComponent,
+    ItemPointIconComponent,
     BreadcrumbComponent,
     ArrowForwardIosIconComponent,
+    TabListComponent,
   ],
   imports: [
     CommonModule
@@ -71,6 +73,7 @@ import { ArrowForwardIosIconComponent } from './components/arrow-forward-ios-ico
     SuccessfulCaseComponent,
     HeaderSpacingComponent,
     BreadcrumbComponent,
+    TabListComponent,
   ]
 })
 export class SharedModule {

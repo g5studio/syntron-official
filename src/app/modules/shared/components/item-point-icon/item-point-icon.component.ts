@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-item-point-gray-icon',
+  selector: 'app-item-point-icon',
   templateUrl: './item-point-gray-icon.component.svg',
-  styleUrls: ['./item-point-gray-icon.component.scss']
+  styleUrls: ['./item-point-icon.component.scss']
 })
-export class ItemPointGrayIconComponent implements OnInit {
+export class ItemPointIconComponent implements OnInit {
 
   constructor() { }
 

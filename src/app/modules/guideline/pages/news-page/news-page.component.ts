@@ -8,6 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class NewsPageComponent implements OnInit {
 
   readonly breadcrumbs: string[] = ['首頁', '最新消息'];
+  readonly tabs: string[] = ['全部最新消息 (38)', '新聞媒體 (10)', '重要通知 (10)', '活動通知 (10)', '新產品 (2)'];
 
   constructor() {
   }

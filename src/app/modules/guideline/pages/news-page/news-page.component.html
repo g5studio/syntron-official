@@ -2,7 +2,7 @@
   <app-header-spacing></app-header-spacing>
   <app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
 
-  <section class="row main-title d-flex flex-column-reverse flex-md-row mb-30">
+  <section class="row main-title d-flex flex-column-reverse flex-md-row">
     <img src="assets/img/logo/logo_chengkung_university.png" alt="news-main-img" class="bg-black col-12 col-md-8">
     <div class="position-relative col-12 col-md-4 p-10 d-flex flex-md-column justify-content-center bg-black-9">
       <div>
@@ -16,14 +16,17 @@
     </div>
   </section>
 
-  <section class="d-flex flex-column flex-md-row">
-    <aside class="d-none d-md-flex">
-      這邊是側邊欄
+  <section class="d-flex flex-column flex-md-row px-30 py-25">
+    <aside class="d-none d-md-flex flex-md-column">
+      <h4 class="mb-4">分類</h4>
+      <app-tab-list [tabs]="tabs" [focusTabIndex]="0"></app-tab-list>
     </aside>
-    <article>
-      <h2>全部最新消息</h2>
+    <article class="w-100">
+      <h1>全部最新消息</h1>
       <section>
-
+        <div style="width: 100px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden">
+          testtesttesttesttesttesttesttest
+        </div>
       </section>
     </article>
   </section>
