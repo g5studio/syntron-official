@@ -7,6 +7,10 @@ import {Component, HostListener, OnInit} from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
+  get scrollTransformStyle() {
+    return {transform: `translateX(-${this.scrollTop}px)`};
+  }
+
   scrollTop = 0;
   readonly news: { date: string, title: string }[] = [
     {
@@ -41,10 +45,6 @@ export class HomePageComponent implements OnInit {
     'taiwan_oil',
   ]
   readonly reverseSuccessfulCases: string[] = [...this.successfulCases].reverse();
-
-  get scrollTransformStyle() {
-    return {transform: `translateX(-${this.scrollTop}px)`};
-  }
 
   constructor() {
   }

@@ -1,5 +1,6 @@
 <div class="component-pagination d-flex justify-content-center">
   <button
+    *ngIf="pages.length > 1"
     id="{{id}}_1"
     type="button"
     class="btn d-flex justify-content-center align-items-center text-nowrap border-1 component-pagination__button"

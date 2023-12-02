@@ -16,7 +16,7 @@ export class HeaderSpacingComponent implements OnInit {
   private currentPath: string = window.location.pathname;
 
   private bgSettingConfig: Record<string, string> = {
-    '/guideline/home': 'bg-azure-2'
+    '/common/home': 'bg-azure-2'
   }
 
   constructor(private router: Router) {

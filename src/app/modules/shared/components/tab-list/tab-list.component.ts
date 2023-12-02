@@ -12,11 +12,11 @@ export class TabListComponent implements OnInit {
 
   @Output() changeTab = new EventEmitter<string>();
 
-  readonly id = `tab-list-${Math.random().toString(36).substring(2)}`;
-
   get focusTabIndex(): number {
     return this.tabs.findIndex((tab)=> tab === this.focusTab);
   }
+
+  readonly id = `tab-list-${Math.random().toString(36).substring(2)}`;
 
   constructor() { }
 
