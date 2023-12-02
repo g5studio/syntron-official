@@ -21,6 +21,10 @@ fieldset {
   cursor: pointer;
 }
 
+small {
+  display: block;
+}
+
 ul,
 ol {
   list-style-position: inside;

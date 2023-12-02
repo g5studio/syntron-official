@@ -1,4 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router, RouterEvent } from '@angular/router';
+import { filter, tap } from 'rxjs';
 
 @Component({
   selector: 'app-header-spacing',
@@ -7,11 +9,31 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class HeaderSpacingComponent implements OnInit {
 
-  @Input() bgClass: string = 'bg-white';
+  get bgClass() {
+    return this.bgSettingConfig[this.currentPath] ?? 'bg-white';
+  }
 
-  constructor() { }
+  private currentPath: string = window.location.pathname;
+
+  private bgSettingConfig: Record<string, string> = {
+    '/guideline/home': 'bg-azure-2'
+  }
+
+  constructor(private router: Router) {
+    this.onRouterChanged$.subscribe();
+  }
 
   ngOnInit(): void {
+  }
+
+  private onRouterChanged$ = this.router.events.pipe(
+    tap((event) => this.routeHandler(event))
+  );
+
+  private routeHandler(event: any) {
+    if (event instanceof NavigationEnd) {
+      this.currentPath = event.url;
+    }
   }
 
 }
