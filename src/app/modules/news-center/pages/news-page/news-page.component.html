@@ -13,7 +13,7 @@
     </div>
   </section>
 
-  <section class="d-flex flex-column flex-md-row px-30 py-25 news-list">
+  <section class="d-flex flex-column flex-md-row px-8 px-md-30 py-25 news-list">
     <aside class="d-none d-md-flex flex-md-column">
       <h4 class="mb-4">分類</h4>
       <app-tab-list
@@ -22,7 +22,7 @@
         (changeTab)="changeTab($event)"></app-tab-list>
     </aside>
     <section class="w-100">
-      <h2 class="mb-6">全部最新消息</h2>
+      <h2 class="mb-6 d-none d-sm-block">全部最新消息</h2>
       <ul class="mb-10">
         <li *ngFor="let news of filterNews.slice((currentPage - 1) * 8, currentPage * 8);let i = index">
           <div class="d-flex">
@@ -32,11 +32,12 @@
                 class="border-radius-xl news-list__img">
             </div>
             <div>
-              <p>{{news.date}}</p>
-              <h4 class="my-2">{{news.title}}</h4>
-              <p class="font-sm overflow-hidden news-list__description">{{news.description}}</p>
+              <p class="font-xs font-sm-md">{{news.date}}</p>
+              <h4 class="my-2 font-md font-sm-lg">{{news.title}}</h4>
+              <p class="font-sm d-none overflow-hidden news-list__description">{{news.description}}</p>
             </div>
           </div>
+          <p class="font-sm d-sm-none">{{news.description}}</p>
           <hr
             *ngIf="i !== filterNews.slice((currentPage - 1) * 8, currentPage * 8).length - 1"
             class="w-100 border-0 bg-black-4 opacity-100 my-6 news-list__divider">
