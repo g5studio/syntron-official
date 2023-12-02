@@ -10,21 +10,21 @@ export type Breadcrumb = {
 }
 
 export const BreadcrumbConfig: Record<string, Breadcrumb[]> = {
-  '/guideline/news': [{
+  '/news-center/news': [{
     i18n: '首頁',
-    url: '/guideline/home'
+    url: '/common/home'
   }, {
     i18n: '最新消息',
-    url: '/guideline/home'
+    url: '/news-center/home'
   }],
-  '/guideline/news/detail': [{
+  '/news-center/news/detail': [{
     i18n: '首頁',
-    url: '/guideline/home'
+    url: '/common/home'
   }, {
     i18n: '最新消息',
-    url: '/guideline/news'
+    url: '/news-center/news'
   }, {
     i18n: '全部最新消息',
-    url: '/guideline/news/detail'
+    url: '/news-center/news/detail'
   }]
 }

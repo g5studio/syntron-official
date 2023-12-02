@@ -4,12 +4,12 @@ import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {BorderlessButtonComponent} from './components/borderless-button/borderless-button.component';
 import {MainLogoComponent} from './components/main-logo/main-logo.component';
-import {NewsComponent} from './components/news/news.component';
+import {NewsComponent} from '../common/components/news/news.component';
 import {
   ArrowForwardIconComponent
 } from "./components/arrow-forward-icon/arrow-forward-icon.component";
 import {TextButtonComponent} from './components/text-button/text-button.component';
-import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductCardComponent } from '../common/components/product-card/product-card.component';
 import { HealthcareIconComponent } from './components/healthcare-icon/healthcare-icon.component';
 import { PillIconComponent } from './components/pill-icon/pill-icon.component';
 import { DnsIconComponent } from './components/dns-icon/dns-icon.component';

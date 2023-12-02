@@ -7,6 +7,12 @@ const routes: Routes = [{
 }, {
   path: '*',
   redirectTo: 'guideline'
+}, {
+  path: 'common',
+  loadChildren: () => import('./modules/common/common.module').then((m) => m.CommonModule)
+},{
+  path: 'news-center',
+  loadChildren: () => import('./modules/news-center/news-center.module').then((m) => m.NewsCenterModule)
 }];
 
 @NgModule({

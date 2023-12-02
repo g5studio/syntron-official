@@ -1,5 +1,5 @@
-@import "colors";
-@import "mixins";
+@import "src/styles/colors";
+@import "src/styles/mixins";
 
 .component-news {
   &__round-out {
@@ -10,7 +10,7 @@
 
   &__tab {
     max-width: calc(100vw - 4.375rem);
-    width: 32rem;
+    width: 37rem;
     max-height: 3rem;
     border-top-left-radius: 1rem;
     @include generateStyleByMaxBreakpoint("sm") {

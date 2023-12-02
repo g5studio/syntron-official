@@ -1,11 +1,11 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-overview-page',
-  templateUrl: './overview-page.component.html',
-  styleUrls: ['./overview-page.component.scss']
+  selector: 'app-home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.scss']
 })
-export class OverviewPageComponent implements OnInit {
+export class HomePageComponent implements OnInit {
 
   scrollTop = 0;
   readonly news: { date: string, title: string }[] = [
