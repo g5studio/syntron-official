@@ -6,13 +6,15 @@ import { OverviewPageComponent } from './pages/overview-page/overview-page.compo
 import {SharedModule} from "../shared/shared.module";
 import { NewsPageComponent } from './pages/news-page/news-page.component';
 import { NewsDetailPageComponent } from './pages/news-detail-page/news-detail-page.component';
+import { TextLevelUsagePageComponent } from './pages/text-level-usage-page/text-level-usage-page.component';
 
 
 @NgModule({
   declarations: [
     OverviewPageComponent,
     NewsPageComponent,
-    NewsDetailPageComponent
+    NewsDetailPageComponent,
+    TextLevelUsagePageComponent
   ],
     imports: [
         CommonModule,
