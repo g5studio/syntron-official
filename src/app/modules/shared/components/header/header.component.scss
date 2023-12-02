@@ -1,7 +1,8 @@
 @import "mixins";
+@import "variables";
 
 .component-header {
-  height: 5.625rem;
+  height: $header-height;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
   border-bottom-left-radius: 3rem;
 
@@ -15,7 +16,8 @@
   }
 
   &__icon::ng-deep {
-    .component-menu-icon, .component-close-icon, {
+    .component-menu-icon,
+    .component-close-icon {
       width: 1.5rem;
       height: 1.5rem;
       margin-right: 1.25rem;
