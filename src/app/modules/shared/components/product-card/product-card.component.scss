@@ -90,6 +90,7 @@
 
   &__img {
     width: 19.375rem;
+    height: 11rem;
     left: 0.875rem;
     @include generateStyleByBreakpoint("md") {
       width: 17.125rem;

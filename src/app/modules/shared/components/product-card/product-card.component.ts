@@ -26,4 +26,17 @@ export class ProductCardComponent implements OnInit {
         return 'bg-green-2__before bg-green-1__after';
     }
   }
+
+  getImg(type: "healthcare" | "pill" | "dns" | "backup") {
+    switch (type) {
+      case 'healthcare':
+        return 'assets/img/iStock/iStock-1210904793.jpg';
+      case 'pill':
+        return 'assets/img/iStock/iStock-1288255694.jpg';
+      case 'dns':
+        return 'assets/img/iStock/iStock-1053603796.jpg';
+      case 'backup':
+        return 'assets/img/iStock/iStock-1422149137.jpg';
+    }
+  }
 }

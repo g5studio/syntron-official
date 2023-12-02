@@ -21,9 +21,13 @@
 }
 
 .news {
-  animation: fade-in-right 1s ease-in-out, twink 1s ease-in-out;
-  @include generateStyleByMaxBreakpoint("md") {
-    display: none !important;
+  height: 400px;
+
+  &__title {
+    animation: fade-in-right 1s ease-in-out, twink 1s ease-in-out;
+    @include generateStyleByMaxBreakpoint("md") {
+      display: none !important;
+    }
   }
 
   &__view-all-button::ng-deep {
@@ -53,7 +57,7 @@
 }
 
 .news-list {
-  width: 65%;
+  min-width: 65%;
   animation: fade-in-right 1s ease-in-out, twink 1s ease-in-out;
   @include generateStyleByMaxBreakpoint("md") {
     width: 100%;
@@ -148,8 +152,6 @@
   }
 
   &__content {
-    height: fit-content;
-
     @include generateStyleByBreakpoint("md") {
       background-color: map-get($black-light, 9);
     }
