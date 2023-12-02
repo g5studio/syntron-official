@@ -16,12 +16,15 @@
   <section class="d-flex flex-column flex-md-row px-30 py-25 news-list">
     <aside class="d-none d-md-flex flex-md-column">
       <h4 class="mb-4">分類</h4>
-      <app-tab-list [tabs]="tabs" [focusTabIndex]="0"></app-tab-list>
+      <app-tab-list
+        [tabs]="tabs"
+        [focusTab]="focusTab"
+        (changeTab)="changeTab($event)"></app-tab-list>
     </aside>
     <section class="w-100">
       <h2 class="mb-6">全部最新消息</h2>
-      <ul>
-        <li *ngFor="let news of newsList;let i = index">
+      <ul class="mb-10">
+        <li *ngFor="let news of filterNews.slice((currentPage - 1) * 8, currentPage * 8);let i = index">
           <div class="d-flex">
             <div class="news-list__img-container d-flex justify-content-center align-items-center me-4">
               <img
@@ -35,10 +38,14 @@
             </div>
           </div>
           <hr
-            *ngIf="i !== newsList.length - 1"
+            *ngIf="i !== filterNews.slice((currentPage - 1) * 8, currentPage * 8).length - 1"
             class="w-100 border-0 bg-black-4 opacity-100 my-6 news-list__divider">
         </li>
       </ul>
+      <app-pagination
+        class="d-flex justify-content-center"
+        [total]="filterNews.length"
+        (changePage)="changePage($event)"></app-pagination>
     </section>
   </section>
 </section>

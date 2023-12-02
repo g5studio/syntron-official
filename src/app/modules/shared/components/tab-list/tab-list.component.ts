@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-tab-list',
@@ -8,9 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TabListComponent implements OnInit {
 
   @Input() tabs: string[] = [];
-  @Input() focusTabIndex: number = 0;
+  @Input() focusTab: string = '';
+
+  @Output() changeTab = new EventEmitter<string>();
 
   readonly id = `tab-list-${Math.random().toString(36).substring(2)}`;
+
+  get focusTabIndex(): number {
+    return this.tabs.findIndex((tab)=> tab === this.focusTab);
+  }
 
   constructor() { }
 
@@ -32,5 +38,4 @@ export class TabListComponent implements OnInit {
     tabItemElement?.classList.add('text-black-3--hover');
     tabIconElement?.classList.remove('component-tab-list__icon');
   }
-
 }

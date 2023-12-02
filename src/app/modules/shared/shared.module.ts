@@ -28,6 +28,7 @@ import { ItemPointIconComponent } from './components/item-point-icon/item-point-
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { ArrowForwardIosIconComponent } from './components/arrow-forward-ios-icon/arrow-forward-ios-icon.component';
 import { TabListComponent } from './components/tab-list/tab-list.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 
 @NgModule({
@@ -58,23 +59,25 @@ import { TabListComponent } from './components/tab-list/tab-list.component';
     BreadcrumbComponent,
     ArrowForwardIosIconComponent,
     TabListComponent,
+    PaginationComponent,
   ],
   imports: [
     CommonModule
   ],
-  exports: [
-    HeaderComponent,
-    FooterComponent,
-    BorderlessButtonComponent,
-    NewsComponent,
-    TextButtonComponent,
-    ArrowForwardIconComponent,
-    ProductCardComponent,
-    SuccessfulCaseComponent,
-    HeaderSpacingComponent,
-    BreadcrumbComponent,
-    TabListComponent,
-  ]
+    exports: [
+        HeaderComponent,
+        FooterComponent,
+        BorderlessButtonComponent,
+        NewsComponent,
+        TextButtonComponent,
+        ArrowForwardIconComponent,
+        ProductCardComponent,
+        SuccessfulCaseComponent,
+        HeaderSpacingComponent,
+        BreadcrumbComponent,
+        TabListComponent,
+        PaginationComponent,
+    ]
 })
 export class SharedModule {
 }

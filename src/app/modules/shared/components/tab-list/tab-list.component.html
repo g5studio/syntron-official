@@ -9,7 +9,8 @@
         'text-primary-2': focusTabIndex === i
       }"
       (mousedown)="mouseDownChangeClass(id, i)"
-      (mouseup)="mouseUpChangeClass(id, i)">
+      (mouseup)="mouseUpChangeClass(id, i)"
+      (click)="changeTab.emit(tab)">
       <app-item-point-icon
         id="{{id}}_{{i}}_icon"
         class="me-4"
