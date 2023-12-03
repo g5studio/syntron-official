@@ -8,8 +8,10 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class MenuMainButtonComponent implements OnInit {
 
   @Input() hasSubmenu = false;
+  @Input() isFocus = false;
 
   @Output() changeIsOpenStatus = new EventEmitter<boolean>();
+  @Output() navigate = new EventEmitter<void>();
 
   isOpen = false;
   readonly id = `menu-main-button-${Math.random().toString(36).substring(2)}`;
@@ -21,21 +23,29 @@ export class MenuMainButtonComponent implements OnInit {
   }
 
   removeTextHoverClass(id: string) {
+    if (this.isFocus) return;
     const element = document.getElementById(id);
     element?.classList.remove('bg-black-7--hover');
   }
 
   addTextHoverClass(id: string) {
+    if (this.isFocus) return;
     const element = document.getElementById(id);
     element?.classList.add('bg-black-7--hover');
   }
 
   onClickBtn() {
     if (this.hasSubmenu) {
+      if (this.isFocus) return;
       this.isOpen = !this.isOpen;
       this.changeIsOpenStatus.emit(this.isOpen);
     } else {
-      // TODO navigate
+      this.onNavigate()
     }
+  }
+
+  onNavigate() {
+    if (this.isFocus) return;
+    this.navigate.emit();
   }
 }

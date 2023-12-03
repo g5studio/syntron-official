@@ -8,7 +8,10 @@
     <div class="d-flex">
       <ul class="h-100 align-items-center d-none d-md-flex">
         <li>
-          <app-borderless-button>最新消息</app-borderless-button>
+          <app-borderless-button
+            [isFocus]="getIsFocus('/news-center/news')"
+            (click)="navigate(['news-center'])">最新消息
+          </app-borderless-button>
         </li>
         <li>
           <app-borderless-button>產品介紹</app-borderless-button>
@@ -35,4 +38,7 @@
   </div>
 </header>
 
-<app-menu *ngIf="isMenuOpen" class="d-md-none position-absolute"></app-menu>
+<app-menu
+  *ngIf="isMenuOpen"
+  (navigate)="navigate($event)"
+  class="d-md-none position-absolute"></app-menu>

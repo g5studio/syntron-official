@@ -4,6 +4,7 @@ import {NewsPageComponent} from "./pages/news-page/news-page.component";
 import {NewsDetailPageComponent} from "./pages/news-detail-page/news-detail-page.component";
 
 const routes: Routes = [
+  {path: '', redirectTo: 'news', pathMatch: 'full'},
   {
     path: 'news', children: [
       {path: '', component: NewsPageComponent},

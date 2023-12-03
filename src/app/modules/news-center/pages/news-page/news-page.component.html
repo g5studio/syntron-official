@@ -24,7 +24,9 @@
     <section class="w-100">
       <h2 class="mb-6 d-none d-sm-block">全部最新消息</h2>
       <ul class="mb-10">
-        <li *ngFor="let news of filterNews.slice((currentPage - 1) * 8, currentPage * 8);let i = index">
+        <li
+          *ngFor="let news of filterNews.slice((currentPage - 1) * 8, currentPage * 8);let i = index"
+          class="cursor-pointer">
           <div class="d-flex">
             <div class="news-list__img-container d-flex justify-content-center align-items-center me-4">
               <img
