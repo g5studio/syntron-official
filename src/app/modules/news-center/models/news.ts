@@ -1,6 +1,6 @@
 import {INews} from "../interfaces/i-news";
 
-export class News implements INews{
+export class News implements INews {
 
   private readonly _id: number;
   private readonly _title!: string;
@@ -11,8 +11,13 @@ export class News implements INews{
   private readonly _content!: string;
 
   constructor(data: INews, id: number) {
-    Object.assign(this, data);
+    const {title, date, category, description, content} = data;
     this._id = id;
+    this._title = title;
+    this._date = date;
+    this._category = category;
+    this._description = description;
+    this._content = content;
     this._image = data.hasOwnProperty('image') ? data.image! : 'assets/img/news/image_default_s_pc.png';
   }
 
