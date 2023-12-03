@@ -8,7 +8,11 @@ const routes: Routes = [
   {
     path: 'news', children: [
       {path: '', component: NewsPageComponent},
-      {path: 'detail', component: NewsDetailPageComponent},
+      {path: 'all/detail', component: NewsDetailPageComponent},
+      {path: 'media/detail', component: NewsDetailPageComponent},
+      {path: 'notice/detail', component: NewsDetailPageComponent},
+      {path: 'events/detail', component: NewsDetailPageComponent},
+      {path: 'new-products/detail', component: NewsDetailPageComponent},
     ]
   }
 ];

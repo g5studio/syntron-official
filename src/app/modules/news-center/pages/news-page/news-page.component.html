@@ -22,15 +22,16 @@
         (changeTab)="changeTab($event)"></app-tab-list>
     </aside>
     <section class="w-100">
-      <h2 class="mb-6 d-none d-sm-block">全部最新消息</h2>
+      <h2 class="mb-6 d-none d-sm-block">{{focusTab}}</h2>
       <ul class="mb-10">
         <li
           *ngFor="let news of filterNews.slice((currentPage - 1) * 8, currentPage * 8);let i = index"
+          (click)="toDetailPage(news.id)"
           class="cursor-pointer">
           <div class="d-flex">
             <div class="news-list__img-container d-flex justify-content-center align-items-center me-4">
               <img
-                [src]="news.image ? news.image : 'assets/img/news/image_default_s_pc.png'" alt="news_{{i}}"
+                [src]="news.image" alt="news_{{i}}"
                 class="border-radius-xl news-list__img">
             </div>
             <div>

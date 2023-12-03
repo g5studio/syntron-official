@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Breadcrumb, BreadcrumbConfig } from '@shared/constants';
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
+import {Breadcrumb, BreadcrumbConfig} from '@shared/constants';
 
 
 @Component({
@@ -11,13 +11,18 @@ import { Breadcrumb, BreadcrumbConfig } from '@shared/constants';
 export class BreadcrumbComponent {
 
   get breadcrumbs(): Breadcrumb[] {
-    return BreadcrumbConfig[this.router.url] ?? [];
+    return BreadcrumbConfig[window.location.pathname] ?? [];
   }
 
   get isShow(): boolean {
     return this.breadcrumbs.length > 0;
   }
 
-  constructor(public router: Router) { }
+  constructor(public router: Router) {
+  }
 
+  navigate(url: string, index: number) {
+    if (index === this.breadcrumbs.length - 1) return;
+    this.router.navigateByUrl(url).then();
+  }
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NewsService} from "../../services/news.service";
 import {News} from "../../models/news";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-news-page',
@@ -16,7 +17,8 @@ export class NewsPageComponent implements OnInit {
   focusTab: string = '';
 
   constructor(
-    private $news: NewsService
+    private $news: NewsService,
+    private router: Router,
   ) {
   }
 
@@ -43,5 +45,27 @@ export class NewsPageComponent implements OnInit {
     if ($event.includes('全部最新消息')) this.filterNews = this.$news.news;
     else this.filterNews = this.$news.news.filter((news) => news.category === $event.split(' ')[0]);
     document.getElementById('main')!.scrollTop = 0;
+  }
+
+  toDetailPage(id: number) {
+    const focusTab = this.focusTab.split(' ')[0];
+    let focusTabPath: string = '';
+    switch (focusTab) {
+      case '全部最新消息':
+        focusTabPath = 'all';
+        break;
+      case '新聞媒體':
+        focusTabPath = 'media';
+        break;
+      case '重要通知':
+        focusTabPath = 'notice';
+        break;
+      case '活動通知':
+        focusTabPath = 'events';
+        break;
+      case '新產品':
+        focusTabPath = 'new-products';
+    }
+    this.router.navigate([`/news-center/news/${focusTabPath}/detail/`], {queryParams: {id}}).then();
   }
 }
