@@ -1,1 +1,35 @@
-<section></section>
+<section>
+  <div class="banner">
+    <h1 class="d-flex justify-content-center align-items-center banner__title">最新消息</h1>
+    <hr class="banner__divider m-0 border-0 bg-black-4 opacity-100">
+  </div>
+  <section class="p-10 px-md-50">
+    <app-outline-button (click)="backToNewsPage()">返回最新消息</app-outline-button>
+
+    <ng-container *ngIf="!!news">
+      <div class="mt-4 mb-4 d-flex">
+        <p class="vertical_divider border-black-4 pe-4 me-4">{{news.date}}</p>
+        <p>{{news.category}}</p>
+      </div>
+      <h3 class="mb-8">{{news.title}}</h3>
+      <article
+        class="news-content mb-10"
+        [innerHTML]="news.content"></article>
+      <div class="d-flex mb-20">
+        <app-outline-button
+          class="me-4"
+          *ngIf="news.id !== 0"
+          (click)="changePage(news.id - 1)">
+          <app-arrow-left-icon></app-arrow-left-icon>
+          上一篇文章
+        </app-outline-button>
+        <app-outline-button
+          *ngIf="news.id !== total - 1"
+          (click)="changePage(news.id + 1)">
+          下一篇文章
+          <app-arrow-right-icon></app-arrow-right-icon>
+        </app-outline-button>
+      </div>
+    </ng-container>
+  </section>
+</section>

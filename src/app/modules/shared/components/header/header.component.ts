@@ -18,10 +18,10 @@ export class HeaderComponent implements OnInit {
 
   navigate(path: string[]) {
     this.isMenuOpen = false;
-    this.router.navigate(path).then();
+    this.router.navigate(path).then(() => document.getElementById('main')!.scrollTop = 0);
   }
 
   getIsFocus(path: string) {
-    return window.location.pathname === path;
+    return window.location.pathname.includes(path);
   }
 }

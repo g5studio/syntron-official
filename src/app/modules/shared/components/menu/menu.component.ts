@@ -24,6 +24,6 @@ export class MenuComponent implements OnInit {
   }
 
   getIsFocus(path: string) {
-    return window.location.pathname === path;
+    return window.location.pathname.includes(path);
   }
 }
