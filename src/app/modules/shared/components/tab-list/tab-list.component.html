@@ -1,0 +1,21 @@
+<div class="component-tab-list">
+  <ul>
+    <li
+      *ngFor="let tab of tabs;let i = index"
+      id="{{id}}_{{i}}"
+      class="d-flex align-items-center font-sm cursor-pointer component-tab-list__item"
+      [ngClass]="{
+        'text-black-2 text-black-3--hover text-primary-2--active': focusTabIndex !== i,
+        'text-primary-2': focusTabIndex === i
+      }"
+      (mousedown)="mouseDownChangeClass(id, i)"
+      (mouseup)="mouseUpChangeClass(id, i)"
+      (click)="changeTab.emit(tab)">
+      <app-item-point-icon
+        id="{{id}}_{{i}}_icon"
+        class="me-4"
+        [ngClass]="{'component-tab-list__icon': focusTabIndex === i}"></app-item-point-icon>
+      {{tab}}
+    </li>
+  </ul>
+</div>

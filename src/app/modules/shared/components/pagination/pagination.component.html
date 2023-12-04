@@ -1,0 +1,59 @@
+<div class="component-pagination d-flex justify-content-center">
+  <button
+    *ngIf="pages.length > 1"
+    id="{{id}}_1"
+    type="button"
+    class="btn d-flex justify-content-center align-items-center text-nowrap border-1 component-pagination__button"
+    [ngClass]="{
+      'me-2': pages.length > 1,
+      'border-black-4 border-primary-4--hover text-black-2 text-primary-4--hover border-primary-2--active text-primary-2--active': 1 !== currentPage,
+      'border-primary-2 text-primary-2': 1 === currentPage
+    }"
+    (mousedown)="mouseDownChangeClass(id, 1)"
+    (mouseup)="mouseUpChangeClass(id, 1)"
+    (click)="onChangePage(1)">
+    {{1}}
+  </button>
+  <div
+    *ngIf="currentPage - 1 > 3"
+    class="d-flex justify-content-center align-items-center text-nowrap me-2 component-pagination__button">
+    ...
+  </div>
+  <ng-container *ngIf="pages.length > 2">
+    <ng-container *ngFor="let page of pages.slice(1, pages.length - 1)">
+      <button
+        *ngIf="isShowPageButton(page)"
+        id="{{id}}_{{page}}"
+        type="button"
+        class="btn d-flex justify-content-center me-2 align-items-center text-nowrap border-1 component-pagination__button"
+        [ngClass]="{
+          'border-black-4 border-primary-4--hover text-black-2 text-primary-4--hover border-primary-2--active text-primary-2--active': page !== currentPage,
+          'border-primary-2 text-primary-2': page === currentPage
+         }"
+        (mousedown)="mouseDownChangeClass(id, page)"
+        (mouseup)="mouseUpChangeClass(id, page)"
+        (click)="onChangePage(page)">
+        {{page}}
+      </button>
+    </ng-container>
+  </ng-container>
+  <div
+    *ngIf="pages.length - currentPage > 3"
+    class="d-flex justify-content-center align-items-center text-nowrap me-2 component-pagination__button">
+    ...
+  </div>
+  <button
+    id="{{id}}_{{pages.length}}"
+    type="button"
+    class="btn d-flex justify-content-center align-items-center text-nowrap border-1 component-pagination__button"
+    *ngIf="pages.length > 1"
+    [ngClass]="{
+      'border-black-4 border-primary-4--hover text-black-2 text-primary-4--hover border-primary-2--active text-primary-2--active': pages.length !== currentPage,
+      'border-primary-2 text-primary-2': pages.length === currentPage
+    }"
+    (mousedown)="mouseDownChangeClass(id, pages.length)"
+    (mouseup)="mouseUpChangeClass(id, pages.length)"
+    (click)="onChangePage(pages.length)">
+    {{pages.length}}
+  </button>
+</div>

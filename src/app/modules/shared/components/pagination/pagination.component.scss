@@ -1,0 +1,17 @@
+@import "mixins";
+
+.component-pagination {
+  width: 20.5rem;
+  @include generateStyleByBreakpoint("sm") {
+    width: 18.75rem;
+  }
+
+  &__button {
+    height: 2.5rem;
+    min-width: 2.5rem;
+    @include generateStyleByBreakpoint("sm") {
+      height: 2.25rem;
+      min-width: 2.25rem;
+    }
+  }
+}

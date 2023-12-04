@@ -4,7 +4,7 @@
 >
   <ng-container *ngFor="let breadcrumb of breadcrumbs; let i = index">
     <p
-      (click)="this.router.navigateByUrl(breadcrumb.url)"
+      (click)="navigate(breadcrumb.url, i)"
       class="font-sm cursor-pointer text-primary-4--hover"
       [ngClass]="
         i === breadcrumbs.length - 1 ? 'text-primary-2' : 'text-black-2'

@@ -4,12 +4,12 @@ import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {BorderlessButtonComponent} from './components/borderless-button/borderless-button.component';
 import {MainLogoComponent} from './components/main-logo/main-logo.component';
-import {NewsComponent} from './components/news/news.component';
+import {NewsComponent} from '../common/components/news/news.component';
 import {
   ArrowForwardIconComponent
 } from "./components/arrow-forward-icon/arrow-forward-icon.component";
 import {TextButtonComponent} from './components/text-button/text-button.component';
-import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductCardComponent } from '../common/components/product-card/product-card.component';
 import { HealthcareIconComponent } from './components/healthcare-icon/healthcare-icon.component';
 import { PillIconComponent } from './components/pill-icon/pill-icon.component';
 import { DnsIconComponent } from './components/dns-icon/dns-icon.component';
@@ -24,9 +24,13 @@ import { AddIconComponent } from './components/add-icon/add-icon.component';
 import { ArrowRightIconComponent } from './components/arrow-right-icon/arrow-right-icon.component';
 import { RemoveIconComponent } from './components/remove-icon/remove-icon.component';
 import { CloseIconComponent } from './components/close-icon/close-icon.component';
-import { ItemPointGrayIconComponent } from './components/item-point-gray-icon/item-point-gray-icon.component';
+import { ItemPointIconComponent } from './components/item-point-icon/item-point-icon.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { ArrowForwardIosIconComponent } from './components/arrow-forward-ios-icon/arrow-forward-ios-icon.component';
+import { TabListComponent } from './components/tab-list/tab-list.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { OutlineButtonComponent } from './components/outline-button/outline-button.component';
+import { ArrowLeftIconComponent } from './components/arrow-left-icon/arrow-left-icon.component';
 
 
 @NgModule({
@@ -53,9 +57,13 @@ import { ArrowForwardIosIconComponent } from './components/arrow-forward-ios-ico
     ArrowRightIconComponent,
     RemoveIconComponent,
     CloseIconComponent,
-    ItemPointGrayIconComponent,
+    ItemPointIconComponent,
     BreadcrumbComponent,
     ArrowForwardIosIconComponent,
+    TabListComponent,
+    PaginationComponent,
+    OutlineButtonComponent,
+    ArrowLeftIconComponent,
   ],
   imports: [
     CommonModule
@@ -71,6 +79,11 @@ import { ArrowForwardIosIconComponent } from './components/arrow-forward-ios-ico
     SuccessfulCaseComponent,
     HeaderSpacingComponent,
     BreadcrumbComponent,
+    TabListComponent,
+    PaginationComponent,
+    OutlineButtonComponent,
+    ArrowRightIconComponent,
+    ArrowLeftIconComponent,
   ]
 })
 export class SharedModule {

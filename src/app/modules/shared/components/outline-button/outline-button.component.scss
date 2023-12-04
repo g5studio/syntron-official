@@ -1,0 +1,14 @@
+@import "mixins";
+
+.component-outline-button::ng-deep {
+  height: 2.5rem;
+  @include generateStyleByBreakpoint("sm") {
+    height: 2.25rem;
+  }
+
+  .component-arrow-right-icon,
+  .component-arrow-left-icon {
+    height: 1.125rem;
+    width: 1.125rem;
+  }
+}
