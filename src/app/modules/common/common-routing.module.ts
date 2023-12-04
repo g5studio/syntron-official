@@ -1,10 +1,22 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {HomePageComponent} from "./pages/home-page/home-page.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AboutUsPageComponent, HomePageComponent } from './pages';
+
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomePageComponent},
+  {
+    path: '',
+    children: [
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
+      },
+      { path: 'home', component: HomePageComponent },
+      { path: 'about-us', component: AboutUsPageComponent }
+    ]
+  },
+
 ];
 
 @NgModule({

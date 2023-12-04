@@ -10,14 +10,21 @@
         <li>
           <app-borderless-button
             [isFocus]="getIsFocus('/news-center/news')"
-            (click)="navigate(['news-center'])">最新消息
+            (click)="navigate('news-center')"
+          >
+            最新消息
           </app-borderless-button>
         </li>
         <li>
-          <app-borderless-button>產品介紹</app-borderless-button>
+          <app-borderless-button>產品介紹 </app-borderless-button>
         </li>
         <li>
-          <app-borderless-button>關於SYNTRON</app-borderless-button>
+          <app-borderless-button
+            [isFocus]="getIsFocus('/common/about-us')"
+            (click)="navigate('common/about-us')"
+          >
+            關於SYNTRON
+          </app-borderless-button>
         </li>
         <li>
           <app-borderless-button>聯絡我們</app-borderless-button>
@@ -41,4 +48,5 @@
 <app-menu
   *ngIf="isMenuOpen"
   (navigate)="navigate($event)"
-  class="d-md-none position-absolute"></app-menu>
+  class="d-md-none position-absolute"
+></app-menu>

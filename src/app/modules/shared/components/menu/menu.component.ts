@@ -1,5 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Router} from "@angular/router";
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-menu',
@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
 })
 export class MenuComponent implements OnInit {
 
-  @Output() navigate = new EventEmitter<string[]>();
+  @Output() navigate = new EventEmitter<string>();
 
   isProductSubmenuOpen = false;
 
@@ -18,7 +18,7 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onNavigate(path: string[]) {
+  onNavigate(path: string) {
     this.isProductSubmenuOpen = false;
     this.navigate.emit(path);
   }

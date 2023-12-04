@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -16,9 +16,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navigate(path: string[]) {
+  navigate(path: string) {
     this.isMenuOpen = false;
-    this.router.navigate(path).then(() => document.getElementById('main')!.scrollTop = 0);
+    this.router.navigateByUrl(path).then(() => document.getElementById('main')!.scrollTop = 0);
   }
 
   getIsFocus(path: string) {
