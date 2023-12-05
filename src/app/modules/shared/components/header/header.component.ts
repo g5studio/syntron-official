@@ -24,4 +24,9 @@ export class HeaderComponent implements OnInit {
   getIsFocus(path: string) {
     return window.location.pathname.includes(path);
   }
+
+  contactUs() {
+    const main = document.getElementById('main')!;
+    main.scrollTop = main.scrollHeight;
+  }
 }

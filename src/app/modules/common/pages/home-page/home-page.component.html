@@ -13,7 +13,7 @@
       />
     </div>
 
-    <app-news class="position-absolute bottom-0 end-0"></app-news>
+    <app-news [news]="news" class="position-absolute bottom-0 end-0"></app-news>
   </section>
 
   <section class="overflow-x-hidden news d-flex justify-content-between">
@@ -43,7 +43,7 @@
                 class="news-list__divider-horizontal my-0_5 opacity-100 border-0 bg-black-4 mx-6"
               />
             </div>
-            <h5 class="text-black-2 news-list__title">{{ news.title }}</h5>
+            <h6 class="text-black-2 news-list__title">{{ news.title }}</h6>
           </div>
           <app-text-button
             class="d-none d-sm-flex justify-content-center align-items-center news-list__arrow-forward-button"
@@ -138,7 +138,7 @@
     </div>
 
     <img
-      src="../../../../../assets/img/illustration/molecular_chain_b.svg"
+      src="assets/img/illustration/molecular_chain_b.svg"
       alt="illustration-chain-b"
       class="position-absolute d-none d-sm-block successful-case__illustration"
     />
