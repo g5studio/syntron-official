@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { BasePage } from 'src/utilities/bases/base-page';
+import { Component } from '@angular/core';
+import { BasePage } from 'src/utilities/bases';
+
 
 @Component({
   selector: 'app-about-us-page',

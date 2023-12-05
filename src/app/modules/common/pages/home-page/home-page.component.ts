@@ -1,5 +1,5 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { BasePage } from 'src/utilities/bases/base-page';
+import { Component, HostListener } from '@angular/core';
+import { BasePage } from 'src/utilities/bases';
 
 @Component({
   selector: 'app-home-page',

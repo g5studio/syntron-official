@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NewsService } from "../../services/news.service";
 import { News } from "../../models/news";
-import { Router } from "@angular/router";
-import { BasePage } from 'src/utilities/bases/base-page';
+import { BasePage } from 'src/utilities/bases';
 
 @Component({
   selector: 'app-news-page',
