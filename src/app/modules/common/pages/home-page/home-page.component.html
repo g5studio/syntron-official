@@ -2,15 +2,20 @@
   <section class="main-img-container position-relative">
     <div class="d-flex main-img-container__gradient-bg">
       <p
-        class="main-img-container__syntron-text text-white d-flex justify-content-center align-items-center"
-      >
+        class="main-img-container__syntron-text text-white d-none d-sm-flex justify-content-center align-items-center">
         SYNTRON
       </p>
-      <img
-        src="assets/img/logo/logo_chengkung_university.png"
-        alt=""
-        class="h-100 bg-black main-img-container__img"
-      />
+      <div class="position-relative w-100">
+        <img
+          src=""
+          alt=""
+          class="w-100 h-100 bg-black main-img-container__img"
+        />
+        <div class="position-absolute main-img-container__title">
+          <h1 class="text-white font-3xl font-sm-4xl">全方位的生活體驗</h1>
+          <h3 class="text-white font-md font-sm-xl">無縫連接，提供關懷，精確管理，無微不至的照護</h3>
+        </div>
+      </div>
     </div>
 
     <app-news [news]="news" class="position-absolute bottom-0 end-0"></app-news>
@@ -33,7 +38,7 @@
         <li
           *ngFor="let news of news"
           class="d-flex justify-content-between align-items-center cursor-pointer news-list__content bg-primary-5--hover rounded px-4"
-        >
+          (click)="toNewsDetail(news.id)">
           <div
             class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center me-2 mw-100"
           >
@@ -69,19 +74,19 @@
       <div class="row product__cards">
         <app-product-card
           type="healthcare"
-          class="col-12 col-sm-6 col-md-3 mb-4 mb-md-0"
+          class="col-12 col-sm-6 col-md-3 mb-4 mb-md-0 d-flex justify-content-center"
         ></app-product-card>
         <app-product-card
           type="pill"
-          class="col-12 col-sm-6 col-md-3 mb-4 mb-md-0"
+          class="col-12 col-sm-6 col-md-3 mb-4 mb-md-0 d-flex justify-content-center"
         ></app-product-card>
         <app-product-card
           type="dns"
-          class="col-12 col-sm-6 col-md-3 mb-4 mb-md-0"
+          class="col-12 col-sm-6 col-md-3 mb-4 mb-md-0 d-flex justify-content-center"
         ></app-product-card>
         <app-product-card
           type="backup"
-          class="col-12 col-sm-6 col-md-3 mb-4 mb-md-0"
+          class="col-12 col-sm-6 col-md-3 mb-4 mb-md-0 d-flex justify-content-center"
         ></app-product-card>
       </div>
     </div>
@@ -97,7 +102,8 @@
         <img src="assets/img/illustration/molecular_chain_a.svg" alt="illustration-chain-a"
              class="position-absolute d-none d-sm-block exclusive__illustration">
       </div>
-      <div class="exclusive__content border-radius-xl px-md-10 py-md-20 col-12 col-md-5 text-center text-md-start mb-7_5 mb-md-0">
+      <div
+        class="exclusive__content border-radius-xl px-md-10 py-md-20 col-12 col-md-5 text-center text-md-start mb-7_5 mb-md-0">
         <h2 class="exclusive__text-animation">優勢</h2>
         <h3 class="my-2_5 exclusive__text-animation">EXCLUSIVE</h3>
         <p class="font-sm exclusive__text-animation">

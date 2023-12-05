@@ -44,7 +44,11 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.$news.fetchNews$()
-      .subscribe(() => this.news = this.$news.news.slice(0,3));
+      .subscribe(() => this.news = this.$news.news.slice(0, 3));
+  }
+
+  toNewsDetail(id: number) {
+    this.router.navigate([`/news-center/news/all/detail/`], {queryParams: {id}}).then();
   }
 
   @HostListener('wheel', ['$event'])
