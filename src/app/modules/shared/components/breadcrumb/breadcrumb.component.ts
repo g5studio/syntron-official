@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { Breadcrumb, BreadcrumbConfig } from '@shared/constants';
 import { NavigationService } from '@shared/services';
 import { BaseComponent } from 'src/utilities/bases';
-import { formatAbsolutePath } from 'src/utilities/helpers';
 
 
 @Component({

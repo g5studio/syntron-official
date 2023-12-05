@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {NewsService} from "../../services/news.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {News} from "../../models/news";
+import { Component, OnInit } from '@angular/core';
+import { NewsService } from "../../services/news.service";
+import { ActivatedRoute, Router } from "@angular/router";
+import { News } from "../../models/news";
 
 @Component({
   selector: 'app-news-detail-page',
@@ -30,8 +30,8 @@ export class NewsDetailPageComponent implements OnInit {
 
   changePage(id: number) {
     const category = this.route.snapshot.url[0].path;
-    this.router.navigate(['news-center', 'news', category, 'detail'], {queryParams: {id}})
-      .then(()=> {
+    this.router.navigate(['news-center', 'news', category, 'detail'], { queryParams: { id } })
+      .then(() => {
         this.news = new News(this.$news.news[id], id);
         document.getElementById('main')!.scrollTop = 0;
       });

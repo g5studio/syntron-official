@@ -1,14 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-import {NewsService} from "../../services/news.service";
-import {News} from "../../models/news";
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { NewsService } from "../../services/news.service";
+import { News } from "../../models/news";
+import { Router } from "@angular/router";
+import { BasePage } from 'src/utilities/bases/base-page';
 
 @Component({
   selector: 'app-news-page',
   templateUrl: './news-page.component.html',
   styleUrls: ['./news-page.component.scss']
 })
-export class NewsPageComponent implements OnInit {
+export class NewsPageComponent extends BasePage {
 
   filterNews: News[] = [];
   currentPage: number = 1;
@@ -18,11 +19,11 @@ export class NewsPageComponent implements OnInit {
 
   constructor(
     private $news: NewsService,
-    private router: Router,
   ) {
+    super();
   }
 
-  ngOnInit(): void {
+  protected override onInit(): void {
     this.$news.fetchNews$()
       .subscribe(() => {
         this.filterNews = this.$news.news;
@@ -66,6 +67,6 @@ export class NewsPageComponent implements OnInit {
       case '新產品':
         focusTabPath = 'new-products';
     }
-    this.router.navigate([`/news-center/news/${focusTabPath}/detail/`], {queryParams: {id}}).then();
+    this.router.navigate([`/news-center/news/${focusTabPath}/detail/`], { queryParams: { id } }).then();
   }
 }

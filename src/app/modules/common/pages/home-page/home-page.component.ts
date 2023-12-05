@@ -1,14 +1,15 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { BasePage } from 'src/utilities/bases/base-page';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent extends BasePage {
 
   get scrollTransformStyle() {
-    return {transform: `translateX(-${this.scrollTop}px)`};
+    return { transform: `translateX(-${this.scrollTop}px)` };
   }
 
   scrollTop = 0;
@@ -47,9 +48,7 @@ export class HomePageComponent implements OnInit {
   readonly reverseSuccessfulCases: string[] = [...this.successfulCases].reverse();
 
   constructor() {
-  }
-
-  ngOnInit(): void {
+    super();
   }
 
   @HostListener('wheel', ['$event'])

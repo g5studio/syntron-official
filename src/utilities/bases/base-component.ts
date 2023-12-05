@@ -2,17 +2,15 @@ import {
   AfterContentInit,
   AfterViewInit,
   Directive,
-  Injector,
   OnChanges,
   OnDestroy,
   OnInit,
   SimpleChanges
 } from "@angular/core";
-import { NavigationEnd, Router } from "@angular/router";
+import { Router } from "@angular/router";
 import { NavigationService } from "@shared/services";
-import { Subject, distinctUntilChanged, filter, map, scan, takeUntil } from "rxjs";
+import { Subject } from "rxjs";
 import { AppInjector } from "./app-injector";
-import { formatAbsolutePath } from "../helpers";
 
 /**
  * @description 基礎元件
@@ -38,19 +36,7 @@ export class BaseComponent
    * @override 覆寫生命週期後便無法使用onInit方法，除特殊需求外優先使用onInit方法
    */
   ngOnInit(): void {
-    this.router.events.pipe(
-      filter(e => e instanceof NavigationEnd),
-      map((e) => formatAbsolutePath((e as NavigationEnd).url)),
-      distinctUntilChanged(),
-      scan((previous, current) => {
-        this.$navigation.history.push(previous);
-        return current;
-      }),
-      takeUntil(this.onDestroy$)
-    ).subscribe(url => {
-      this.$navigation.currentPath = url;
-      this.afterRouterChanged(url);
-    })
+    this.onInit();
   }
   ngAfterViewInit(): void { }
   ngAfterContentInit(): void { }
@@ -76,7 +62,7 @@ export class BaseComponent
   protected afterChanged(changes: SimpleChanges): void { }
 
   /**
-   * @description 執行於ngOnInit階段，若有提供user service則會在拿到user資料後執行
+   * @description 執行於ngOnInit階段
    */
   protected onInit(): void { }
   /**
