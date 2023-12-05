@@ -29,4 +29,10 @@ export class BasePage extends BaseComponent {
       this.afterRouterChanged(url);
     })
   }
+
+
+  override ngOnInit(): void {
+    this.$window.scrollTo(0);
+    this.onInit();
+  }
 }

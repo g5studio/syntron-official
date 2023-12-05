@@ -8,9 +8,10 @@ import {
   SimpleChanges
 } from "@angular/core";
 import { Router } from "@angular/router";
-import { NavigationService } from "@shared/services";
+import { NavigationService, WindowHelperService } from "@shared/services";
 import { Subject } from "rxjs";
 import { AppInjector } from "./app-injector";
+
 
 /**
  * @description 基礎元件
@@ -25,8 +26,11 @@ export class BaseComponent
     const injector = AppInjector.getInjector();
     this.router = injector.get(Router);
     this.$navigation = injector.get(NavigationService);
+    this.$window = injector.get(WindowHelperService);
   }
 
+  public $navigation: NavigationService;
+  public $window: WindowHelperService;
   public onDestroy$ = new Subject<void>();
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -49,7 +53,6 @@ export class BaseComponent
   }
 
   protected router: Router;
-  protected $navigation: NavigationService;
 
   /**
    * @description 執行於路徑變動後
