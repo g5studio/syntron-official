@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {NewsService} from "../../services/news.service";
-import {News} from "../../models/news";
-import {Router} from "@angular/router";
+import { Component } from '@angular/core';
+import { NewsService } from "../../services/news.service";
+import { News } from "../../models/news";
+import { BasePage } from 'src/utilities/bases';
 
 @Component({
   selector: 'app-news-page',
   templateUrl: './news-page.component.html',
   styleUrls: ['./news-page.component.scss']
 })
-export class NewsPageComponent implements OnInit {
+export class NewsPageComponent extends BasePage {
 
   filterNews: News[] = [];
   currentPage: number = 1;
@@ -18,11 +18,11 @@ export class NewsPageComponent implements OnInit {
 
   constructor(
     private $news: NewsService,
-    private router: Router,
   ) {
+    super();
   }
 
-  ngOnInit(): void {
+  protected override onInit(): void {
     this.$news.fetchNews$()
       .subscribe(() => {
         this.filterNews = this.$news.news;
@@ -36,7 +36,7 @@ export class NewsPageComponent implements OnInit {
 
   changePage($event: number) {
     this.currentPage = $event;
-    document.getElementById('main')!.scrollTop = 0;
+    this.$window.scrollTo(0);
   }
 
   changeTab($event: string) {
@@ -44,7 +44,7 @@ export class NewsPageComponent implements OnInit {
     this.focusTab = $event;
     if ($event.includes('全部最新消息')) this.filterNews = this.$news.news;
     else this.filterNews = this.$news.news.filter((news) => news.category === $event.split(' ')[0]);
-    document.getElementById('main')!.scrollTop = 0;
+    this.$window.scrollTo(0);
   }
 
   toDetailPage(id: number) {
@@ -65,7 +65,8 @@ export class NewsPageComponent implements OnInit {
         break;
       case '新產品':
         focusTabPath = 'new-products';
+        break;
     }
-    this.router.navigate([`/news-center/news/${focusTabPath}/detail/`], {queryParams: {id}}).then();
+    this.router.navigate([`/news-center/news/${focusTabPath}/detail/`], { queryParams: { id } }).then();
   }
 }

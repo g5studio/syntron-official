@@ -1,6 +1,8 @@
-import {Component} from '@angular/core';
-import {Router} from '@angular/router';
-import {Breadcrumb, BreadcrumbConfig} from '@shared/constants';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Breadcrumb, BreadcrumbConfig } from '@shared/constants';
+import { NavigationService } from '@shared/services';
+import { BaseComponent } from 'src/utilities/bases';
 
 
 @Component({
@@ -8,20 +10,21 @@ import {Breadcrumb, BreadcrumbConfig} from '@shared/constants';
   templateUrl: './breadcrumb.component.html',
   styleUrls: ['./breadcrumb.component.scss']
 })
-export class BreadcrumbComponent {
+export class BreadcrumbComponent extends BaseComponent {
 
   get breadcrumbs(): Breadcrumb[] {
-    return BreadcrumbConfig[window.location.pathname] ?? [];
+    return BreadcrumbConfig[this.$navigation.currentPath.split('?')[0]] ?? [];
   }
 
   get isShow(): boolean {
     return this.breadcrumbs.length > 0;
   }
 
-  constructor(public router: Router) {
+  constructor() {
+    super();
   }
 
-  navigate(url: string, index: number) {
+  public navigate(url: string, index: number) {
     if (index === this.breadcrumbs.length - 1) return;
     this.router.navigateByUrl(url).then();
   }

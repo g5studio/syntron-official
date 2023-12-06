@@ -1,20 +1,19 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { BasePage } from 'src/utilities/bases';
 import {News} from "../../../news-center/models/news";
 import {NewsService} from "../../../news-center/services/news.service";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent extends BasePage {
 
   get scrollTransformStyle() {
-    return {transform: `translateX(-${this.scrollTop}px)`};
+    return { transform: `translateX(-${this._scrollTop}px)` };
   }
 
-  scrollTop = 0;
   news: News[] = [];
 
   readonly successfulCases: string[] = [
@@ -36,13 +35,16 @@ export class HomePageComponent implements OnInit {
   ]
   readonly reverseSuccessfulCases: string[] = [...this.successfulCases].reverse();
 
+  private _scrollTop = 0;
+
+
   constructor(
     private $news: NewsService,
-    private router: Router,
   ) {
+    super();
   }
 
-  ngOnInit(): void {
+  protected override onInit(): void {
     this.$news.fetchNews$()
       .subscribe(() => this.news = this.$news.news.slice(0, 3));
   }
@@ -54,6 +56,6 @@ export class HomePageComponent implements OnInit {
   @HostListener('wheel', ['$event'])
   onWheelScroll() {
     let scrollTop = document.querySelector('.container')?.scrollTop;
-    this.scrollTop = !!scrollTop ? scrollTop : 0;
+    this._scrollTop = !!scrollTop ? scrollTop : 0;
   }
 }
