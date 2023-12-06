@@ -1,0 +1,21 @@
+<div>
+  <div class="img img-afterImage"></div>
+</div>
+<div>
+  <div>
+    <h1 class="">{{this.data?.title}}</h1>
+    <h2>{{this.data?.subTitle}}</h2>
+    <p *ngIf="this.data?.des">{{this.data?.des}}</p>
+    <div *ngIf="this.data?.listContent">
+      <h2>{{this.data?.listContent?.title}}</h2>
+      <ul *ngFor="let item of this.data?.listContent?.list">
+        <li>{{item}}</li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <div class="img img-afterImage"></div>
+    <div class="img"></div>
+    <div class="img img-afterImage"></div>
+  </div>
+</div>

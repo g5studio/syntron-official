@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LayoutService } from './modules/shared/services/layout.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'syntron-official';
+
+  constructor(
+    private $layout: LayoutService
+  ) {}
+
+  public onMainScroll(event: Event): void {
+    this.$layout.mainScrollSubject.next(event);
+  }
 }

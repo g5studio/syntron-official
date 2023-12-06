@@ -1,0 +1,19 @@
+
+@import "mixins";
+:host {
+  --pc-img: '',
+  --pad-img: '',
+  --mobile-img: '',
+}
+
+// .img {
+//   background-image: url(var(--pc-img));
+//   @include generateStyleByMaxBreakpoint("md") {
+//     background-image: url(var(--pad-img));
+//   }
+//   @include generateStyleByMaxBreakpoint("sm") {
+//     background-image: url(var(--mobile-img));
+//   }
+// }
+
+

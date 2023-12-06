@@ -1,0 +1,66 @@
+@import "colors";
+@import "mixins";
+
+:host {
+  display: flex;
+  @include generateStyleByMaxBreakpoint("md") {
+    flex-direction: column-reverse;
+  }
+}
+
+.cover {
+  &__img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: map-get($black-light, 5 );
+    @include generateStyleByMaxBreakpoint("md") {
+      height: 25rem;
+      width: 100%;
+    }
+    @include generateStyleByMaxBreakpoint("md") {
+      height: 12.1875rem;
+      width: 100%;
+    }
+  }
+  &__des {
+    height: 500px;
+    width: 540px;
+    padding-right: 2.625rem;
+    padding-left: 3.75rem;
+    @include generateStyleByMaxBreakpoint("md") {
+      height: unset;
+      width: 100%;
+      padding: 2.5rem;
+      padding-right: 8.4375rem;
+    }
+    @include generateStyleByMaxBreakpoint("sm") {
+      height: unset;
+      width: 100%;
+      padding: 2.5rem 1.25rem;
+      padding-right: 1.875rem;
+    }
+    p {
+      @include generateStyleByMaxBreakpoint("sm") {
+        font-size: map-get($font-level, sm ) !important;
+      }
+    }
+    img {
+      top: 5%;
+      right: 5%;
+      width: 7.5rem;
+      height: 7.5rem;
+      @include generateStyleByMaxBreakpoint("md") {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      @include generateStyleByMaxBreakpoint("sm") {
+        top: 5%;
+        right: 1%;
+        transform: unset;
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+  }
+}

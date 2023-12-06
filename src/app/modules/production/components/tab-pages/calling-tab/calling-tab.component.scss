@@ -1,0 +1,17 @@
+@import "mixins";
+
+.block {
+  &__1 {
+
+  }
+  &__2 {
+    height: 1000px;
+  }
+}
+
+.animation-bg-words {
+  background-image: url('~src/assets/product_pc/image_features_pc.png');
+  @include generateStyleByMaxBreakpoint("md") {
+    background-image: url('~src/assets/product_pad/image_features_pad.png');
+  }
+}

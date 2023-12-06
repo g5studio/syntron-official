@@ -1,0 +1,15 @@
+@import "mixins";
+
+.component-breadcrumb {
+  height: 2rem;
+  @include generateStyleByBreakpoint("sm") {
+    height: 3.125rem;
+  }
+
+  &__icon::ng-deep {
+    .component-arrow-forward-ios-icon {
+      width: 0.875rem;
+      height: 0.875rem;
+    }
+  }
+}
