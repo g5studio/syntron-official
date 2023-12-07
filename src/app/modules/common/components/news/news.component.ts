@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {News} from "../../../news-center/models/news";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-news',
@@ -7,25 +9,18 @@ import {Component, OnInit} from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  readonly news: {date: string, title: string}[] = [
-    {
-      date: '2014 06 19',
-      title: "新北企業觔斗雲二代 伈創資訊推出雲端應用黃金陣容"
-    },
-    {
-      date: '2014 06 19',
-      title: "新北企業觔斗 伈創資訊推出雲端應用黃金陣容"
-    },
-    {
-      date: '2014 06 19',
-      title: "新北企業觔斗雲二代 伈創資訊推出雲端應用黃金陣容"
-    },
-  ];
+  @Input() news: News[] = [];
 
-  constructor() {
+  constructor(
+    private router: Router,
+  ) {
   }
 
   ngOnInit(): void {
+  }
+
+  toNewsDetail(id: number) {
+    this.router.navigate([`/news-center/news/all/detail/`], {queryParams: {id}}).then();
   }
 
 }

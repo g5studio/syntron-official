@@ -2,14 +2,16 @@
   <img src="assets/img/icon/round-out.png" alt="round-out" class="component-news__round-out position-absolute bottom-0">
 
   <ul class="component-news__tab overflow-hidden bg-white">
-    <li *ngFor="let news of news"
-        class="d-flex justify-content-between align-items-center position-relative component-news__content cursor-pointer">
+    <li
+      *ngFor="let news of news"
+      (click)="toNewsDetail(news.id)"
+      class="d-flex justify-content-between align-items-center position-relative component-news__content cursor-pointer">
       <div class="h-100 d-flex align-items-center">
         <div class="mx-5 text-nowrap">
           <p>{{news.date}}</p>
           <hr class="component-news__divider-colored border-0 my-0_5 opacity-100">
         </div>
-        <h5 class="text-black-2 me-2 me-sm-14 component-news__content-title">{{news.title}}</h5>
+        <h5 class="text-black-2 me-2 me-sm-14 font-sm font-sm-md component-news__content-title">{{news.title}}</h5>
       </div>
 
       <app-arrow-forward-icon

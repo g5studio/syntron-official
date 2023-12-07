@@ -11,16 +11,23 @@
   &__tab {
     max-width: calc(100vw - 4.375rem);
     width: 37rem;
-    max-height: 3rem;
+    max-height: 5rem;
     border-top-left-radius: 1rem;
     @include generateStyleByMaxBreakpoint("sm") {
       max-width: calc(100vw - 1.5rem);
+    }
+    @include generateStyleByBreakpoint("sm") {
+      max-height: 3.75rem;
     }
   }
 
   &__content {
     animation: playing-news 15s linear infinite, fade-out 5s linear 4.8s infinite;
-    height: 3rem;
+    height: 5rem;
+    @include generateStyleByBreakpoint("sm") {
+      height: 3.75rem;
+      animation: playing-news-sm 15s linear infinite, fade-out 5s linear 4.8s infinite;
+    }
 
     &:hover::ng-deep {
       .component-arrow-forward-icon__path {
@@ -55,16 +62,40 @@
     transform: translateY(0%);
   }
   33% {
-    transform: translateY(-3rem);
+    transform: translateY(-5rem);
   }
   65% {
-    transform: translateY(-3rem);
+    transform: translateY(-5rem);
   }
   66% {
-    transform: translateY(-6rem);
+    transform: translateY(-10rem);
   }
   99% {
-    transform: translateY(-6rem);
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes playing-news-sm {
+  0% {
+    transform: translateY(0%);
+  }
+  32% {
+    transform: translateY(0%);
+  }
+  33% {
+    transform: translateY(-3.75rem);
+  }
+  65% {
+    transform: translateY(-3.75rem);
+  }
+  66% {
+    transform: translateY(-7.5rem);
+  }
+  99% {
+    transform: translateY(-7.5rem);
   }
   100% {
     transform: translateY(0%);

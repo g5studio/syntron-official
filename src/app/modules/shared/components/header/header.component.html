@@ -10,24 +10,24 @@
         <li>
           <app-borderless-button
             [isFocus]="getIsFocus('/news-center/news')"
-            (click)="navigate('news-center')"
-          >
+            (click)="navigate('news-center')">
             最新消息
           </app-borderless-button>
         </li>
         <li>
-          <app-borderless-button>產品介紹 </app-borderless-button>
+          <app-borderless-button>產品介紹</app-borderless-button>
         </li>
         <li>
           <app-borderless-button
             [isFocus]="getIsFocus('/common/about-us')"
-            (click)="navigate('common/about-us')"
-          >
+            (click)="navigate('common/about-us')">
             關於SYNTRON
           </app-borderless-button>
         </li>
         <li>
-          <app-borderless-button>聯絡我們</app-borderless-button>
+          <app-borderless-button
+            (click)="contactUs()">聯絡我們
+          </app-borderless-button>
         </li>
       </ul>
 

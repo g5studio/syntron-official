@@ -2,8 +2,6 @@ import { Injectable, ElementRef } from '@angular/core';
 import { Device } from '@shared/enums/common.enum';
 import { Subject, BehaviorSubject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
-import { ResizeObserverEntry } from 'resize-observer/lib/ResizeObserverEntry';
-import { ResizeObserver } from 'resize-observer';
 
 const DEVICE = {
   XS: 0,

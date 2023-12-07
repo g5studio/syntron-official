@@ -13,7 +13,7 @@ import { BaseComponent } from 'src/utilities/bases';
 export class BreadcrumbComponent extends BaseComponent {
 
   get breadcrumbs(): Breadcrumb[] {
-    return BreadcrumbConfig[this.$navigation.currentPath] ?? [];
+    return BreadcrumbConfig[this.$navigation.currentPath.split('?')[0]] ?? [];
   }
 
   get isShow(): boolean {
