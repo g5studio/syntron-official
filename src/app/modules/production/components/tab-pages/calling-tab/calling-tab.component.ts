@@ -20,9 +20,9 @@ export class CallingTabComponent extends UnSubscribeOnDestroy implements OnInit 
   public cards: IAfterImgBlockData[] = [
     {
       img: {
-        pc: '~src/assets/product_pc/photo_queue_pc.png',
-        pad: '~src/assets/product_pad/photo_queue_pad.png',
-        mb: '~src/assets/product_mobile/photo_queue_mobile.png'
+        pc: 'assets/product_pc/photo_queue_pc.png',
+        pad: 'assets/product_pad/photo_queue_pad.png',
+        mb: 'assets/product_mobile/photo_queue_mobile.png'
       },
       title: '智慧就診系統',
       subTitle: 'SMART QUEUE SYSTEM',
@@ -37,9 +37,9 @@ export class CallingTabComponent extends UnSubscribeOnDestroy implements OnInit 
       }
     }, {
       img: {
-        pc: '~src/assets/product_pc/photo_media_pc.png',
-        pad: '~src/assets/product_pad/photo_media_pad.png',
-        mb: '~src/assets/product_mobile/photo_media_mobile.png'
+        pc: 'assets/product_pc/photo_media_pc.png',
+        pad: 'assets/product_pad/photo_media_pad.png',
+        mb: 'assets/product_mobile/photo_media_mobile.png'
       },
       title: '智慧型多媒體公播系統',
       subTitle: 'INTELLIGENT MULTIMEDIA PUBLIC BROADCASTING SYSTEM',
@@ -54,9 +54,9 @@ export class CallingTabComponent extends UnSubscribeOnDestroy implements OnInit 
       }
     }, {
       img: {
-        pc: '~src/assets/product_pc/photo_server_pc.png',
-        pad: '~src/assets/product_pad/photo_server_pad.png',
-        mb: '~src/assets/product_mobile/photo_server_md.png'
+        pc: 'assets/product_pc/photo_server_pc.png',
+        pad: 'assets/product_pad/photo_server_pad.png',
+        mb: 'assets/product_mobile/photo_server_md.png'
       },
       title: '中心端伺服器管理系統',
       subTitle: 'CENTRAL SERVER MANAGEMENT SYSTEM',
