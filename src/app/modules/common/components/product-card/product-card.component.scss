@@ -1,0 +1,130 @@
+@import "src/styles/colors";
+@import "src/styles/mixins";
+
+.component-product-card {
+  width: fit-content;
+
+  &:hover::ng-deep {
+    @include generateStyleByBreakpoint("md") {
+      .component-product-card__text-animation {
+        color: white !important;
+        transition: color 1s ease-in-out;
+      }
+
+      .component-product-card__content {
+        &:before {
+          transform: translate(-50%, -50%) scale(6.5);
+          transition: transform 0.8s ease-in-out;
+        }
+
+        &:after {
+          transform: translate(-50%, -50%) scale(6.5);
+          transition: transform 0.8s ease-in-out;
+          transition-delay: 0.2s;
+        }
+      }
+
+      .component-product-card__button {
+        &:before {
+          transform: translate(-50%, -50%) scale(1);
+          transition: transform 0.8s ease-in-out;
+          transition-delay: 0.2s;
+        }
+      }
+
+      .component-healthcare-icon__path {
+        fill: map-get($primary-light, 3);
+        transition: fill 1s ease-in-out;
+        transition-delay: 0.2s;
+      }
+
+      .component-pill-icon__path {
+        fill: map-get($azure-light, 1);
+        transition: fill 1s ease-in-out;
+        transition-delay: 0.2s;
+      }
+
+      .component-dns-icon__path {
+        fill: map-get($cyan-light, 1);
+        transition: fill 1s ease-in-out;
+        transition-delay: 0.2s;
+      }
+
+      .component-backup-icon__path {
+        fill: map-get($green-light, 1);
+        transition: fill 1s ease-in-out;
+        transition-delay: 0.2s;
+      }
+    }
+  }
+
+  &__spacing {
+    height: 1rem;
+    width: 20.875rem;
+    @include generateStyleByBreakpoint("md") {
+      width: 18.625rem;
+    }
+  }
+
+  &__content {
+    width: 20.875rem;
+    min-height: 24.375rem;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.1);
+
+    @include generateStyleByBreakpoint("md") {
+      width: 18.625rem;
+      &::before,
+      &::after {
+        content: "";
+        width: 8.125rem;
+        height: 8.125rem;
+        transform: translate(-22%, 13%) scale(0);
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  &__img {
+    width: 19.375rem;
+    height: 11rem;
+    left: 0.875rem;
+    @include generateStyleByBreakpoint("md") {
+      width: 17.125rem;
+    }
+  }
+
+  &__button {
+    @include generateStyleByBreakpoint("md") {
+
+      &::before {
+        content: "";
+        width: 8.125rem;
+        height: 8.125rem;
+        transform: translate(-50%, -50%) scale(0);
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 100%;
+        background-color: white;
+      }
+    }
+  }
+
+  &__icon::ng-deep {
+    position: inherit;
+
+    .component-healthcare-icon, .component-pill-icon, .component-dns-icon, .component-backup-icon, {
+      width: 2.75rem;
+      height: 2.75rem;
+
+      &__path {
+        fill: map-get($black-light, 2);
+      }
+    }
+  }
+}

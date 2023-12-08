@@ -7,16 +7,27 @@ $pseudo-class: "hover", "disabled", "active", "checked", "first-child",
   "last-child" // "first-of-type", "last-of-type", , "empty", "only-child"
 ;
 
+$header-height: 5.625rem;
+
 $text-level: (
-  h1: 2.25rem,
-  h2: 1.5rem,
-  h3: 1.125rem,
-  h4: 1rem,
-  h5: 0.875rem,
-  h6: 0.75rem,
+  h1: 2.75rem,
+  h2: 2.25rem,
+  h3: 1.5rem,
+  h4: 1.125rem,
+  h5: 1rem,
+  h6: 0.875rem,
   p: 1rem,
   button: 0.875rem,
   small: 0.75rem,
+);
+
+$line-height-level: (
+  h1: 1.27272727273em,
+  h2: 1.22em,
+  h4: 1.44444444444em,
+  h6: 1.57142857143em,
+  button: 1.57142857143em,
+  small: 1.66666666667em,
 );
 
 $layer-level: (
@@ -125,7 +136,7 @@ $spacers: (
 
 $grid-breakpoints: (
   xs: 0,
-  sm: 375px,
+  sm: 412px,
   md: 768px,
   lg: 1440px,
 );

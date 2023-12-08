@@ -1,0 +1,8 @@
+<button
+  id="{{id}}"
+  type="button"
+  class="btn d-flex align-items-center px-2_5 border-black-4 border-primary-4--hover border-primary-2--active text-black-2 text-primary-4--hover text-primary-2--active component-outline-button"
+  (mousedown)="removeTextHoverClass(id)"
+  (mouseup)="addTextHoverClass(id)">
+  <ng-content></ng-content>
+</button>

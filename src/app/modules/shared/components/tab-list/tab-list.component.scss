@@ -1,0 +1,20 @@
+.component-tab-list {
+  &__item::ng-deep {
+    height: 2.5rem;
+    width: 17.812rem;
+
+    .component-item-point-icon {
+      width: 1.125rem;
+    }
+  }
+
+  &__icon::ng-deep {
+    .component-item-point-icon__outer {
+      fill: #D9F1FE;
+    }
+
+    .component-item-point-icon__inner {
+      fill: #43B1EF;
+    }
+  }
+}

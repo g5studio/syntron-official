@@ -1,5 +1,12 @@
 <app-header></app-header>
-<main class="container overflow-y-auto overflow-x-hidden px-0" (scroll)="this.onMainScroll($event)">
-  <router-outlet></router-outlet>
+<main
+  #tContainer
+  class="container overflow-y-auto vh-100 overflow-x-hidden px-0"
+  id="main"
+  (scroll)="this.onMainScroll($event)"
+>
+  <app-header-spacing></app-header-spacing>
+  <app-breadcrumb></app-breadcrumb>
+  <router-outlet> </router-outlet>
   <app-footer></app-footer>
 </main>

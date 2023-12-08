@@ -1,7 +1,8 @@
 @import "mixins";
+@import "variables";
 
 .component-header-spacing {
-  height: 5.625rem;
+  height: $header-height;
   @include generateStyleByMaxBreakpoint("sm") {
     height: 3.125rem;
   }

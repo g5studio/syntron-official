@@ -1,16 +1,23 @@
 <div class="component-menu position-relative">
-  <div class="component-menu__container bg-white z-2 position-absolute top-0 start-0 d-flex flex-column align-items-center">
+  <div
+    class="component-menu__container bg-white z-2 position-absolute top-0 start-0 d-flex flex-column align-items-center"
+  >
     <app-header-spacing></app-header-spacing>
 
     <div class="px-5 px-sm-10 w-100">
       <ul class="mt-10 mt-sm-5 w-100">
         <li class="mb-2">
-          <app-menu-main-button>最新消息</app-menu-main-button>
+          <app-menu-main-button
+            [isFocus]="getIsFocus('/news-center/news')"
+            (navigate)="onNavigate('news-center')"
+            >最新消息
+          </app-menu-main-button>
         </li>
         <li class="mb-2">
           <app-menu-main-button
             [hasSubmenu]="true"
-            (changeIsOpenStatus)="this.isProductSubmenuOpen = $event">
+            (changeIsOpenStatus)="this.isProductSubmenuOpen = $event"
+          >
             產品介紹
           </app-menu-main-button>
           <ul *ngIf="isProductSubmenuOpen">
@@ -32,16 +39,24 @@
           <app-menu-main-button>成功案例</app-menu-main-button>
         </li>
         <li>
-          <app-menu-main-button>關於SYNTRON</app-menu-main-button>
+          <app-menu-main-button
+            [isFocus]="getIsFocus('/common/about-us')"
+            (navigate)="onNavigate('common/about-us')"
+            >關於SYNTRON
+          </app-menu-main-button>
         </li>
       </ul>
 
-      <hr class="w-100 border-0 bg-black-4 opacity-100 my-10 component-menu__divider">
+      <hr
+        class="w-100 border-0 bg-black-4 opacity-100 my-10 component-menu__divider"
+      />
 
-      <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+      <div
+        class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center"
+      >
         <div>
           <h2 class="text-black-1 text-nowrap">聯絡我們</h2>
-          <h3 class="text-black-2 mb-5 text-nowrap">CONTACT US</h3>
+          <h4 class="text-black-2 mb-5 text-nowrap">CONTACT US</h4>
           <span class="d-flex mb-2_5">
             <p class="font-sm me-4 text-nowrap text-black-1">電話</p>
             <p class="font-sm text-nowrap text-black-1">02-2509-9072</p>
@@ -52,20 +67,30 @@
           </span>
           <span class="d-flex mb-2_5">
             <p class="font-sm me-4 text-nowrap text-black-1">Email</p>
-            <p class="font-sm text-nowrap text-black-1">Service@Syntrontech.Com</p>
+            <p class="font-sm text-nowrap text-black-1">
+              Service@Syntrontech.Com
+            </p>
           </span>
           <span class="d-flex mb-5 mb-sm-0">
             <p class="font-sm me-4 text-nowrap text-black-2">公司地址</p>
-            <p class="font-sm text-nowrap text-black-2">台北市吉林路45號5樓之1</p>
+            <p class="font-sm text-nowrap text-black-2">
+              台北市吉林路45號5樓之1
+            </p>
           </span>
         </div>
 
         <iframe
           class="component-menu__map border-0 border-radius-xl me-7_5"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.6213132293041!2d121.52959838743195!3d25.051537113850006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a966beb5401d%3A0xb7ca71f861acf3a!2zMTA0OTHlj7DljJfluILkuK3lsbHljYDlkInmnpfot680NeiZnw!5e0!3m2!1szh-TW!2stw!4v1700977523418!5m2!1szh-TW!2stw" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.6213132293041!2d121.52959838743195!3d25.051537113850006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a966beb5401d%3A0xb7ca71f861acf3a!2zMTA0OTHlj7DljJfluILkuK3lsbHljYDlkInmnpfot680NeiZnw!5e0!3m2!1szh-TW!2stw!4v1700977523418!5m2!1szh-TW!2stw"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </div>
   </div>
 
-  <div class="component-menu__mask top-0 start-0 d-flex bg-black opacity-50 z-1 position-absolute"></div>
+  <div
+    class="component-menu__mask top-0 start-0 d-flex bg-black opacity-50 z-1 position-absolute"
+  ></div>
 </div>

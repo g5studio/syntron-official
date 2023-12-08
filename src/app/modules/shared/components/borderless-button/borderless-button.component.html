@@ -1,7 +1,12 @@
-<button id="{{id}}"
-        type="button"
-        class="btn border-0 px-4 font-md text-black-2 bg-primary-5--hover text-primary-3--hover bg-primary-5--active text-primary-2--active text-black-4--disabled me-7_5"
-        (mousedown)="removeTextHoverClass(id)"
-        (mouseup)="addTextHoverClass(id)">
+<button
+  id="{{id}}"
+  type="button"
+  class="btn border-0 px-4 font-md bg-primary-5--active text-primary-2--active text-black-4--disabled me-7_5"
+  [ngClass]="{
+    'text-black-2 bg-primary-5--hover text-primary-3--hover': !isFocus,
+    'bg-primary-5 text-primary-2': isFocus
+  }"
+  (mousedown)="removeTextHoverClass(id)"
+  (mouseup)="addTextHoverClass(id)">
   <ng-content></ng-content>
 </button>
