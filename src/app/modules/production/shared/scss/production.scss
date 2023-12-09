@@ -41,10 +41,34 @@ ul.list-disc {
   background-size: contain;
 
   @include generateStyleByMaxBreakpoint("md") {
+    height: 4.125rem;
     margin-bottom: 4.125rem;
   }
 
   @include generateStyleByMaxBreakpoint("sm") {
     display: none;
   }
+}
+
+h2 {
+  font-weight: 500 !important;
+  line-height: 2.75rem;
+  color: map-get($black-light, 1 )
+}
+
+h3 {
+  font-weight: 400 !important;
+  line-height: 2.25rem;
+  color: map-get($black-light, 2 );
+}
+
+h4 {
+  font-weight: 700 !important;
+  line-height: 1.625rem;
+}
+
+p {
+  font-weight: 400 !important;
+  color: map-get($black-light, 2 );
+  line-height: 24px;
 }
