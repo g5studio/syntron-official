@@ -1,4 +1,6 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Device } from '@shared/enums';
+import { BasePage } from 'src/utilities/bases';
 
 export interface IAfterImgBlockData {
   img: {
@@ -20,22 +22,28 @@ export interface IAfterImgBlockData {
   templateUrl: './afterImage-img-block.component.html',
   styleUrls: ['./afterImage-img-block.component.scss', '../../../shared/scss/production.scss']
 })
-export class AfterImgBlockComponent implements OnInit {
+export class AfterImgBlockComponent extends BasePage {
   @Input() data?: IAfterImgBlockData;
 
-  constructor(
-    private selfElement: ElementRef
-  ) { }
+  constructor() { super() }
 
-  ngOnInit(): void {
+  public img?: string;
+  public device?: Device;
+
+  get deviceType() { return Device };
+
+  protected override onInit(): void {
+    this.device = this.$window.getDevice();
     if (this.data?.img) {
-      this.setImgs();
+      this.img = this.getImgs(this.device);
     };
   }
 
-  private setImgs(): void {
-    this.selfElement.nativeElement.style.setProperty('--pc-img', this.data?.img.pc);
-    this.selfElement.nativeElement.style.setProperty('--pad-img', this.data?.img.pad);
-    this.selfElement.nativeElement.style.setProperty('--mobile-img', this.data?.img.mb);
+  private getImgs(device: Device): string {
+    switch(device) {
+      case Device.Desktop: return this.data!.img.pc;
+      case Device.Tablet: return this.data!.img.pad;
+      case Device.Mobile: return  this.data!.img.mb
+    }
   }
 }
