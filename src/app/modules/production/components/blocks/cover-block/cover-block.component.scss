@@ -18,7 +18,7 @@
       height: 25rem;
       width: 100%;
     }
-    @include generateStyleByMaxBreakpoint("md") {
+    @include generateStyleByMaxBreakpoint("sm") {
       height: 12.1875rem;
       width: 100%;
     }
@@ -39,12 +39,14 @@
       width: 100%;
       padding: 2.5rem 1.25rem;
       padding-right: 1.875rem;
-    }
-    p {
-      @include generateStyleByMaxBreakpoint("sm") {
+      h1 {
+        font-size: 1.5rem !important;
+      }
+      p {
         font-size: map-get($font-level, sm ) !important;
       }
     }
+
     img {
       top: 5%;
       right: 5%;
