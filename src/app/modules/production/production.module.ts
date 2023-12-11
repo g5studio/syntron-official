@@ -11,6 +11,7 @@ import { ProductionRoutingModule } from './production-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ArrowDropUpIconComponent } from '../shared/components/arrow-drop-up-icon/arrow-drop-up-icon.component';
 import { AfterImgBlockComponent } from './components/blocks/afterImage-img-block/afterImage-img-block.component';
+import { IconCardComponent } from './components/cards/icon-card/icon-card.component';
 
 
 
@@ -25,6 +26,7 @@ import { AfterImgBlockComponent } from './components/blocks/afterImage-img-block
     MedicineTabComponent,
     ArrowDropUpIconComponent,
     AfterImgBlockComponent,
+    IconCardComponent,
   ],
   imports: [
     CommonModule,
