@@ -23,9 +23,9 @@ export class NewsDetailPageComponent extends BasePage {
 
   protected override onInit(): void {
     const id = this.route.snapshot.queryParams['id'];
-    this.$news.fetchNews$().subscribe((news) => {
-      this.news = new News(news[id], +id);
-      this.total = Object.values(news).length;
+    this.$news.fetchNews$().subscribe(() => {
+      this.news = new News(this.$news.news[id], +id);
+      this.total = Object.values(this.$news.news).length;
     });
   }
 
