@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Device } from '@shared/enums';
 import { BasePage } from 'src/utilities/bases';
 
