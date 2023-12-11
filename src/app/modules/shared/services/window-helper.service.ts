@@ -3,7 +3,6 @@ import { Device } from '@shared/enums/common.enum';
 import { Subject, BehaviorSubject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
 
-
 const DEVICE = {
   XS: 0,
   MD: 411,

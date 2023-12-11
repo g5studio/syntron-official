@@ -1,5 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { BasePage } from 'src/utilities/bases';
+import {News} from "../../../news-center/models/news";
+import {NewsService} from "../../../news-center/services/news.service";
 
 @Component({
   selector: 'app-home-page',
@@ -9,24 +11,10 @@ import { BasePage } from 'src/utilities/bases';
 export class HomePageComponent extends BasePage {
 
   get scrollTransformStyle() {
-    return { transform: `translateX(-${this.scrollTop}px)` };
+    return { transform: `translateX(-${this._scrollTop}px)` };
   }
 
-  scrollTop = 0;
-  readonly news: { date: string, title: string }[] = [
-    {
-      date: '2014 06 19',
-      title: "喬遷快報：伈創資訊要搬家囉！"
-    },
-    {
-      date: '2014 06 19',
-      title: "喬遷快報：伈創資訊要搬家囉！"
-    },
-    {
-      date: '2014 06 19',
-      title: "喬遷快報：伈創資訊要搬家囉！"
-    },
-  ];
+  news: News[] = [];
 
   readonly successfulCases: string[] = [
     'ntuh',
@@ -47,13 +35,27 @@ export class HomePageComponent extends BasePage {
   ]
   readonly reverseSuccessfulCases: string[] = [...this.successfulCases].reverse();
 
-  constructor() {
+  private _scrollTop = 0;
+
+
+  constructor(
+    private $news: NewsService,
+  ) {
     super();
+  }
+
+  protected override onInit(): void {
+    this.$news.fetchNews$()
+      .subscribe(() => this.news = this.$news.news.slice(0, 3));
+  }
+
+  toNewsDetail(id: number) {
+    this.router.navigate([`/news-center/news/all/detail/`], {queryParams: {id}}).then();
   }
 
   @HostListener('wheel', ['$event'])
   onWheelScroll() {
     let scrollTop = document.querySelector('.container')?.scrollTop;
-    this.scrollTop = !!scrollTop ? scrollTop : 0;
+    this._scrollTop = !!scrollTop ? scrollTop : 0;
   }
 }

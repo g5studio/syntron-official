@@ -36,7 +36,7 @@ export class NewsPageComponent extends BasePage {
 
   changePage($event: number) {
     this.currentPage = $event;
-    document.getElementById('main')!.scrollTop = 0;
+    this.$window.scrollTo(0);
   }
 
   changeTab($event: string) {
@@ -44,7 +44,7 @@ export class NewsPageComponent extends BasePage {
     this.focusTab = $event;
     if ($event.includes('全部最新消息')) this.filterNews = this.$news.news;
     else this.filterNews = this.$news.news.filter((news) => news.category === $event.split(' ')[0]);
-    document.getElementById('main')!.scrollTop = 0;
+    this.$window.scrollTo(0);
   }
 
   toDetailPage(id: number) {
@@ -65,6 +65,7 @@ export class NewsPageComponent extends BasePage {
         break;
       case '新產品':
         focusTabPath = 'new-products';
+        break;
     }
     this.router.navigate([`/news-center/news/${focusTabPath}/detail/`], { queryParams: { id } }).then();
   }
