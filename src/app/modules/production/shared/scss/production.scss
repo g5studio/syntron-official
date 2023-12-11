@@ -51,12 +51,14 @@ ul.list-disc {
 }
 
 h2 {
+  word-break: break-all !important;
   font-weight: 500 !important;
   line-height: 2.75rem;
   color: map-get($black-light, 1 )
 }
 
 h3 {
+  word-break: break-all !important;
   font-weight: 400 !important;
   line-height: 2.25rem;
   color: map-get($black-light, 2 );
