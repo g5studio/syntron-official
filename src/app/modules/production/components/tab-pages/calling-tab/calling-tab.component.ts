@@ -2,20 +2,23 @@ import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/co
 import { IAfterImgBlockData } from '../../blocks/afterImage-img-block/afterImage-img-block.component';
 import { LayoutService } from 'src/app/modules/shared/services/layout.service';
 import { takeUntil } from 'rxjs';
-import { UnSubscribeOnDestroy } from 'src/app/modules/shared/abstracts/unSubacribeOnDestory.abstract';
+import { BasePage } from 'src/utilities/bases';
+import { Device } from '@shared/enums';
 
 @Component({
   selector: 'app-calling-tab',
   templateUrl: './calling-tab.component.html',
   styleUrls: ['./calling-tab.component.scss', '../../../shared/scss/production.scss']
 })
-export class CallingTabComponent extends UnSubscribeOnDestroy implements OnInit {
+export class CallingTabComponent extends BasePage implements OnInit {
   @ViewChild('tBgWords') tBgWords?: ElementRef<HTMLElement>;
 
   constructor(
     private renderer: Renderer2,
     private $layout: LayoutService,
   ) { super() }
+
+  public coverImg = '';
 
   public cards: IAfterImgBlockData[] = [
     {
@@ -37,9 +40,9 @@ export class CallingTabComponent extends UnSubscribeOnDestroy implements OnInit 
       }
     }, {
       img: {
-        pc: 'assets/product_pc/photo_media_pc.png',
+        pc: 'assets/product_pc/photo_media_pc2.png',
         pad: 'assets/product_pad/photo_media_pad.png',
-        mb: 'assets/product_mobile/photo_media_mobile.png'
+        mb: 'assets/product_mobile/photo_media_mobile2.png'
       },
       title: '智慧型多媒體公播系統',
       subTitle: 'INTELLIGENT MULTIMEDIA PUBLIC BROADCASTING SYSTEM',
@@ -70,10 +73,22 @@ export class CallingTabComponent extends UnSubscribeOnDestroy implements OnInit 
     },
   ];
 
-  ngOnInit(): void {
-      this.$layout.$mainScroll.pipe(takeUntil(this.$onDestroy)).subscribe( scroll => {
+  protected override onInit(): void {
+      this.$layout.$mainScroll.pipe(takeUntil(this.onDestroy$)).subscribe( scroll => {
         const scrollDistance = (scroll.target as HTMLElement).scrollTop;
         this.renderer.setStyle(this.tBgWords?.nativeElement, 'backgroundPosition', scrollDistance + 'px 0');
-      })
+      });
+
+      this.setCoverImg();
+  }
+
+  private setCoverImg(): void {
+    this.$window.device$.pipe(takeUntil(this.onDestroy$)).subscribe(device => {
+      switch(device) {
+        case Device.Desktop: this.coverImg = 'assets/product_pc/banner_news_queue_pc.png';break;
+        case Device.Tablet: this.coverImg = 'assets/product_pc/banner_news_queue_pad.png';break;
+        case Device.Mobile: this.coverImg = 'assets/product_pc/banner_news_queue_mobile.png';break;
+      }
+    })
   }
 }
