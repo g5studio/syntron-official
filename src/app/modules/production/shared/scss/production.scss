@@ -1,0 +1,76 @@
+@import "mixins";
+
+.block-bottom-gap {
+  margin-bottom: 6.6875rem;
+
+  @include generateStyleByMaxBreakpoint("md") {
+    margin-bottom: 6.25rem;
+  }
+
+  @include generateStyleByMaxBreakpoint("sm") {
+    margin-bottom: 4.375rem;
+  }
+}
+
+ul.list-disc {
+  li {
+    position: relative;
+    padding-left: 1.2rem;
+
+    &::before {
+      content: '．';
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: map-get($black-light, 5);
+}
+
+.animation-bg-words {
+  height: 8.25rem;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: contain;
+
+  @include generateStyleByMaxBreakpoint("md") {
+    height: 4.125rem;
+    margin-bottom: 4.125rem;
+  }
+
+  @include generateStyleByMaxBreakpoint("sm") {
+    display: none;
+  }
+}
+
+h2 {
+  word-break: break-all !important;
+  font-weight: 500 !important;
+  line-height: 2.75rem;
+  color: map-get($black-light, 1 )
+}
+
+h3 {
+  word-break: break-all !important;
+  font-weight: 400 !important;
+  line-height: 2.25rem;
+  color: map-get($black-light, 2 );
+}
+
+h4 {
+  font-weight: 700 !important;
+  line-height: 1.625rem;
+}
+
+p {
+  font-weight: 400 !important;
+  color: map-get($black-light, 2 );
+  line-height: 24px;
+}

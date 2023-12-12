@@ -1,0 +1,28 @@
+<app-cover-block class="block-bottom-gap"
+[imgUrl]="this.coverImg"
+title="雲端儲存"
+[contentInnerHtml]="'SynDrive提供公有雲、私有雲及混合雲等不同應用架構，並可使用於Ｗindows、iOS及Android等不同平台間，讓您更方便的進行資料同步、傳輸及協同編輯作業'">
+</app-cover-block>
+
+<div class="block__1 block-bottom-gap">
+  <h2 class="text-center text-black-1 mb-5">SynDrive</h2>
+  <h5 class="text-center text-secondary-1 fw-normal"><span class="text-primary-2">SynDrive</span>雲端儲存系統是伈創開發的第一個智慧應用產品，並取得新型專利</h5>
+  <h5 class="text-center text-secondary-1 fw-normal">底層採用加密技術，保障客戶資料安全；不限搭配硬體品牌，更方便進行硬體採購規劃</h5>
+  <h5 class="text-center text-secondary-1 fw-normal mb-5">提供水平擴充技術，可透過不停機之水平擴充特性，善用所有資源，並達到備份、備援之目的</h5>
+</div>
+
+<div class="block__2 d-flex flex-wrap block-bottom-gap">
+  <app-icon-card *ngFor="let card of this.iconCards" [card]="card"></app-icon-card>
+</div>
+
+<div #tBgWords class="w-100 animation-bg-words"></div>
+
+<div class="block__3 position-relative block-bottom-gap bt-17_5">
+  <div class="d-flex flex-column align-items-center mb-17_5">
+    <h2 class="mb-5">條條大路通雲端</h2>
+    <h4>辦公室和私人使用的電腦、平板和智慧型手機，能同時存取最新版本文件和檔案</h4>
+  </div>
+  <div class="img position-absolute"></div>
+</div>
+
+<app-afterImage-img-block class="block-bottom-gap" [data]="this.infoCard"></app-afterImage-img-block>

@@ -1,0 +1,15 @@
+
+@import "mixins";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  padding-top: 2.5rem;
+}
+
+::ng-deep app-tab-set {
+  @include generateStyleByMaxBreakpoint("md") {
+    display: none !important;
+  }
+}

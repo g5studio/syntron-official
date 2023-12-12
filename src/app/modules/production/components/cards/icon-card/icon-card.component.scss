@@ -1,0 +1,27 @@
+
+@import "colors";
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 15px;
+  border: 1px solid map-get($primary-light, 2 );
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
+  & > div:first-of-type {
+    width: 110px;
+    height: 110px;
+    background-color: white;
+    border-radius: 50%;
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.08));
+  }
+}
+
+h4 {
+  color: map-get($black-light, 1 )
+}
+
+h6 {
+  font-weight: 400 !important;
+  color: map-get($black-light, 2 )
+}

@@ -1,3 +1,4 @@
+import { LayoutService } from './modules/shared/services/layout.service';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { filter, takeUntil } from 'rxjs';
 import { BaseComponent } from 'src/utilities/bases';
@@ -9,10 +10,11 @@ import { BaseComponent } from 'src/utilities/bases';
 })
 export class AppComponent extends BaseComponent {
   title = 'syntron-official';
-
   @ViewChild('tContainer') container?: ElementRef;
 
-  constructor() {
+  constructor(
+    private $layout: LayoutService
+  ) {
     super();
   }
 
@@ -21,5 +23,9 @@ export class AppComponent extends BaseComponent {
       takeUntil(this.onDestroy$),
       filter(() => this.container?.nativeElement),
     ).subscribe(top => this.container!.nativeElement.scrollTop = top);
+  }
+
+  public onMainScroll(event: Event): void {
+    this.$layout.mainScrollSubject.next(event);
   }
 }

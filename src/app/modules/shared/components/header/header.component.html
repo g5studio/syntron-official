@@ -15,7 +15,10 @@
           </app-borderless-button>
         </li>
         <li>
-          <app-borderless-button>產品介紹</app-borderless-button>
+          <app-borderless-button
+          [isFocus]="getIsFocus('/production')"
+          (click)="navigate('production')"
+          >產品介紹 </app-borderless-button>
         </li>
         <li>
           <app-borderless-button
