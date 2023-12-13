@@ -6,8 +6,10 @@ import {
   ViewChild,
 } from '@angular/core';
 import { UnSubscribeOnDestroy } from '@shared/abstracts/unSubacribeOnDestory.abstract';
+import { Device } from '@shared/enums';
 import { LayoutService } from '@shared/services/layout.service';
 import { takeUntil } from 'rxjs';
+import { BasePage } from 'src/utilities/bases';
 import { IAfterImgWordBlockData } from '../../blocks/after-img-word-block/after-img-word-block.component';
 
 interface IQuestionList {
@@ -34,7 +36,7 @@ interface IPeopleList {
     '../../../shared/scss/production.scss',
   ],
 })
-export class CareTabComponent extends UnSubscribeOnDestroy implements OnInit {
+export class CareTabComponent extends BasePage implements OnInit {
   @ViewChild('consultationWords') consultationWords?: ElementRef<HTMLElement>;
   @ViewChild('traningWords') traningWords?: ElementRef<HTMLElement>;
 
@@ -42,6 +44,7 @@ export class CareTabComponent extends UnSubscribeOnDestroy implements OnInit {
     super();
   }
   public img?: string;
+  public coverImg = '';
 
   public consultation_cards: IAfterImgWordBlockData[] = [
     {
@@ -144,9 +147,9 @@ export class CareTabComponent extends UnSubscribeOnDestroy implements OnInit {
     },
   ];
 
-  ngOnInit(): void {
+  protected override onInit(): void {
     this.$layout.$mainScroll
-      .pipe(takeUntil(this.$onDestroy))
+      .pipe(takeUntil(this.onDestroy$))
       .subscribe((scroll) => {
         const scrollDistance = (scroll.target as HTMLElement).scrollTop;
         this.renderer.setStyle(
@@ -160,5 +163,16 @@ export class CareTabComponent extends UnSubscribeOnDestroy implements OnInit {
           scrollDistance + 'px 0'
         );
       });
+
+    this.setCoverImg();
+  }
+  private setCoverImg(): void {
+    this.$window.device$.pipe(takeUntil(this.onDestroy$)).subscribe(device => {
+      switch(device) {
+        case Device.Desktop: this.coverImg = 'assets/product_pc/banner_news_caring_pc.png';break;
+        case Device.Tablet: this.coverImg = 'assets/product_pc/banner_news_caring_pc.png';break;
+        case Device.Mobile: this.coverImg = 'assets/product_pc/banner_news_caring_mobile.png';break;
+      }
+    })
   }
 }
