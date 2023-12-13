@@ -1,0 +1,403 @@
+@import "mixins";
+@import "src/styles/mixins";
+
+.block {
+  &__afterImg {
+    margin-top: -3.75rem;
+
+    @include generateStyleByMaxBreakpoint("md") {
+      margin-top: 0;
+    }
+  }
+
+  &__1 {
+    @include generateStyleByMaxBreakpoint("md") {
+      flex-direction: column;
+
+      li {
+        width: 100% !important;
+      }
+
+      h1 {
+        font-size: 2.25rem !important;
+        line-height: 2.75rem;
+        text-align: center;
+      }
+
+      h3 {
+        font-size: 1.125rem !important;
+        line-height: 1.625rem;
+      }
+    }
+
+    @include generateStyleByMaxBreakpoint("sm") {
+      flex-direction: column;
+
+      &>li {
+        padding: 20px 40px !important;
+      }
+
+      h1 {
+        font-size: 1.5rem !important;
+        line-height: 2.25rem;
+        text-align: center;
+      }
+
+      h3 {
+        font-size: 0.875rem !important;
+        line-height: 1.375rem;
+      }
+    }
+  }
+
+  &__2 {
+    // height: 500px;
+
+    ul {
+      margin-top: -5.625rem;
+    }
+
+    @include generateStyleByMaxBreakpoint("md") {
+      // height: 2410px;
+
+      ul {
+        top: 35px;
+      }
+    }
+
+    @include generateStyleByMaxBreakpoint("sm") {
+      // height: 2095px;
+      margin-top: 0;
+
+      ul {
+        top: 0;
+      }
+    }
+
+  }
+}
+
+.care-system {
+  animation: fade-in-right 1s ease-in-out,
+  twink 1s ease-in-out;
+  max-width: 50rem;
+  width:100%;
+  gap: 0.625rem;
+
+  @include generateStyleByMaxBreakpoint("lg") {
+    max-width: 43rem;
+  }
+
+  @include generateStyleByMaxBreakpoint("md") {
+    max-width: 20.75rem;
+  }
+
+  &__block {
+    margin-top: 1.25rem;
+    padding-bottom: 2.5rem;
+
+    @include generateStyleByMaxBreakpoint("lg") {
+      padding-bottom: 20rem;
+    }
+
+    @include generateStyleByMaxBreakpoint("md") {
+      padding-bottom: 15rem;
+    }
+
+    &__sub-block-1 {
+      max-width: 28.75rem;
+      width: 100%;
+
+      @include generateStyleByMaxBreakpoint("lg") {
+        max-width: 40.625rem;
+      }
+
+      @include generateStyleByMaxBreakpoint("md") {
+        max-width: 25.75rem
+      }
+    }
+
+    &__sub-block-2 {
+      position: relative;
+      max-width: 34.5rem;
+      width: 100%;
+
+      @include generateStyleByMaxBreakpoint("lg") {
+        max-width: 37.5rem;
+      }
+
+      @include generateStyleByMaxBreakpoint("md") {
+        max-width: 21.6875rem;
+      }
+    }
+
+    &__question-block {
+      max-width: 13.75rem;
+      width: 50%;
+      height: 11.25rem;
+
+      border-radius: 1.25rem;
+      border: 1px solid map-get($primary-light, 2);
+      box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
+      background-image: url('~src/assets/img/illustration/question_mark.svg');
+      background-repeat: no-repeat;
+      background-position: 95% 10%;
+
+      @include generateStyleByMaxBreakpoint("lg") {
+        max-width: 19.6875rem;
+        height: 11.25rem;
+      }
+
+      @include generateStyleByMaxBreakpoint("md") {
+        max-width: 10.125rem;
+        height: 8.75rem;
+      }
+    }
+
+    &__setting-block {
+      &__img-block {
+        margin-top: -7rem;
+      }
+
+      max-width: 10rem;
+      width: calc(100% / 3);
+      height: 11rem;
+      border: 1px solid map-get($primary-light, 3);
+      border-radius: 10% 10% 70% 70%;
+      box-shadow: 5px 5px 15px 0px map-get($primary-light, 2);
+
+      @include generateStyleByMaxBreakpoint("md") {
+        max-width: 6.8125rem;
+        height: 9.375rem;
+      }
+    }
+
+    &__line-circle {
+      max-width: 26.25rem;
+      height: 12.75rem;
+      width: 100%;
+      border: 1px solid map-get($primary-light, 3);
+      border-radius: 0 0 50% 50%/0 0 100% 100%;
+      border-top: none;
+      position: absolute;
+      top: 15.5rem;
+
+      @include generateStyleByMaxBreakpoint("lg") {
+        max-width: 28.875rem;
+        height: 15.3125rem;
+      }
+
+      @include generateStyleByMaxBreakpoint("md") {
+        max-width: 16.0625rem;
+        height: 9.1875rem;
+        top: 17rem;
+      }
+    }
+
+    &__circle-word {
+      width: 6.875rem;
+      height: 6.875rem;
+      border-radius: 50%;
+      box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
+      position: absolute;
+
+      @include generateStyleByMaxBreakpoint("lg") {
+        width: 8.125rem;
+        height: 8.125rem;
+      }
+
+      @include generateStyleByMaxBreakpoint("md") {
+        width: 5.625rem;
+        height: 5.625rem;
+      }
+
+      &__circle-1 {
+        top: 20rem;
+        left: 3rem;
+
+        @include generateStyleByMaxBreakpoint("lg") {
+          top: 21.75rem;
+          left: 3rem;
+        }
+
+        @include generateStyleByMaxBreakpoint("md") {
+          top: 18rem;
+          left: 0.75rem;
+        }
+      }
+
+      &__circle-2 {
+        top: 24rem;
+        left: 9.865rem;
+
+        @include generateStyleByMaxBreakpoint("lg") {
+          top: 26.75rem;
+          left: 10rem;
+        }
+
+        @include generateStyleByMaxBreakpoint("md") {
+          top: 22rem;
+          left: 5rem;
+        }
+      }
+
+      &__circle-3 {
+        top: 24rem;
+        right: 9.865rem;
+
+        @include generateStyleByMaxBreakpoint("lg") {
+          top: 26.75rem;
+          right: 10rem;
+        }
+
+        @include generateStyleByMaxBreakpoint("md") {
+          top: 22rem;
+          right: 5rem;
+        }
+      }
+
+      &__circle-4 {
+        top: 20rem;
+        right: 3rem;
+
+        @include generateStyleByMaxBreakpoint("lg") {
+          top: 21.75rem;
+          right: 3rem;
+        }
+
+        @include generateStyleByMaxBreakpoint("md") {
+          top: 18rem;
+          right: 0.75rem;
+        }
+      }
+    }
+  }
+
+  &__traning-people-block {
+    @include generateStyleByMaxBreakpoint("lg") {
+      max-width: 48rem;
+      width: 100%;
+    }
+  }
+
+  &__traning-people {
+    max-width: 18rem;
+    width: 100%;
+    height: 20.625rem;
+    border-radius: 1.25rem;
+    border: 1px solid map-get($primary-light, 3);
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
+
+    @include generateStyleByMaxBreakpoint("lg") {
+      min-width: 20.875rem;
+      height: 21rem;
+    }
+  }
+
+  &__circle-block {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
+
+    &__img {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+  }
+}
+
+.animation-bg-consultation_words {
+  margin-top: 3.75rem;
+  height: 8.125rem;
+  background-image: url('~src/assets/product_pc/image_consultation_pc.png');
+  background-repeat: repeat;
+  background-size: contain;
+
+  @include generateStyleByMaxBreakpoint("lg") {
+    background-image: url('~src/assets/product_pad/image_consultation_pad.png');
+    height: 4.125rem;
+  }
+}
+
+.animation-bg-trining_words {
+  margin-top: 3.75rem;
+  height: 8.125rem;
+  background-image: url('~src/assets/product_pc/image_training_pc.png');
+  background-repeat: repeat;
+  background-size: contain;
+
+  @include generateStyleByMaxBreakpoint("lg") {
+    background-image: url('~src/assets/product_pad/image_training_pad.png');
+    height: 4.125rem;
+  }
+}
+
+.icon {
+  &__arrow::ng-deep {
+
+    .component-arrow-right-icon,
+    .component-arrow-drop-down-icon {
+      width: 8.75rem;
+      height: 8.75rem;
+
+      &__path {
+        fill: map-get($primary-light, 2)
+      }
+    }
+  }
+
+  &__question::ng-deep {
+
+    .component-clinical-notes-solid-icon,
+    .component-prescriptions-solid-icon,
+    .component-psychology-alt-solid-icon,
+    .component-blind-solid-icon {
+      width: 5rem;
+      height: 5rem;
+
+      &__path {
+        fill: map-get($primary-light, 2)
+      }
+
+      @include generateStyleByMaxBreakpoint("md") {
+        width: 3.75rem;
+        height: 3.75rem;
+      }
+    }
+  }
+
+  &__setting::ng-deep {
+
+    .component-hub-solid-icon,
+    .component-light-mode-solid-icon,
+    .component-family-home-solid-icon {
+      width: 2.75rem;
+      height: 2.75rem;
+
+      &__path {
+        fill: map-get($primary-light, 2)
+      }
+
+      @include generateStyleByMaxBreakpoint("md") {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  &__people::ng-deep {
+
+    .component-diversity-one-solid-icon,
+    .component-diversity-four-solid-icon,
+    .component-family-home-solid-icon,
+    .component-diversity-two-solid-icon {
+      width: 3rem;
+      height: 3rem;
+
+      &__path {
+        fill: map-get($primary-light, 2)
+      }
+    }
+  }
+}
