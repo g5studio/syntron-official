@@ -31,6 +31,17 @@ import { TabListComponent } from './components/tab-list/tab-list.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { OutlineButtonComponent } from './components/outline-button/outline-button.component';
 import { ArrowLeftIconComponent } from './components/arrow-left-icon/arrow-left-icon.component';
+import { ClinicalNotesSolidIconComponent } from './components/clinical-notes-solid-icon/clinical-notes-solid-icon.component';
+import { ArrowDropDownIconComponent } from './components/arrow-drop-down-icon/arrow-drop-down-icon.component';
+import { PrescriptionsSolidIconComponent } from './components/prescriptions-solid-icon/prescriptions-solid-icon.component';
+import { PsychologyAltSolidIconComponent } from './components/psychology-alt-solid-icon/psychology-alt-solid-icon.component';
+import { BlindSolidIconComponent } from './components/blind-solid-icon/blind-solid-icon.component';
+import { HubSolidIconComponent } from './components/hub-solid-icon/hub-solid-icon.component';
+import { LightModeSolidIconComponent } from './components/light-mode-solid-icon/light-mode-solid-icon.component';
+import { FamilyHomeSolidIconComponent } from './components/family-home-solid-icon/family-home-solid-icon.component';
+import { DiversityOneSolidIconComponent } from './components/diversity-one-solid-icon/diversity-one-solid-icon.component';
+import { DiversityFourSolidIconComponent } from './components/diversity-four-solid-icon/diversity-four-solid-icon.component';
+import { DiversityTwoSolidIconComponent } from './components/diversity-two-solid-icon/diversity-two-solid-icon.component';
 
 
 @NgModule({
@@ -64,6 +75,17 @@ import { ArrowLeftIconComponent } from './components/arrow-left-icon/arrow-left-
     PaginationComponent,
     OutlineButtonComponent,
     ArrowLeftIconComponent,
+    ClinicalNotesSolidIconComponent,
+    ArrowDropDownIconComponent,
+    PrescriptionsSolidIconComponent,
+    PsychologyAltSolidIconComponent,
+    BlindSolidIconComponent,
+    HubSolidIconComponent,
+    LightModeSolidIconComponent,
+    FamilyHomeSolidIconComponent,
+    DiversityOneSolidIconComponent,
+    DiversityFourSolidIconComponent,
+    DiversityTwoSolidIconComponent,
   ],
   imports: [
     CommonModule
@@ -84,6 +106,17 @@ import { ArrowLeftIconComponent } from './components/arrow-left-icon/arrow-left-
     OutlineButtonComponent,
     ArrowRightIconComponent,
     ArrowLeftIconComponent,
+    ClinicalNotesSolidIconComponent,
+    ArrowDropDownIconComponent,
+    PrescriptionsSolidIconComponent,
+    PsychologyAltSolidIconComponent,
+    BlindSolidIconComponent,
+    HubSolidIconComponent,
+    LightModeSolidIconComponent,
+    FamilyHomeSolidIconComponent,
+    DiversityOneSolidIconComponent,
+    DiversityFourSolidIconComponent,
+    DiversityTwoSolidIconComponent,
   ]
 })
 export class SharedModule {
