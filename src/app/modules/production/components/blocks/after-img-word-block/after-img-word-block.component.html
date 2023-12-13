@@ -1,0 +1,60 @@
+<div class="img__1 overflow-hidden d-lg-block d-none">
+  <div
+    class="img img-afterImage mb-4"
+    [style.backgroundImage]="'url(' + this.img + ')'"
+  ></div>
+</div>
+<div class="main d-flex main--{{ this.device }}">
+  <div class="d-flex justify-content-center align-items-center mb-5 w-100">
+    <div class="d-flex flex-column main__content-block align-items-center mt-10">
+      <h2 class="mb-2_5 text-break d-none d-md-block">
+        {{ this.data?.title }}
+      </h2>
+      <h3 class="mb-2_5 text-break d-none d-md-block fw-normal">
+        {{ this.data?.subTitle }}
+      </h3>
+      <h3 class="mb-2_5 text-break d-block d-md-none text-center">
+        {{ this.data?.title }}
+      </h3>
+      <h4 class="mb-2_5 text-break d-block d-md-none text-center fw-normal">
+        {{ this.data?.subTitle }}
+      </h4>
+      <div class="main__content">
+        <div *ngIf="this.data?.content">
+          <h5
+            class="text-break text-secondary-1 d-block fw-normal text-sm-center text-lg-start d-none d-md-block"
+          >
+            {{ this.data?.content }}
+          </h5>
+          <h6
+            class="text-break text-secondary-1 d-block fw-normal text-sm-center text-lg-start d-block d-md-none mb-10"
+          >
+            {{ this.data?.content }}
+          </h6>
+        </div>
+      </div>
+      <div
+        class="img img__5 mb-4 d-md-none d-sm-block"
+        [style.backgroundImage]="'url(' + this.img + ')'"
+      ></div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center img__afterImage-block">
+    <div class="img__2 overflow-hidden d-md-block d-none d-lg-none">
+      <div
+        class="img img-afterImage"
+        [style.backgroundImage]="'url(' + this.img + ')'"
+      ></div>
+    </div>
+    <div
+      class="img img__3 mt-20 d-md-block d-none"
+      [style.backgroundImage]="'url(' + this.img + ')'"
+    ></div>
+    <div class="img__4 overflow-hidden d-md-block d-none d-lg-none">
+      <div
+        class="img img-afterImage"
+        [style.backgroundImage]="'url(' + this.img + ')'"
+      ></div>
+    </div>
+  </div>
+</div>
