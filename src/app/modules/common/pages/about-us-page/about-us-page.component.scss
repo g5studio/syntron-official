@@ -43,7 +43,7 @@
                 min-width: 48.875rem;
                 height: 31.25rem;
                 will-change: transform, animation;
-                animation: slideAnimation 3s infinite linear;
+                animation: slideAnimation 30s infinite linear;
 
                 @keyframes slideAnimation {
                     0% {
