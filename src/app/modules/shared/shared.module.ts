@@ -42,6 +42,10 @@ import { FamilyHomeSolidIconComponent } from './components/family-home-solid-ico
 import { DiversityOneSolidIconComponent } from './components/diversity-one-solid-icon/diversity-one-solid-icon.component';
 import { DiversityFourSolidIconComponent } from './components/diversity-four-solid-icon/diversity-four-solid-icon.component';
 import { DiversityTwoSolidIconComponent } from './components/diversity-two-solid-icon/diversity-two-solid-icon.component';
+import { LogoSnqEnIconComponent } from './components/logo-snq-en-icon/logo-snq-en-icon.component';
+import { LogoSnqCnIconComponent } from './components/logo-snq-cn-icon/logo-snq-cn-icon.component';
+import { StorageSolidIconComponent } from './components/storage-solid-icon/storage-solid-icon.component';
+import { PillSolidIconComponent } from './components/pill-solid-icon/pill-solid-icon.component';
 
 
 @NgModule({
@@ -86,6 +90,10 @@ import { DiversityTwoSolidIconComponent } from './components/diversity-two-solid
     DiversityOneSolidIconComponent,
     DiversityFourSolidIconComponent,
     DiversityTwoSolidIconComponent,
+    LogoSnqEnIconComponent,
+    LogoSnqCnIconComponent,
+    StorageSolidIconComponent,
+    PillSolidIconComponent,
   ],
   imports: [
     CommonModule
@@ -117,6 +125,10 @@ import { DiversityTwoSolidIconComponent } from './components/diversity-two-solid
     DiversityOneSolidIconComponent,
     DiversityFourSolidIconComponent,
     DiversityTwoSolidIconComponent,
+    LogoSnqEnIconComponent,
+    LogoSnqCnIconComponent,
+    StorageSolidIconComponent,
+    PillSolidIconComponent,
   ]
 })
 export class SharedModule {
