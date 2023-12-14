@@ -46,6 +46,7 @@ import { LogoSnqEnIconComponent } from './components/logo-snq-en-icon/logo-snq-e
 import { LogoSnqCnIconComponent } from './components/logo-snq-cn-icon/logo-snq-cn-icon.component';
 import { StorageSolidIconComponent } from './components/storage-solid-icon/storage-solid-icon.component';
 import { PillSolidIconComponent } from './components/pill-solid-icon/pill-solid-icon.component';
+import { BannerBlockComponent } from './components/banner-block/banner-block.component';
 
 
 @NgModule({
@@ -94,6 +95,7 @@ import { PillSolidIconComponent } from './components/pill-solid-icon/pill-solid-
     LogoSnqCnIconComponent,
     StorageSolidIconComponent,
     PillSolidIconComponent,
+    BannerBlockComponent,
   ],
   imports: [
     CommonModule
@@ -129,6 +131,7 @@ import { PillSolidIconComponent } from './components/pill-solid-icon/pill-solid-
     LogoSnqCnIconComponent,
     StorageSolidIconComponent,
     PillSolidIconComponent,
+    BannerBlockComponent,
   ]
 })
 export class SharedModule {
