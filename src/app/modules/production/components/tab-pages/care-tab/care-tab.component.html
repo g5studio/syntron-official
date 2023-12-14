@@ -1,1 +1,214 @@
-<app-cover-block></app-cover-block>
+<section class="mb-10 mb-md-20">
+  <app-cover-block
+    class=""
+    [imgUrl]="this.coverImg"
+    title="照護服務"
+    [contentInnerHtml]="
+      '串聯關懷，完整服務：整合性方案，實現全方位無縫照護體驗。從照顧到管理，讓關懷更深入更全面'
+    "
+  >
+  </app-cover-block>
+</section>
+<section class="mb-10 mb-md-20">
+  <div class="block__2 position-relative">
+    <div
+      #consultationWords
+      class="w-100 animation-bg-consultation_words d-md-block d-none"
+    ></div>
+    <div class="block__afterImg">
+      <app-after-img-word-block
+        [data]="this.consultation_cards[0]"
+      ></app-after-img-word-block>
+    </div>
+  </div>
+</section>
+<section class="mb-10 mb-md-20">
+  <div class="d-flex flex-column text-center align-items-center">
+    <div class="d-flex flex-column care-system mb-5">
+      <h2 class="d-md-block d-none d-none d-md-block">照護系統</h2>
+      <h3 class="text-secondary-1 d-none d-md-block">CARE SYSTEM</h3>
+      <h5 class="text-secondary-1 fw-normal mt-2 d-none d-md-block">
+        照護系統是一套以「人」為主軸的系統，期望隨著「人」的老化年齡及需求變化，在不同機構都可以了解被照護者的過去及現在狀況，評估未來可能發生風險，並可以讓後勤照護者及醫療團隊建立一套彼此溝通、紀錄照護／用藥的共通平台
+      </h5>
+
+      <h3 class="d-block d-md-none">照護系統</h3>
+      <h4 class="text-secondary-1 d-block d-md-none">CARE SYSTEM</h4>
+      <h6 class="text-secondary-1 fw-normal mt-2 d-block d-md-none">
+        照護系統是一套以「人」為主軸的系統，期望隨著「人」的老化年齡及需求變化，在不同機構都可以了解被照護者的過去及現在狀況，評估未來可能發生風險，並可以讓後勤照護者及醫療團隊建立一套彼此溝通、紀錄照護／用藥的共通平台
+      </h6>
+    </div>
+    <div
+      class="d-flex flex-column flex-lg-row care-system__block bg-primary-5 w-100 justify-content-center align-items-lg-start align-items-center pt-15"
+    >
+      <div
+        class="d-flex flex-column gap-2 care-system__block__sub-block-1 ms-lg-20 gap-2"
+      >
+        <h3 class="text-primary-2 mb-3">現行長照機構問題</h3>
+        <div class="mb-2">
+          <h5 class="text-secondary-1 fw-normal">
+            長輩的日常紀錄與醫療相關紀錄無法串連
+          </h5>
+          <h5 class="text-secondary-1 fw-normal">
+            醫療團隊無法從日常狀況了解長輩身體狀況
+          </h5>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-center w-100 gap-4">
+          <div
+            *ngFor="let question of this.questions_list"
+            class="d-flex flex-column care-system__block__question-block bg-white align-items-center justify-content-center text-primary-2"
+          >
+            <div [ngSwitch]="question.img">
+              <app-clinical-notes-solid-icon
+                class="icon__question"
+                *ngSwitchCase="'app-clinical-notes-solid-icon'"
+              ></app-clinical-notes-solid-icon>
+              <app-prescriptions-solid-icon
+                class="icon__question"
+                *ngSwitchCase="'app-prescriptions-solid-icon'"
+              >
+              </app-prescriptions-solid-icon>
+              <app-psychology-alt-solid-icon
+                class="icon__question"
+                *ngSwitchCase="'app-psychology-alt-solid-icon'"
+              >
+              </app-psychology-alt-solid-icon>
+              <app-blind-solid-icon
+                class="icon__question"
+                *ngSwitchCase="'app-blind-solid-icon'"
+              >
+              </app-blind-solid-icon>
+            </div>
+            <h4>{{ question.title }}</h4>
+          </div>
+        </div>
+      </div>
+      <app-arrow-right-icon
+        class="d-none d-lg-block mx-6 align-self-center icon__arrow"
+      ></app-arrow-right-icon>
+      <app-arrow-drop-down-icon
+        class="d-lg-none d-block icon__arrow"
+      ></app-arrow-drop-down-icon>
+      <div
+        class="d-flex flex-column gap-2 care-system__block__sub-block-2 align-items-center me-0"
+      >
+        <h3 class="text-primary-2">智慧醫療照護平台設計理念</h3>
+        <div class="d-flex flex-wrap mt-20 justify-content-between w-100">
+          <div
+            *ngFor="let setting of this.settings_list"
+            class="d-flex flex-column care-system__block__setting-block bg-primary-3 align-items-center justify-content-center text-white"
+          >
+            <div
+              class="care-system__circle-block care-system__block__setting-block__img-block bg-white d-flex justify-content-center align-items-center"
+            >
+              <div [ngSwitch]="setting.img">
+                <app-hub-solid-icon
+                  class="icon__setting"
+                  *ngSwitchCase="'app-hub-solid-icon'"
+                ></app-hub-solid-icon>
+                <app-light-mode-solid-icon
+                  class="icon__setting"
+                  *ngSwitchCase="'app-light-mode-solid-icon'"
+                >
+                </app-light-mode-solid-icon>
+                <app-family-home-solid-icon
+                  class="icon__setting"
+                  *ngSwitchCase="'app-family-home-solid-icon'"
+                >
+                </app-family-home-solid-icon>
+              </div>
+              <!-- <img
+                class="care-system__circle-block__img"
+                src="{{ setting.img }}"
+              /> -->
+            </div>
+            <div class="pt-4">
+              <h4>{{ setting.title1 }}</h4>
+              <h4>{{ setting.title2 }}</h4>
+            </div>
+          </div>
+        </div>
+        <div class="care-system__block__line-circle"></div>
+        <div
+          class="care-system__block__circle-word care-system__block__circle-word__circle-1 bg-white d-flex align-items-center justify-content-center"
+        >
+          <h4>認知強化</h4>
+        </div>
+        <div
+          class="d-flex flex-column care-system__block__circle-word care-system__block__circle-word__circle-2 bg-white d-flex align-items-center justify-content-center"
+        >
+          <h4>身體機能</h4>
+          <h4>活化</h4>
+        </div>
+        <div
+          class="care-system__block__circle-word care-system__block__circle-word__circle-3 bg-white d-flex align-items-center justify-content-center"
+        >
+          <h4>促進健康</h4>
+        </div>
+        <div
+          class="care-system__block__circle-word care-system__block__circle-word__circle-4 bg-white d-flex align-items-center justify-content-center"
+        >
+          <h4>減緩老化</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mb-10 mb-md-20">
+  <div class="block__2 position-relative">
+    <div
+      #traningWords
+      class="w-100 animation-bg-trining_words d-md-block d-none"
+    ></div>
+    <div class="block__afterImg">
+      <app-after-img-word-block
+        [data]="this.traning_cards[0]"
+      ></app-after-img-word-block>
+    </div>
+  </div>
+</section>
+<section class="mb-10 mb-md-20 d-flex justify-content-center w-100">
+  <div
+    class="d-flex justify-content-center gap-5 py-16 flex-md-wrap flex-nowrap flex-column flex-md-row align-items-center care-system__traning-people-block w-100"
+  >
+    <div
+      *ngFor="let people of this.traning_people_list"
+      class="d-flex flex-column care-system__traning-people bg-white align-items-center pt-10 gap-5"
+    >
+      <div
+        class="care-system__circle-block bg-white d-flex justify-content-center align-items-center"
+      >
+        <div [ngSwitch]="people.img">
+          <app-diversity-one-solid-icon
+            class="icon__people"
+            *ngSwitchCase="'app-diversity-one-solid-icon'"
+          ></app-diversity-one-solid-icon>
+          <app-diversity-four-solid-icon
+            class="icon__people"
+            *ngSwitchCase="'app-diversity-four-solid-icon'"
+          >
+          </app-diversity-four-solid-icon>
+          <app-family-home-solid-icon
+            class="icon__people"
+            *ngSwitchCase="'app-family-home-solid-icon'"
+          >
+          </app-family-home-solid-icon>
+          <app-diversity-two-solid-icon
+            class="icon__people"
+            *ngSwitchCase="'app-diversity-two-solid-icon'"
+          >
+          </app-diversity-two-solid-icon>
+        </div>
+        <!-- <img class="care-system__circle-block__img" src="{{ people.img }}" /> -->
+      </div>
+      <h4>{{ people.title }}</h4>
+      <ul
+        class="list-disc align-items-center d-flex flex-column px-2 text-center justify-content-center"
+      >
+        <li *ngFor="let content of people.contentList">
+          <h6 class="fw-normal">{{ content }}</h6>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

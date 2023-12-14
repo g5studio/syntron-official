@@ -13,3 +13,6 @@
     display: none !important;
   }
 }
+::ng-deep app-production {
+  max-width: 1440px;
+}
