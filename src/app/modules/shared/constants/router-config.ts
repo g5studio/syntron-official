@@ -66,5 +66,46 @@ export const BreadcrumbConfig: Record<string, Breadcrumb[]> = {
   }, {
     i18n: '新產品',
     url: '/news-center/news/new-products/detail'
-  }]
+  }],
+  // Production
+  'production/care': [{
+    i18n: '首頁',
+    url: '/common/home'
+  }, {
+    i18n: '產品介紹',
+    url: '/production'
+  }, {
+    i18n: '照護服務',
+    url: '/production/care'
+  }],
+  'production/calling': [{
+    i18n: '首頁',
+    url: '/common/home'
+  }, {
+    i18n: '產品介紹',
+    url: '/production'
+  }, {
+    i18n: '叫號系統',
+    url: '/production/calling'
+  }],
+  'production/medicine': [{
+    i18n: '首頁',
+    url: '/common/home'
+  }, {
+    i18n: '產品介紹000',
+    url: '/production'
+  }, {
+    i18n: '藥品管理00000',
+    url: '/production/medicine'
+  }],
+  'production/cloud': [{
+    i18n: '首頁',
+    url: '/common/home'
+  }, {
+    i18n: '產品介紹',
+    url: '/production'
+  }, {
+    i18n: '雲端儲存',
+    url: '/production/cloud'
+  }],
 }
