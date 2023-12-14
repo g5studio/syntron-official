@@ -14,7 +14,8 @@ import { SharedModule } from '@shared/shared.module';
   imports: [
     CommonRoutingModule,
     SharedModule,
-    AngularCommonModule
+    AngularCommonModule,
+    SharedModule
   ]
 })
 export class CommonModule { }
