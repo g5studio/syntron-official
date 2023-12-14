@@ -33,7 +33,6 @@ interface IPeopleList {
   templateUrl: './care-tab.component.html',
   styleUrls: [
     './care-tab.component.scss',
-    // '../../../shared/scss/production.scss',
   ],
 })
 export class CareTabComponent extends BasePage implements OnInit {
