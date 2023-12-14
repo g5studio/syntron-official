@@ -1,8 +1,6 @@
 import {
   Component,
-  Directive,
   ElementRef,
-  HostListener,
   OnInit,
   Renderer2,
   ViewChild,
@@ -104,31 +102,8 @@ export class AboutUsPageComponent extends BasePage implements OnInit {
     el.scrollIntoView({ behavior: 'smooth' });
   }
 
-  // @HostListener('window:scroll')
-  // onWindowScroll() {
-  //   const el = this.leftSide!.nativeElement;
-  //   const distance = el.getBoundingClientRect().top;
-  //   console.log(window.pageYOffset);
-  //   if (window.pageYOffset > distance) {
-  //     el.style.position = 'fixed';
-  //     el.style.top = '10rem';
-  //     // 设置其他样式
-  //   } else {
-  //     el.style.position = 'absolute';
-  //     el.style.top = '5rem';
-  //     // 移除其他样式
-  //   }
-  // }
   protected override onInit(): void {
-    // this.$news.fetchNews$()
-    //   .subscribe(() => {
-    //     this.filterNews = this.$news.news;
-    //     this.tabs = this.tabs.map((tab) => {
-    //       let length = tab === '全部最新消息' ? this.filterNews.length : this.filterNews.filter((news) => news.category === tab).length;
-    //       return `${tab} (${length})`;
-    //     });
-    //     this.focusTab = this.tabs[0];
-    //   });
+    this.focusTab = this.tabs[0];
     this.$layout.$mainScroll
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((scroll) => {
@@ -145,45 +120,20 @@ export class AboutUsPageComponent extends BasePage implements OnInit {
           leftSide.style.position = 'absolute';
           leftSide.style.top = '';
         }
+        if(scrollDistance < this.solution!.nativeElement.offsetTop + distanceFromTop - 90){
+          this.focusTab = this.tabs[0];
+        }
+        else if(scrollDistance < this.custom!.nativeElement.offsetTop + distanceFromTop -90){
+          this.focusTab = this.tabs[1];
+        }
+        else {
+          this.focusTab = this.tabs[2];
+        }
       });
     this.setCoverImg();
   }
 
-  changePage($event: number) {
-    // this.currentPage = $event;
-    // this.$window.scrollTo(0);
-  }
-
   changeTab($event: string) {
-    // if ($event.includes('SYNTRON企業願景')) {
-    //   this.company!.nativeElement.scrollIntoView({
-    //     behavior: 'smooth',
-    //     block: 'start',
-    //     inline: 'nearest',
-    //   });
-    // } else if ($event.includes('解決方案')) {
-    //   this.solution!.nativeElement.scrollIntoView({
-    //     behavior: 'smooth',
-    //     block: 'start',
-    //     inline: 'nearest',
-    //   });
-    // } else if ($event.includes('我們的客戶')) {
-    //   this.custom!.nativeElement.scrollIntoView({
-    //     behavior: 'smooth',
-    //     block: 'start',
-    //     inline: 'nearest',
-    //   });
-    // } else {
-    //   this.company!.nativeElement.scrollIntoView({
-    //     behavior: 'smooth',
-    //     block: 'center',
-    //   });
-    // }
-    // this.$window.scrollTo(0);
-    // window.scrollTo({
-    //     top: 100,
-    //     behavior: 'smooth',
-    //   });
     const distanceFromTop =
     this.banner!.nativeElement.offsetTop +
     this.banner!.nativeElement.offsetHeight -
@@ -200,36 +150,8 @@ export class AboutUsPageComponent extends BasePage implements OnInit {
       this.$window.scrollTo(this.custom!.nativeElement.offsetTop + distanceFromTop);
     } 
  
-    // setTimeout(() => {
-    //   this.$window.scrollTo(this.solution!.nativeElement.offsetTop);
-    // }, 1000);
-    // setTimeout(() => {
-    //   window.scrollBy(0, 1000);
-    // }, 500);
   }
 
-  toDetailPage(id: number) {
-    // const focusTab = this.focusTab.split(' ')[0];
-    // let focusTabPath: string = '';
-    // switch (focusTab) {
-    //   case '全部最新消息':
-    //     focusTabPath = 'all';
-    //     break;
-    //   case '新聞媒體':
-    //     focusTabPath = 'media';
-    //     break;
-    //   case '重要通知':
-    //     focusTabPath = 'notice';
-    //     break;
-    //   case '活動通知':
-    //     focusTabPath = 'events';
-    //     break;
-    //   case '新產品':
-    //     focusTabPath = 'new-products';
-    //     break;
-    // }
-    // this.router.navigate([`/news-center/news/${focusTabPath}/detail/`], { queryParams: { id } }).then();
-  }
   private setCoverImg(): void {
     this.$window.device$
       .pipe(takeUntil(this.onDestroy$))

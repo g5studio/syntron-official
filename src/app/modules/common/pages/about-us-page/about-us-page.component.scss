@@ -107,37 +107,3 @@
         }
     }
 }
-
-.news-list {
-    &__img-container {
-        min-width: 6.25rem;
-        min-height: 6.25rem;
-
-        @include generateStyleByBreakpoint("sm") {
-            min-width: 17.8125rem;
-            min-height: 11.25rem;
-        }
-    }
-
-    &__img {
-        max-width: 6.25rem;
-        max-height: 6.25rem;
-
-        @include generateStyleByBreakpoint("sm") {
-            max-width: 17.8125rem;
-            max-height: 11.25rem;
-        }
-    }
-
-    &__divider {
-        height: 2px;
-    }
-
-    &__description {
-        @include generateStyleByBreakpoint("sm") {
-            display: -webkit-box !important;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 4;
-        }
-    }
-}
