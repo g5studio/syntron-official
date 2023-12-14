@@ -42,7 +42,6 @@ ul.list-disc {
 
   @include generateStyleByMaxBreakpoint("md") {
     height: 4.125rem;
-    margin-bottom: 4.125rem;
   }
 
   @include generateStyleByMaxBreakpoint("sm") {
@@ -58,7 +57,6 @@ h2 {
 }
 
 h3 {
-  word-break: break-all !important;
   font-weight: 400 !important;
   line-height: 2.25rem;
   color: map-get($black-light, 2 );
