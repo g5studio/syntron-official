@@ -1,5 +1,5 @@
 import { LayoutService } from './modules/shared/services/layout.service';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { filter, takeUntil } from 'rxjs';
 import { BaseComponent } from 'src/utilities/bases';
 
@@ -11,6 +11,7 @@ import { BaseComponent } from 'src/utilities/bases';
 export class AppComponent extends BaseComponent {
   title = 'syntron-official';
   @ViewChild('tContainer') container?: ElementRef;
+  @HostListener('window:resize', ['$event']) onResize = () => this.$window.detectWindowSize();
 
   constructor(
     private $layout: LayoutService
