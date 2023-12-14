@@ -59,7 +59,7 @@ export class CallingTabComponent extends BasePage implements OnInit {
       img: {
         pc: 'assets/product_pc/photo_server_pc.png',
         pad: 'assets/product_pad/photo_server_pad.png',
-        mb: 'assets/product_mobile/photo_server_md.png'
+        mb: 'assets/product_mobile/photo_server_mobile.png'
       },
       title: '中心端伺服器管理系統',
       subTitle: 'CENTRAL SERVER MANAGEMENT SYSTEM',

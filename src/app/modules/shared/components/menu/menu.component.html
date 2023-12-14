@@ -22,16 +22,20 @@
           </app-menu-main-button>
           <ul *ngIf="isProductSubmenuOpen">
             <li class="my-2">
-              <app-menu-sub-button>照護服務</app-menu-sub-button>
+              <app-menu-sub-button (click)="this.navigate.emit('production/care')"
+              >照護服務</app-menu-sub-button>
             </li>
             <li class="mb-2">
-              <app-menu-sub-button>藥品管理</app-menu-sub-button>
+              <app-menu-sub-button (click)="this.navigate.emit('production/medicine')"
+              >藥品管理</app-menu-sub-button>
             </li>
             <li class="mb-2">
-              <app-menu-sub-button>叫號系統</app-menu-sub-button>
+              <app-menu-sub-button (click)="this.navigate.emit('production/calling')"
+              >叫號系統</app-menu-sub-button>
             </li>
             <li class="mb-2">
-              <app-menu-sub-button>雲端儲存</app-menu-sub-button>
+              <app-menu-sub-button (click)="this.navigate.emit('production/cloud')"
+              >雲端儲存</app-menu-sub-button>
             </li>
           </ul>
         </li>

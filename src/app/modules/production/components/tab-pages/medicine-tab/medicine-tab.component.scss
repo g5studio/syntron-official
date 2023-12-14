@@ -1,0 +1,195 @@
+@import "src/styles/mixins";
+
+ul.list-disc {
+    li {
+        position: relative;
+        padding-left: 1.2rem;
+
+        &::before {
+            content: '．';
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 1.25rem;
+        }
+    }
+}
+
+.medicine {
+    &__text-animation {
+        animation: fade-in-right 1s ease-in-out,
+        twink 1s ease-in-out;
+    }
+    &__list {
+        &__block {
+            z-index: 1;
+            margin-top: -3.75rem;
+            max-width: 55.625rem;
+            width: 100%;
+
+            @include generateStyleByMaxBreakpoint("lg") {
+                margin-top: -2rem;
+            }
+
+            @include generateStyleByMaxBreakpoint("md") {
+                margin-top: 4.375rem;
+            }
+        }
+
+        &__detail {
+            max-width: 17.8125rem;
+            width: 100%;
+            height: 23.75rem;
+            border-radius: 1.25rem;
+            border: 1px solid map-get($primary-light, 3);
+            box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
+
+            @include generateStyleByMaxBreakpoint("lg") {
+                min-width: 13.5rem;
+                height: 27.875rem;
+            }
+
+            @include generateStyleByMaxBreakpoint("md") {
+                max-width: 20.75rem;
+                height: auto;
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+
+        &__circle {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
+
+            &__img {
+                width: 2.75rem;
+                height: 2.75rem;
+            }
+
+            @include generateStyleByMaxBreakpoint("md") {
+                width: 3.75rem;
+                height: 3.75rem;
+
+                &__img {
+                    width: 1.75rem;
+                    height: 1.75rem;
+                }
+            }
+
+        }
+    }
+
+    &__pic {
+        &__1 {
+            width: 10.911rem;
+            height: 3.125rem;
+        }
+    }
+
+    &__system-feature {
+        &__circle-block {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
+
+            @include generateStyleByMaxBreakpoint("md") {
+                width: 3.75rem;
+                height: 3.75rem;
+            }
+        }
+
+        &__divider-horizontal {
+            width: 6rem;
+
+            @include generateStyleByMaxBreakpoint("lg") {
+                width: 3.75rem;
+            }
+
+            @include generateStyleByMaxBreakpoint("md") {
+                display: none;
+            }
+
+        }
+    }
+
+    &__system-rfid-card {
+        max-width: 77.5rem;
+        width: 100%;
+
+        &__block {
+            max-width: 25rem;
+            height: 31.25rem;
+            border-radius: 1.25rem;
+            box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            overflow: hidden;
+        }
+
+        &__img-container {
+            width: 100%;
+            height: 18.75rem;
+
+            @include generateStyleByMaxBreakpoint("md") {
+                height: 25.9375rem;
+            }
+
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+    &__icon {
+
+        &__logo::ng-deep {
+            .component-logo-snq-en-icon {
+                width: auto;
+                height: 6.25rem;
+
+                @include generateStyleByMaxBreakpoint("md") {
+                    height: 4.375rem
+                }
+            }
+
+            .component-logo-snq-cn-icon {
+                width: auto;
+                height: 8.75rem;
+
+                @include generateStyleByMaxBreakpoint("md") {
+                    height: 7.5rem
+                }
+            }
+        }
+
+        &__medicinelist::ng-deep {
+
+            .component-storage-solid-icon,
+            .component-pill-solid-icon,
+            .component-prescriptions-solid-icon {
+                width: 3rem;
+                height: 3rem;
+
+                &__path {
+                    fill: map-get($primary-light, 2)
+                }
+            }
+        }
+    }
+}
+
+
+.animation-bg-functions_words {
+    margin-top: 3.75rem;
+    height: 8.125rem;
+    background-image: url('~src/assets/product_pc/image_functions_pc.png');
+    background-repeat: repeat;
+    background-size: contain;
+
+    @include generateStyleByMaxBreakpoint("lg") {
+        background-image: url('~src/assets/product_pad/image_functions_pad.png');
+        height: 4.125rem;
+    }
+}

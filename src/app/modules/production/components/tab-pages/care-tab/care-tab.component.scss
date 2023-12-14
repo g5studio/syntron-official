@@ -1,6 +1,21 @@
 @import "mixins";
 @import "src/styles/mixins";
 
+ul.list-disc {
+  li {
+    position: relative;
+    padding-left: 1.2rem;
+
+    &::before {
+      content: '．';
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 1.25rem;
+    }
+  }
+}
+
 .block {
   &__afterImg {
     margin-top: -3.75rem;
@@ -79,9 +94,9 @@
 
 .care-system {
   animation: fade-in-right 1s ease-in-out,
-  twink 1s ease-in-out;
+    twink 1s ease-in-out;
   max-width: 50rem;
-  width:100%;
+  width: 100%;
   gap: 0.625rem;
 
   @include generateStyleByMaxBreakpoint("lg") {

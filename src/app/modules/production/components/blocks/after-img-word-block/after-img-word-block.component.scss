@@ -108,6 +108,7 @@
     flex-direction: column;
 
     & .main__content {
+      width: 332px;
       background-color: map-get($black-light, 9);
       margin: 0 20px;
       padding-bottom: 20px;

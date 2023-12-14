@@ -1,0 +1,109 @@
+@import "src/styles/mixins";
+
+.about-us {
+    &__left-side{
+        position: absolute;
+    }
+    &__right-side{
+        padding-left: 23.9375rem;
+        @include generateStyleByMaxBreakpoint("lg") {
+            padding-left: 2.5rem;
+        }
+    }
+
+    &__company{
+        animation: fade-in-right 1s ease-in-out,
+    }
+    &__solution {
+        position: relative;
+        height: 40rem;
+
+        @include generateStyleByMaxBreakpoint("md") {
+            height: auto;
+        }
+
+        &__block {
+            overflow: hidden;
+            top: 8rem;
+            border-radius: 30px 0px 0px 30px;
+            position: absolute;
+
+            @include generateStyleByMaxBreakpoint("md") {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        &__img {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            @include generateStyleByBreakpoint("md") {
+                min-width: 48.875rem;
+                height: 31.25rem;
+                will-change: transform, animation;
+                animation: slideAnimation 30s infinite linear;
+
+                @keyframes slideAnimation {
+                    0% {
+                        transform: translateX(0);
+                    }
+
+                    100% {
+                        transform: translateX(-200%);
+                    }
+                }
+            }
+
+            @include generateStyleByMaxBreakpoint("md") {
+                position: relative;
+                width: 20.875rem;
+                height: 20.625rem;
+                border-radius: 30px 30px;
+            }
+
+        }
+
+        &__content {
+            position: absolute;
+            bottom: 0;
+            width: 16.875rem;
+            border-radius: 0px 30px 0px 0px;
+            background: rgba(16, 16, 16, 0.40);
+
+            @include generateStyleByMaxBreakpoint("md") {
+                border-radius: 0px 30px 0px 30px;
+
+            }
+
+
+        }
+    }
+
+    &__logo {
+        width: 10.5rem;
+        height: 5rem;
+        @include generateStyleByMaxBreakpoint("md") {
+            width: 8.125rem;
+            height: auto;
+        }
+    }
+}
+
+.main-title {
+    &__illustration {
+        top: 0.5rem;
+        right: 0.5rem;
+
+        @include generateStyleByBreakpoint("sm") {
+            position: initial !important;
+        }
+
+        @include generateStyleByBreakpoint("md") {
+            position: absolute !important;
+            top: 1.5rem;
+            right: 1.5rem;
+        }
+    }
+}

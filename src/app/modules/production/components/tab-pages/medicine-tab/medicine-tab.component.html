@@ -1,1 +1,176 @@
-<p>medicine-tab works!</p>
+<section>
+  <app-cover-block
+    [imgUrl]="this.coverImg"
+    title="藥品管理"
+    [contentInnerHtml]="
+      '我們提供全面性藥品管理服務，旨在協助醫療機構有效管理藥品供應、監控庫存以及提供全面的追蹤與報告'
+    "
+  >
+  </app-cover-block>
+</section>
+<section class="mb-10">
+  <div
+    #functionsWords
+    class="w-100 animation-bg-functions_words d-md-block d-none"
+  ></div>
+  <div class="mb-10 mb-md-20 d-flex justify-content-center w-100">
+    <div
+      class="d-flex justify-content-between gap-5 mx-8 flex-column flex-md-row align-items-center medicine__list__block w-100"
+    >
+      <div
+        *ngFor="let medicine of this.medicine_list"
+        class="d-flex flex-column medicine__list__detail bg-white align-items-center pt-10 gap-5 mx-1"
+      >
+        <div
+          class="medicine__list__circle bg-white d-flex justify-content-center align-items-center"
+        >
+          <div [ngSwitch]="medicine.img" class="medicine__icon__medicinelist">
+            <app-storage-solid-icon
+              *ngSwitchCase="'app-storage-solid-icon'"
+            ></app-storage-solid-icon>
+            <app-pill-solid-icon *ngSwitchCase="'app-pill-solid-icon'">
+            </app-pill-solid-icon>
+            <app-prescriptions-solid-icon
+              *ngSwitchCase="'app-prescriptions-solid-icon'"
+            >
+            </app-prescriptions-solid-icon>
+          </div>
+        </div>
+        <h4>{{ medicine.title }}</h4>
+        <div
+          class="align-items-center d-flex flex-column text-center justify-content-center"
+        >
+          <ul
+            *ngIf="medicine.contentList.length > 1"
+            class="list-disc align-items-center d-flex flex-column px-2 text-center justify-content-center"
+          >
+            <li *ngFor="let content of medicine.contentList">
+              <h6 class="fw-normal">{{ content }}</h6>
+            </li>
+          </ul>
+          <h6 *ngIf="medicine.contentList.length === 1" class="fw-normal px-2">
+            {{ medicine.contentList[0] }}
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="d-flex justify-content-center text-center pb-5">
+  <div class="d-flex flex-column medicine__main-content mb-5 mx-md-22 mx-10">
+    <h2 class="d-md-block d-none d-none d-md-block">SNQ國家級認證</h2>
+    <h3 class="text-secondary-1 d-none d-md-block">
+      SYMBOL OF NATIONAL QUALITY
+    </h3>
+    <h5 class="text-secondary-1 fw-normal mt-2 d-none d-md-block">
+      SNQ國家品質標章（Symbol of national Quality，代表Safety and
+      Quality）是國家生技醫療產業策進會（生策會）召集全台120位最權威的學者專家，經過嚴謹、專業的科學驗證審查，將優質的生技、醫藥與保健產品及服務篩選出來的機制，嚴謹的評審流程，只要認明SNQ國家品質標章，就等於是最健康、最安全的品質保證。
+    </h5>
+
+    <h3 class="d-block d-md-none">SNQ國家級認證</h3>
+    <h4 class="text-secondary-1 d-block d-md-none">
+      SYMBOL OF NATIONAL QUALITY
+    </h4>
+    <h6 class="text-secondary-1 fw-normal mt-2 d-block d-md-none">
+      SNQ國家品質標章（Symbol of national Quality，代表Safety and
+      Quality）是國家生技醫療產業策進會（生策會）召集全台120位最權威的學者專家，經過嚴謹、專業的科學驗證審查，將優質的生技、醫藥與保健產品及服務篩選出來的機制，嚴謹的評審流程，只要認明SNQ國家品質標章，就等於是最健康、最安全的品質保證。
+    </h6>
+    
+    <div
+      class="d-flex flex-md-row flex-column justify-content-center align-items-center gap-md-20 gap-10 py-10"
+    >
+      <app-logo-snq-en-icon class="medicine__icon__logo"></app-logo-snq-en-icon>
+      <app-logo-snq-cn-icon class="medicine__icon__logo"></app-logo-snq-cn-icon>
+    </div>
+  </div>
+</section>
+
+<section class="d-flex justify-content-center text-center pb-10">
+  <div
+    class="bg-black-9 medicine__system-feature align-items-center d-flex flex-column w-100 pt-10"
+  >
+    <div class="w-100 medicine__text-animation">
+      <h2 class="d-md-block d-none d-none d-md-block">系統功能</h2>
+      <h3 class="text-secondary-1 d-none d-md-block">SYSTEM FUNCTIONS</h3>
+      <h3 class="d-block d-md-none">系統功能</h3>
+      <h4 class="text-secondary-1 d-block d-md-none">SYSTEM FUNCTIONS</h4>
+    </div>
+
+    <div
+      class="d-flex flex-md-row flex-column justify-content-between align-items-center align-items-md-start pt-10"
+    >
+      <div *ngFor="let item of system_list; index as i" class="d-flex pb-10">
+        <div class="d-flex flex-column align-items-center">
+          <div
+            class="medicine__system-feature__circle-block bg-white d-flex justify-content-center align-items-center"
+          >
+            <h3 class="text-primary-2">{{ i + 1 }}</h3>
+          </div>
+          <div>
+            <h3 class="fw-normal pt-4 pb-2">{{ item.title }}</h3>
+            <ul
+              class="list-disc align-items-center align-items-md-start d-flex flex-column pe-md-5 pe-4 text-center"
+            >
+              <li class="p-md-0" *ngFor="let content of item.contentList">
+                <h5 class="fw-normal text-start ps-5 d-md-block d-none">
+                  {{ content }}
+                </h5>
+                <h6 class="fw-normal d-block d-md-none">{{ content }}</h6>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr
+          *ngIf="i + 1 < system_list.length"
+          class="medicine__system-feature__divider-horizontal mx-1 mt-10 hr"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="d-flex justify-content-center text-center pb-10">
+  <div class="align-items-center d-flex flex-column w-100 pt-10">
+    <div class="w-100 medicine__text-animation">
+      <h2 class="d-md-block d-none d-none d-md-block">RFID智慧藥櫃系統優勢</h2>
+      <h3 class="text-secondary-1 d-none d-md-block">SYSTEM EXCLUSIVE</h3>
+      <h3 class="d-block d-md-none">RFID智慧藥櫃系統優勢</h3>
+      <h4 class="text-secondary-1 d-block d-md-none">SYSTEM EXCLUSIVE</h4>
+    </div>
+    <div
+      class="d-flex justify-content-center align-items-center medicine__system-rfid-card px-4 pt-10 flex-md-row flex-column"
+    >
+      <div
+        *ngFor="let rfid of rfid_list"
+        class="medicine__system-rfid-card__block bg-black-9 mx-4 align-items-center d-flex flex-column pb-5 mb-10"
+      >
+        <div
+          class="medicine__system-rfid-card__img-container d-lg-block d-none"
+          [style.backgroundImage]="'url(' + rfid.img_pc + ')'"
+        ></div>
+        <div
+          class="medicine__system-rfid-card__img-container d-md-block d-none d-lg-none"
+          [style.backgroundImage]="'url(' + rfid.img_pad + ')'"
+        ></div>
+        <div
+          class="medicine__system-rfid-card__img-container d-block d-md-none"
+          [style.backgroundImage]="'url(' + rfid.img_mobile + ')'"
+        ></div>
+        <div>
+          <h3 class="fw-normal pt-4 pb-2">{{ rfid.title }}</h3>
+          <ul
+            class="list-disc align-items-center d-flex flex-column pe-md-5 pe-4 text-center"
+          >
+            <li class="p-md-0" *ngFor="let content of rfid.contentList">
+              <h5 class="fw-normal ps-5 d-md-block d-none">
+                {{ content }}
+              </h5>
+              <h6 class="fw-normal d-block d-md-none">{{ content }}</h6>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
