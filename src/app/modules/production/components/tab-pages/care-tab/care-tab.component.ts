@@ -33,7 +33,7 @@ interface IPeopleList {
   templateUrl: './care-tab.component.html',
   styleUrls: [
     './care-tab.component.scss',
-    '../../../shared/scss/production.scss',
+    // '../../../shared/scss/production.scss',
   ],
 })
 export class CareTabComponent extends BasePage implements OnInit {
@@ -167,12 +167,20 @@ export class CareTabComponent extends BasePage implements OnInit {
     this.setCoverImg();
   }
   private setCoverImg(): void {
-    this.$window.device$.pipe(takeUntil(this.onDestroy$)).subscribe(device => {
-      switch(device) {
-        case Device.Desktop: this.coverImg = 'assets/product_pc/banner_news_caring_pc.png';break;
-        case Device.Tablet: this.coverImg = 'assets/product_pc/banner_news_caring_pc.png';break;
-        case Device.Mobile: this.coverImg = 'assets/product_pc/banner_news_caring_mobile.png';break;
-      }
-    })
+    this.$window.device$
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((device) => {
+        switch (device) {
+          case Device.Desktop:
+            this.coverImg = 'assets/product_pc/banner_news_caring_pc.png';
+            break;
+          case Device.Tablet:
+            this.coverImg = 'assets/product_pc/banner_news_caring_pc.png';
+            break;
+          case Device.Mobile:
+            this.coverImg = 'assets/product_pc/banner_news_caring_mobile.png';
+            break;
+        }
+      });
   }
 }
