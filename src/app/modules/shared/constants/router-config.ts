@@ -146,4 +146,14 @@ export const BreadcrumbConfig: Record<string, Breadcrumb[]> = {
       url: '/production/cloud',
     },
   ],
+  'common/about-us': [
+    {
+      i18n: '首頁',
+      url: '/common/home',
+    },
+    {
+      i18n: '關於SYNTRON',
+      url: '/common/about-us',
+    },
+  ],
 };

@@ -60,21 +60,21 @@ export class AboutUsPageComponent extends BasePage implements OnInit {
       },
     },
     {
-      title: '照護服務',
-      content: '長照照護系統、照護流程輔導諮詢、照護人員培訓',
+      title: '叫號系統',
+      content: '叫號系統、診間插卡報到系統',
       img: {
-        pc: 'assets/product_pc/banner_news_caring_pc.png',
-        pad: 'assets/product_pc/banner_news_caring_pad.png',
-        mobile: 'assets/product_pc/banner_news_caring_mobile.png',
+        pc: 'assets/product_pc/banner_news_queue_pc.png',
+        pad: 'assets/product_pc/banner_news_queue_pad.png',
+        mobile: 'assets/product_pc/banner_news_queue_mobile.png',
       },
     },
     {
-      title: '藥品管理',
-      content: '智慧藥櫃系統、藥品管理系統、重要資源管理',
+      title: '雲端儲存',
+      content: '公有雲、私有雲及混合雲',
       img: {
-        pc: 'assets/product_pc/banner_news_medication_pc.png',
-        pad: 'assets/product_pc/banner_news_medication_pad.png',
-        mobile: 'assets/product_pc/banner_news_medication_mobile.png',
+        pc: 'assets/product_pc/banner_news_storage_pc.png',
+        pad: 'assets/product_pc/banner_news_storage_pad.png',
+        mobile: 'assets/product_pc/banner_news_storage_mobile.png',
       },
     },
   ];
