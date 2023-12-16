@@ -53,6 +53,10 @@ export class HomePageComponent extends BasePage {
     this.router.navigate([`/news-center/news/all/detail/`], {queryParams: {id}}).then();
   }
 
+  toNewsCenter() {
+    this.router.navigate(['/news-center/news']).then();
+  }
+
   @HostListener('wheel', ['$event'])
   onWheelScroll() {
     let scrollTop = document.querySelector('.container')?.scrollTop;
