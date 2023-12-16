@@ -1,22 +1,22 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {HeaderComponent} from './components/header/header.component';
-import {FooterComponent} from './components/footer/footer.component';
-import {BorderlessButtonComponent} from './components/borderless-button/borderless-button.component';
-import {MainLogoComponent} from './components/main-logo/main-logo.component';
-import {NewsComponent} from '../common/components/news/news.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { BorderlessButtonComponent } from './components/borderless-button/borderless-button.component';
+import { MainLogoComponent } from './components/main-logo/main-logo.component';
+import { NewsComponent } from '../common/components/news/news.component';
 import {
   ArrowForwardIconComponent
 } from "./components/arrow-forward-icon/arrow-forward-icon.component";
-import {TextButtonComponent} from './components/text-button/text-button.component';
+import { TextButtonComponent } from './components/text-button/text-button.component';
 import { ProductCardComponent } from '../common/components/product-card/product-card.component';
 import { HealthcareIconComponent } from './components/healthcare-icon/healthcare-icon.component';
 import { PillIconComponent } from './components/pill-icon/pill-icon.component';
 import { DnsIconComponent } from './components/dns-icon/dns-icon.component';
 import { BackupIconComponent } from './components/backup-icon/backup-icon.component';
 import { SuccessfulCaseComponent } from './components/successful-case/successful-case.component';
-import {MenuIconComponent} from "./components/menu-icon/menu-icon.component";
-import {MenuComponent} from "./components/menu/menu.component";
+import { MenuIconComponent } from "./components/menu-icon/menu-icon.component";
+import { MenuComponent } from "./components/menu/menu.component";
 import { MenuMainButtonComponent } from './components/menu-main-button/menu-main-button.component';
 import { HeaderSpacingComponent } from './components/header-spacing/header-spacing.component';
 import { MenuSubButtonComponent } from './components/menu-sub-button/menu-sub-button.component';
@@ -47,6 +47,7 @@ import { LogoSnqCnIconComponent } from './components/logo-snq-cn-icon/logo-snq-c
 import { StorageSolidIconComponent } from './components/storage-solid-icon/storage-solid-icon.component';
 import { PillSolidIconComponent } from './components/pill-solid-icon/pill-solid-icon.component';
 import { BannerBlockComponent } from './components/banner-block/banner-block.component';
+import { DirectivesModule } from './directives/directives.module';
 
 
 @NgModule({
@@ -98,7 +99,8 @@ import { BannerBlockComponent } from './components/banner-block/banner-block.com
     BannerBlockComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DirectivesModule
   ],
   exports: [
     HeaderComponent,
@@ -132,6 +134,7 @@ import { BannerBlockComponent } from './components/banner-block/banner-block.com
     StorageSolidIconComponent,
     PillSolidIconComponent,
     BannerBlockComponent,
+    DirectivesModule
   ]
 })
 export class SharedModule {

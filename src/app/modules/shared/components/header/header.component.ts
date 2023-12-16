@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
-import {BaseComponent} from "../../../../../utilities/bases";
+import { BaseComponent } from "@utilities/bases";
 
 @Component({
   selector: 'app-header',
