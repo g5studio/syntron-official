@@ -18,6 +18,8 @@ export class NewsService {
 
   fetchNews$() {
     return this.$http.get<Record<string, INews>>('assets/json/news.json')
-      .pipe(tap(news => this.news = Object.values(news).reverse().map((item, index) => new News(item, index))));
+      .pipe(tap(news => this.news = Object.values(news)
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+        .map((item, index) => new News(item, index))));
   }
 }
