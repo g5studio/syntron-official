@@ -11,7 +11,7 @@
 <section class="mb-10">
   <div
     #functionsWords
-    class="w-100 animation-bg-functions_words d-md-block d-none"
+    class="w-100 animation-bg-functions_words d-sm-block d-none"
   ></div>
   <div class="mb-10 mb-md-20 d-flex justify-content-center w-100">
     <div
@@ -22,7 +22,7 @@
         class="d-flex flex-column medicine__list__detail bg-white align-items-center pt-10 gap-5 mx-1"
       >
         <div
-          class="medicine__list__circle bg-white d-flex justify-content-center align-items-center"
+          class="medicine__list__circle bg-white d-flex justify-content-center align-items-center flex-wrap"
         >
           <div [ngSwitch]="medicine.img" class="medicine__icon__medicinelist">
             <app-storage-solid-icon
@@ -58,27 +58,25 @@
 </section>
 
 <section class="d-flex justify-content-center text-center pb-5">
-  <div class="d-flex flex-column medicine__main-content mb-5 mx-md-22 mx-10">
-    <h2 class="d-md-block d-none d-none d-md-block">SNQ國家級認證</h2>
-    <h3 class="text-secondary-1 d-none d-md-block">
-      SYMBOL OF NATIONAL QUALITY
-    </h3>
-    <h5 class="text-secondary-1 fw-normal mt-2 d-none d-md-block">
-      SNQ國家品質標章（Symbol of national Quality，代表Safety and
-      Quality）是國家生技醫療產業策進會（生策會）召集全台120位最權威的學者專家，經過嚴謹、專業的科學驗證審查，將優質的生技、醫藥與保健產品及服務篩選出來的機制，嚴謹的評審流程，只要認明SNQ國家品質標章，就等於是最健康、最安全的品質保證。
-    </h5>
-
-    <h3 class="d-block d-md-none">SNQ國家級認證</h3>
-    <h4 class="text-secondary-1 d-block d-md-none">
-      SYMBOL OF NATIONAL QUALITY
-    </h4>
-    <h6 class="text-secondary-1 fw-normal mt-2 d-block d-md-none">
-      SNQ國家品質標章（Symbol of national Quality，代表Safety and
-      Quality）是國家生技醫療產業策進會（生策會）召集全台120位最權威的學者專家，經過嚴謹、專業的科學驗證審查，將優質的生技、醫藥與保健產品及服務篩選出來的機制，嚴謹的評審流程，只要認明SNQ國家品質標章，就等於是最健康、最安全的品質保證。
-    </h6>
-    
+  <div class="medicine__main-content mb-5 mx-10 mx-sm-20 w-100">
+    <div class="d-flex flex-column d-sm-flex d-none gap-5">
+      <h2>SNQ國家級認證</h2>
+      <h3 class="text-secondary-1 fw-normal">SYMBOL OF NATIONAL QUALITY</h3>
+      <h5 class="text-secondary-1 fw-normal">
+        SNQ國家品質標章（Symbol of national Quality，代表Safety and
+        Quality）是國家生技醫療產業策進會（生策會）召集全台120位最權威的學者專家，經過嚴謹、專業的科學驗證審查，將優質的生技、醫藥與保健產品及服務篩選出來的機制，嚴謹的評審流程，只要認明SNQ國家品質標章，就等於是最健康、最安全的品質保證。
+      </h5>
+    </div>
+    <div class="d-flex flex-column d-block d-sm-none gap-2_5">
+      <h3>SNQ國家級認證</h3>
+      <h4 class="text-secondary-1">SYMBOL OF NATIONAL QUALITY</h4>
+      <h6 class="text-secondary-1 fw-normal">
+        SNQ國家品質標章（Symbol of national Quality，代表Safety and
+        Quality）是國家生技醫療產業策進會（生策會）召集全台120位最權威的學者專家，經過嚴謹、專業的科學驗證審查，將優質的生技、醫藥與保健產品及服務篩選出來的機制，嚴謹的評審流程，只要認明SNQ國家品質標章，就等於是最健康、最安全的品質保證。
+      </h6>
+    </div>
     <div
-      class="d-flex flex-md-row flex-column justify-content-center align-items-center gap-md-20 gap-10 py-10"
+      class="d-flex flex-sm-row flex-column justify-content-center align-items-center gap-sm-20 gap-10 py-10"
     >
       <app-logo-snq-en-icon class="medicine__icon__logo"></app-logo-snq-en-icon>
       <app-logo-snq-cn-icon class="medicine__icon__logo"></app-logo-snq-cn-icon>
@@ -91,14 +89,18 @@
     class="bg-black-9 medicine__system-feature align-items-center d-flex flex-column w-100 pt-10"
   >
     <div class="w-100 medicine__text-animation">
-      <h2 class="d-md-block d-none d-none d-md-block">系統功能</h2>
-      <h3 class="text-secondary-1 d-none d-md-block">SYSTEM FUNCTIONS</h3>
-      <h3 class="d-block d-md-none">系統功能</h3>
-      <h4 class="text-secondary-1 d-block d-md-none">SYSTEM FUNCTIONS</h4>
+      <div class="d-flex flex-column d-sm-flex d-none gap-5">
+        <h2>系統功能</h2>
+        <h3 class="text-secondary-1 fw-normal">SYSTEM FUNCTIONS</h3>
+      </div>
+      <div class="d-flex flex-column d-block d-sm-none gap-2_5">
+        <h3>系統功能</h3>
+        <h4 class="text-secondary-1">SYSTEM FUNCTIONS</h4>
+      </div>
     </div>
 
     <div
-      class="d-flex flex-md-row flex-column justify-content-between align-items-center align-items-md-start pt-10"
+      class="d-flex flex-sm-row flex-column justify-content-between align-items-center align-items-sm-start pt-10"
     >
       <div *ngFor="let item of system_list; index as i" class="d-flex pb-10">
         <div class="d-flex flex-column align-items-center">
@@ -110,13 +112,13 @@
           <div>
             <h3 class="fw-normal pt-4 pb-2">{{ item.title }}</h3>
             <ul
-              class="list-disc align-items-center align-items-md-start d-flex flex-column pe-md-5 pe-4 text-center"
+              class="list-disc align-items-center align-items-sm-start d-flex flex-column pe-sm-5 pe-4 text-center"
             >
-              <li class="p-md-0" *ngFor="let content of item.contentList">
-                <h5 class="fw-normal text-start ps-5 d-md-block d-none">
+              <li class="p-sm-0" *ngFor="let content of item.contentList">
+                <h5 class="fw-normal text-start ps-5 d-sm-block d-none">
                   {{ content }}
                 </h5>
-                <h6 class="fw-normal d-block d-md-none">{{ content }}</h6>
+                <h6 class="fw-normal d-block d-block d-sm-none">{{ content }}</h6>
               </li>
             </ul>
           </div>
@@ -133,10 +135,14 @@
 <section class="d-flex justify-content-center text-center pb-10">
   <div class="align-items-center d-flex flex-column w-100 pt-10">
     <div class="w-100 medicine__text-animation">
-      <h2 class="d-md-block d-none d-none d-md-block">RFID智慧藥櫃系統優勢</h2>
-      <h3 class="text-secondary-1 d-none d-md-block">SYSTEM EXCLUSIVE</h3>
-      <h3 class="d-block d-md-none">RFID智慧藥櫃系統優勢</h3>
-      <h4 class="text-secondary-1 d-block d-md-none">SYSTEM EXCLUSIVE</h4>
+      <div class="d-flex flex-column d-sm-flex d-none gap-5">
+        <h2>RFID智慧藥櫃系統優勢</h2>
+        <h3 class="text-secondary-1 fw-normal">SYSTEM EXCLUSIVE</h3>
+      </div>
+      <div class="d-flex flex-column d-block d-sm-none gap-2_5">
+        <h3>RFID智慧藥櫃系統優勢</h3>
+        <h4 class="text-secondary-1">SYSTEM EXCLUSIVE</h4>
+      </div>
     </div>
     <div
       class="d-flex justify-content-center align-items-center medicine__system-rfid-card px-4 pt-10 flex-md-row flex-column"
@@ -146,15 +152,15 @@
         class="medicine__system-rfid-card__block bg-black-9 mx-4 align-items-center d-flex flex-column pb-5 mb-10"
       >
         <div
-          class="medicine__system-rfid-card__img-container d-lg-block d-none"
+          class="medicine__system-rfid-card__img-container d-md-block d-none"
           [style.backgroundImage]="'url(' + rfid.img_pc + ')'"
         ></div>
         <div
-          class="medicine__system-rfid-card__img-container d-md-block d-none d-lg-none"
+          class="medicine__system-rfid-card__img-container d-md-none d-sm-block d-none"
           [style.backgroundImage]="'url(' + rfid.img_pad + ')'"
         ></div>
         <div
-          class="medicine__system-rfid-card__img-container d-block d-md-none"
+          class="medicine__system-rfid-card__img-container d-block d-sm-none"
           [style.backgroundImage]="'url(' + rfid.img_mobile + ')'"
         ></div>
         <div>

@@ -174,10 +174,10 @@ export class CareTabComponent extends BasePage implements OnInit {
             this.coverImg = 'assets/product_pc/banner_news_caring_pc.png';
             break;
           case Device.Tablet:
-            this.coverImg = 'assets/product_pc/banner_news_caring_pc.png';
+            this.coverImg = 'assets/product_pad/banner_news_caring_pad.png';
             break;
           case Device.Mobile:
-            this.coverImg = 'assets/product_pc/banner_news_caring_mobile.png';
+            this.coverImg = 'assets/product_mobile/banner_news_caring_mobile.png';
             break;
         }
       });

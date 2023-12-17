@@ -163,11 +163,11 @@ export class MedicineTabComponent extends BasePage implements OnInit {
             this.coverImg = 'assets/product_pc/banner_news_medication_pc.png';
             break;
           case Device.Tablet:
-            this.coverImg = 'assets/product_pc/banner_news_medication_pc.png';
+            this.coverImg = 'assets/product_pad/banner_news_medication_pad.png';
             break;
           case Device.Mobile:
             this.coverImg =
-              'assets/product_pc/banner_news_medication_mobile.png';
+              'assets/product_mobile/banner_news_medication_mobile.png';
             break;
         }
       });

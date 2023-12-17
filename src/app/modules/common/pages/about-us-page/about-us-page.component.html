@@ -16,7 +16,7 @@
   <section class="d-flex flex-column flex-lg-row py-18 position-relative">
     <aside
       #leftSide
-      class="d-none d-lg-block flex-md-column about-us__left-side ps-10 ps-lg-30"
+      class="d-none d-md-block flex-sm-column about-us__left-side ms-10 ms-md-30"
     >
       <app-tab-list
         [tabs]="tabs"
@@ -26,10 +26,10 @@
     </aside>
     <section
       #rightSide
-      class="w-100 d-flex flex-column gap-15 pe-10 pe-lg-30 about-us__right-side"
+      class="w-100 d-flex flex-column gap-15 pe-10 me-md-30 about-us__right-side"
     >
       <div #company class="about-us__company">
-        <div class="d-md-flex d-none gap-5 d-flex flex-column">
+        <div class="d-md-flex d-none d-sm-flex gap-5 d-flex flex-column">
           <h2>SYNTRON企業願景</h2>
           <h3 class="fw-normal">SYNTRON’S CORPORATE VISION</h3>
           <h4 class="fw-normal">
@@ -46,7 +46,7 @@
           </h4>
         </div>
 
-        <div class="d-block d-md-none gap-5 d-flex flex-column">
+        <div class="d-block d-block d-sm-none gap-2_5 d-flex flex-column">
           <h3>SYNTRON企業願景</h3>
           <h4 class="fw-normal">SYNTRON’S CORPORATE VISION</h4>
           <h6 class="fw-normal">
@@ -67,16 +67,16 @@
         #solution
         class="gap-5 d-flex flex-column position-relative about-us__solution"
       >
-        <div class="d-md-flex d-none gap-5 d-flex flex-column">
+        <div class="d-md-flex d-none d-sm-flex gap-5 d-flex flex-column">
           <h2>解決方案</h2>
           <h3 class="fw-normal">SOLUTIONS</h3>
         </div>
-        <div class="d-block d-md-none gap-5 d-flex flex-column">
+        <div class="d-block d-block d-sm-none gap-2_5 d-flex flex-column">
           <h3>解決方案</h3>
           <h4 class="fw-normal">SOLUTIONS</h4>
         </div>
         <div
-          class="d-flex about-us__solution__block flex-column flex-md-row gap-md-0 gap-5"
+          class="d-flex about-us__solution__block flex-column flex-sm-row gap-sm-0 gap-5"
         >
           <div
             *ngFor="let solution of solution_slide"
@@ -99,7 +99,7 @@
       </div>
 
       <div #custom>
-        <div class="d-md-flex d-none gap-5 d-flex flex-column">
+        <div class="d-md-flex d-none d-sm-flex gap-5 d-flex flex-column">
           <h2>我們的客戶</h2>
           <h3 class="fw-normal">OUR CUSTOMERS</h3>
           <h4 class="fw-normal">
@@ -107,7 +107,7 @@
             與我們合作，建立可靠的夥伴關係，讓信任成為您成功的基石。
           </h4>
         </div>
-        <div class="d-block d-md-none gap-5 d-flex flex-column">
+        <div class="d-block d-sm-none gap-2_5 d-flex flex-column">
           <h3>我們的客戶</h3>
           <h4 class="fw-normal">OUR CUSTOMERS</h4>
           <h6 class="fw-normal">
@@ -116,13 +116,15 @@
           </h6>
         </div>
       </div>
-      <div class="d-flex gap-15 flex-wrap">
-        <div *ngFor="let img of logo_list">
-          <img
-            src="assets/basic/logo/{{ img }}.png"
-            alt="img"
-            class="about-us__logo"
-          />
+      <div class="flex-wrap">
+        <div class="row">
+          <div *ngFor="let img of logo_list" class="col-6 col-md-3 col-sm-4">
+            <img
+              src="assets/basic/logo/{{ img }}.png"
+              alt="img"
+              class="about-us__logo"
+            />
+          </div>
         </div>
       </div>
     </section>
