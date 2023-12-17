@@ -150,6 +150,16 @@
   &__cards {
     transform: translateY(-6rem);
   }
+
+  &__card {
+    width: 100%;
+    @media (min-width: 755px) {
+      width: 50%;
+    }
+    @media (min-width: 1220px) {
+      width: 25%;
+    }
+  }
 }
 
 .exclusive {
