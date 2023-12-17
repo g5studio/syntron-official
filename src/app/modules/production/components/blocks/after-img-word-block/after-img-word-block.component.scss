@@ -3,7 +3,7 @@
 
 :host {
   display: flex;
-  align-items: center;
+  // align-items: center;
 }
 
 .img {
@@ -34,11 +34,11 @@
     max-width: 27.5rem;
     animation: fade-in-right 1s ease-in-out,
     twink 1s ease-in-out;
-    @include generateStyleByMaxBreakpoint("lg") {
+    @include generateStyleByMaxBreakpoint("md") {
       max-width: 43rem;
     }
 
-    @include generateStyleByMaxBreakpoint("md") {
+    @include generateStyleByMaxBreakpoint("sm") {
       margin-right: 5rem;
       margin-left: 5rem;
     }
@@ -65,7 +65,7 @@
       border-radius: 28px 0 0 28px;
       background-position: left !important;
 
-      @include generateStyleByMaxBreakpoint("lg") {
+      @include generateStyleByMaxBreakpoint("md") {
         width: 468px;
         height: 400px;
       }
@@ -92,7 +92,7 @@
   }
 
 
-  @include generateStyleByMaxBreakpoint("lg") {
+  @include generateStyleByMaxBreakpoint("md") {
     flex-direction: column;
 
     .img {
@@ -109,7 +109,6 @@
 
     & .main__content {
       width: 332px;
-      background-color: map-get($black-light, 9);
       margin: 0 20px;
       padding-bottom: 20px;
       border-radius: 20px;
