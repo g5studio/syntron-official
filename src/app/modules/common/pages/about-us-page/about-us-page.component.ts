@@ -111,11 +111,11 @@ export class AboutUsPageComponent extends BasePage implements OnInit {
         const distanceFromTop =
           this.banner!.nativeElement.offsetTop +
           this.banner!.nativeElement.offsetHeight -
-          90;
+          42;
         const leftSide = this.leftSide!.nativeElement;
         if (scrollDistance > distanceFromTop) {
           leftSide.style.position = 'fixed';
-          leftSide.style.top = '9rem';
+          leftSide.style.top = '7rem';
         } else {
           leftSide.style.position = 'absolute';
           leftSide.style.top = '';
