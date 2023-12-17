@@ -16,6 +16,12 @@ ul.list-disc {
 }
 
 .medicine {
+    &__main-content{
+        max-width: 50rem;
+        @include generateStyleByMaxBreakpoint("md") {
+            max-width: 43rem;
+        }
+    }
     &__text-animation {
         animation: fade-in-right 1s ease-in-out,
         twink 1s ease-in-out;
@@ -27,11 +33,11 @@ ul.list-disc {
             max-width: 55.625rem;
             width: 100%;
 
-            @include generateStyleByMaxBreakpoint("lg") {
+            @include generateStyleByMaxBreakpoint("md") {
                 margin-top: -2rem;
             }
 
-            @include generateStyleByMaxBreakpoint("md") {
+            @include generateStyleByMaxBreakpoint("sm") {
                 margin-top: 4.375rem;
             }
         }
@@ -51,6 +57,7 @@ ul.list-disc {
 
             @include generateStyleByMaxBreakpoint("md") {
                 max-width: 20.75rem;
+                min-width: 0rem;
                 height: auto;
                 padding-top: 4rem;
                 padding-bottom: 4rem;
@@ -68,7 +75,7 @@ ul.list-disc {
                 height: 2.75rem;
             }
 
-            @include generateStyleByMaxBreakpoint("md") {
+            @include generateStyleByMaxBreakpoint("sm") {
                 width: 3.75rem;
                 height: 3.75rem;
 
@@ -90,12 +97,13 @@ ul.list-disc {
 
     &__system-feature {
         &__circle-block {
-            width: 5rem;
+            max-width: 5rem;
+            width: 100%;
             height: 5rem;
             border-radius: 50%;
             box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
 
-            @include generateStyleByMaxBreakpoint("md") {
+            @include generateStyleByMaxBreakpoint("sm") {
                 width: 3.75rem;
                 height: 3.75rem;
             }
@@ -104,11 +112,11 @@ ul.list-disc {
         &__divider-horizontal {
             width: 6rem;
 
-            @include generateStyleByMaxBreakpoint("lg") {
+            @include generateStyleByMaxBreakpoint("md") {
                 width: 3.75rem;
             }
 
-            @include generateStyleByMaxBreakpoint("md") {
+            @include generateStyleByMaxBreakpoint("sm") {
                 display: none;
             }
 
@@ -147,19 +155,19 @@ ul.list-disc {
         &__logo::ng-deep {
             .component-logo-snq-en-icon {
                 width: auto;
-                height: 6.25rem;
+                max-height: 6.25rem;
 
-                @include generateStyleByMaxBreakpoint("md") {
-                    height: 4.375rem
+                @include generateStyleByMaxBreakpoint("sm") {
+                    max-height: 4.375rem
                 }
             }
 
             .component-logo-snq-cn-icon {
                 width: auto;
-                height: 8.75rem;
+                max-height: 8.75rem;
 
-                @include generateStyleByMaxBreakpoint("md") {
-                    height: 7.5rem
+                @include generateStyleByMaxBreakpoint("sm") {
+                    max-height: 7.5rem
                 }
             }
         }
@@ -188,7 +196,7 @@ ul.list-disc {
     background-repeat: repeat;
     background-size: contain;
 
-    @include generateStyleByMaxBreakpoint("lg") {
+    @include generateStyleByMaxBreakpoint("md") {
         background-image: url('~src/assets/product_pad/image_functions_pad.png');
         height: 4.125rem;
     }
