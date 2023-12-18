@@ -19,7 +19,7 @@
     >
       <div
         *ngFor="let medicine of this.medicine_list"
-        class="d-flex flex-column medicine__list__detail bg-white align-items-center pt-10 gap-5 mx-1"
+        class="d-flex flex-column medicine__list__detail bg-white align-items-center py-10 gap-5 mx-1"
       >
         <div
           class="medicine__list__circle bg-white d-flex justify-content-center align-items-center flex-wrap"
@@ -38,7 +38,7 @@
         </div>
         <h4>{{ medicine.title }}</h4>
         <div
-          class="align-items-center d-flex flex-column text-center justify-content-center"
+          class="align-items-center d-flex flex-column text-center justify-content-center medicine__list__detail__content"
         >
           <ul
             *ngIf="medicine.contentList.length > 1"
