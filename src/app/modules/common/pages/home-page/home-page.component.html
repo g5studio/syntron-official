@@ -1,16 +1,14 @@
 <section>
   <section class="main-img-container position-relative">
-    <div class="d-flex main-img-container__gradient-bg">
+    <div class="d-flex justify-content-between main-img-container__gradient-bg">
       <p
         class="main-img-container__syntron-text text-white d-none d-sm-flex justify-content-center align-items-center">
         SYNTRON
       </p>
-      <div class="position-relative w-100">
-        <img
-          src=""
-          alt=""
-          class="w-100 h-100 bg-black main-img-container__img"
-        />
+      <div class="position-relative d-flex">
+        <video #tVideo class="main-img-container__img" muted autoplay loop>
+          <source [src]="videoSrc" type="video/mp4">
+        </video>
         <div class="position-absolute main-img-container__title">
           <h1 class="text-white font-3xl font-sm-4xl">全方位的生活體驗</h1>
           <h3 class="text-white font-md font-sm-xl">無縫連接，提供關懷，精確管理，無微不至的照護</h3>
@@ -75,18 +73,22 @@
         <app-product-card
           type="healthcare"
           class="mb-4 d-flex justify-content-center product__card"
+          (click)="toProduct('care')"
         ></app-product-card>
         <app-product-card
           type="pill"
           class="mb-4 d-flex justify-content-center product__card"
+          (click)="toProduct('medicine')"
         ></app-product-card>
         <app-product-card
           type="dns"
           class="mb-4 d-flex justify-content-center product__card"
+          (click)="toProduct('calling')"
         ></app-product-card>
         <app-product-card
           type="backup"
           class="mb-4 d-flex justify-content-center product__card"
+          (click)="toProduct('cloud')"
         ></app-product-card>
       </div>
     </div>
