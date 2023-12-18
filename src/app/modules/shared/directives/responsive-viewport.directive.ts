@@ -1,4 +1,3 @@
-import { ResizeObserver } from 'resize-observer';
 import { tap, takeUntil } from 'rxjs/operators';
 import { Directive, ElementRef, Renderer2, Input, HostListener, Output, EventEmitter } from '@angular/core';
 
