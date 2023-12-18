@@ -1,7 +1,9 @@
-import { Component, HostListener } from '@angular/core';
-import { BasePage } from 'src/utilities/bases';
+import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
+import {BasePage} from 'src/utilities/bases';
 import {News} from "../../../news-center/models/news";
 import {NewsService} from "../../../news-center/services/news.service";
+import {Device} from "@shared/enums";
+import {tap} from "rxjs";
 
 @Component({
   selector: 'app-home-page',
@@ -10,10 +12,13 @@ import {NewsService} from "../../../news-center/services/news.service";
 })
 export class HomePageComponent extends BasePage {
 
+  @ViewChild('tVideo') tVideo?: ElementRef<HTMLElement>;
+
   get scrollTransformStyle() {
     return { transform: `translateX(-${this._scrollTop}px)` };
   }
 
+  videoSrc = 'assets/video/home_pc.mov';
   news: News[] = [];
 
   readonly successfulCases: string[] = [
@@ -47,6 +52,25 @@ export class HomePageComponent extends BasePage {
   protected override onInit(): void {
     this.$news.fetchNews$()
       .subscribe(() => this.news = this.$news.news.slice(0, 3));
+    this.$window.device$
+      .pipe(
+        tap((res) => {
+          const video = document.querySelector('video')!;
+          video.pause();
+          switch (res) {
+            case Device.Desktop:
+              this.videoSrc = 'assets/video/home_pc.mov';
+              break;
+            case Device.Tablet:
+              this.videoSrc = 'assets/video/home_pad.mov';
+              break;
+            case Device.Mobile:
+              this.videoSrc = 'assets/video/home_mobile.mov';
+              break;
+          }
+          video.load();
+        })
+      ).subscribe();
   }
 
   toNewsDetail(id: number) {
