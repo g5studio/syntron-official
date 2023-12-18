@@ -35,12 +35,14 @@
   }
   &__2 {
     height: 2025px;
+    width: 100%;
     ul {
       top: 93px;
     }
     @include generateStyleByMaxBreakpoint("md") {
       height: 2410px;
       ul {
+        width: 100%;
         top: 35px;
       }
     }
