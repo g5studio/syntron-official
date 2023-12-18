@@ -57,6 +57,10 @@ export class HomePageComponent extends BasePage {
     this.router.navigate(['/news-center/news']).then();
   }
 
+  toProduct(path: string) {
+    this.router.navigate([`/production/${path}`]).then();
+  }
+
   @HostListener('wheel', ['$event'])
   onWheelScroll() {
     let scrollTop = document.querySelector('.container')?.scrollTop;
