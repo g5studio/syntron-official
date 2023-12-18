@@ -3,29 +3,32 @@
 ul.list-disc {
     li {
         position: relative;
-        padding-left: 1.2rem;
+        padding-left: 0.6rem;
 
         &::before {
-            content: '．';
+            content: '•';
             position: absolute;
             top: 0;
             left: 0;
-            font-size: 1.25rem;
+            font-size: 0.5em;
         }
     }
 }
 
 .medicine {
-    &__main-content{
+    &__main-content {
         max-width: 50rem;
+
         @include generateStyleByMaxBreakpoint("md") {
             max-width: 43rem;
         }
     }
+
     &__text-animation {
         animation: fade-in-right 1s ease-in-out,
-        twink 1s ease-in-out;
+            twink 1s ease-in-out;
     }
+
     &__list {
         &__block {
             z-index: 1;
