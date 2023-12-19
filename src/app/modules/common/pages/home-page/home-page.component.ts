@@ -62,10 +62,10 @@ export class HomePageComponent extends BasePage {
               this.videoSrc = 'assets/video/home_pc.mov';
               break;
             case Device.Tablet:
-              this.videoSrc = 'assets/video/home_pad.mov';
+              this.videoSrc = 'assets/video/home_pad.mp4';
               break;
             case Device.Mobile:
-              this.videoSrc = 'assets/video/home_mobile.mov';
+              this.videoSrc = 'assets/video/home_mobile.mp4';
               break;
           }
           video.load();
