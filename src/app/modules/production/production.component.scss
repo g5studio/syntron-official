@@ -1,17 +1,13 @@
-
 @import "mixins";
 
 :host {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
 }
 
 ::ng-deep app-tab-set {
   @include generateStyleByMaxBreakpoint("md") {
     display: none !important;
   }
-}
-::ng-deep app-production {
-  max-width: 1440px;
 }
