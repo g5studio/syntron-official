@@ -1,35 +1,41 @@
 <header
-  class="component-header bg-white position-absolute top-0 start-0 end-0 z-3 bg-azure"
+  class="component-header bg-white position-absolute top-0 start-0 end-0 z-3 bg-azure container"
 >
   <div
     class="h-100 d-flex justify-content-between align-items-center w-100 component-header__container"
   >
-    <app-main-logo class="h-100 cursor-pointer" (click)="navigate('common/home')"></app-main-logo>
+    <app-main-logo
+      class="h-100 cursor-pointer"
+      (click)="navigate('common/home')"
+    ></app-main-logo>
     <div class="d-flex">
       <ul class="h-100 align-items-center d-none d-md-flex">
         <li>
           <app-borderless-button
             [isFocus]="getIsFocus('/news-center/news')"
-            (click)="navigate('news-center')">
+            (click)="navigate('news-center')"
+          >
             最新消息
           </app-borderless-button>
         </li>
         <li>
           <app-borderless-button
-          [isFocus]="getIsFocus('/production')"
-          (click)="navigate('production')"
-          >產品介紹 </app-borderless-button>
-        </li>
-        <li>
-          <app-borderless-button
-            [isFocus]="getIsFocus('/common/about-us')"
-            (click)="navigate('common/about-us')">
-            關於SYNTRON
+            [isFocus]="getIsFocus('/production')"
+            (click)="navigate('production')"
+            >產品介紹
           </app-borderless-button>
         </li>
         <li>
           <app-borderless-button
-            (click)="contactUs()">聯絡我們
+            [isFocus]="getIsFocus('/common/about-us')"
+            (click)="navigate('common/about-us')"
+          >
+            關於SYNTRON
+          </app-borderless-button>
+        </li>
+        <li>
+          <app-borderless-button (click)="contactUs()"
+            >聯絡我們
           </app-borderless-button>
         </li>
       </ul>

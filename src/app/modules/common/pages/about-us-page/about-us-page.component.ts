@@ -120,10 +120,10 @@ export class AboutUsPageComponent extends BasePage implements OnInit {
           leftSide.style.position = 'absolute';
           leftSide.style.top = '';
         }
-        if(scrollDistance < this.solution!.nativeElement.offsetTop + distanceFromTop - 90){
+        if(scrollDistance < this.solution!.nativeElement.offsetTop + distanceFromTop - 150){
           this.focusTab = this.tabs[0];
         }
-        else if(scrollDistance < this.custom!.nativeElement.offsetTop + distanceFromTop -90){
+        else if(scrollDistance < this.custom!.nativeElement.offsetTop + distanceFromTop -150){
           this.focusTab = this.tabs[1];
         }
         else {

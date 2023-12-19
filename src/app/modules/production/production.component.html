@@ -1,2 +1,5 @@
-<app-tab-set [tabs]="this.tabs" (onTabChange)="this.router.navigateByUrl($event.value)"></app-tab-set>
+<app-tab-set
+  [tabs]="this.tabs"
+  (onTabChange)="this.router.navigateByUrl($event.value)"
+></app-tab-set>
 <router-outlet></router-outlet>
