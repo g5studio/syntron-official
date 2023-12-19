@@ -21,7 +21,7 @@ export class HomePageComponent extends BasePage {
   videoSrc = 'assets/video/home_pc.mov';
   news: News[] = [];
 
-  readonly successfulCases: string[] = [
+  readonly cases: string[] = [
     'ntuh',
     'twpower',
     'narlabs',
@@ -37,11 +37,11 @@ export class HomePageComponent extends BasePage {
     'new_taipei_gov',
     'taipei_city_hospital',
     'taiwan_oil',
-  ]
-  readonly reverseSuccessfulCases: string[] = [...this.successfulCases].reverse();
+  ];
+  displayCases: string[] = this.cases.concat(this.cases);
+  reverseDisplayCases: string[] = [...this.displayCases].reverse();
 
   private _scrollTop = 0;
-
 
   constructor(
     private $news: NewsService,
@@ -62,10 +62,10 @@ export class HomePageComponent extends BasePage {
               this.videoSrc = 'assets/video/home_pc.mov';
               break;
             case Device.Tablet:
-              this.videoSrc = 'assets/video/home_pad.mov';
+              this.videoSrc = 'assets/video/home_pad.mp4';
               break;
             case Device.Mobile:
-              this.videoSrc = 'assets/video/home_mobile.mov';
+              this.videoSrc = 'assets/video/home_mobile.mp4';
               break;
           }
           video.load();
