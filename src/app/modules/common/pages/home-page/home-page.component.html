@@ -73,18 +73,22 @@
         <app-product-card
           type="healthcare"
           class="mb-4 d-flex justify-content-center product__card"
+          (click)="toProduct('care')"
         ></app-product-card>
         <app-product-card
           type="pill"
           class="mb-4 d-flex justify-content-center product__card"
+          (click)="toProduct('medicine')"
         ></app-product-card>
         <app-product-card
           type="dns"
           class="mb-4 d-flex justify-content-center product__card"
+          (click)="toProduct('calling')"
         ></app-product-card>
         <app-product-card
           type="backup"
           class="mb-4 d-flex justify-content-center product__card"
+          (click)="toProduct('cloud')"
         ></app-product-card>
       </div>
     </div>

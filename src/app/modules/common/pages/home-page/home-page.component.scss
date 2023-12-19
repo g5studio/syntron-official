@@ -11,13 +11,12 @@
   }
 
   &__syntron-text {
-    width: 60px;
+    min-width: 60px;
     writing-mode: vertical-lr;
   }
 
   &__video {
     padding-right: 0;
-    width: calc(100% - 60px);
     @include generateStyleByBreakpoint("sm") {
       border-top-left-radius: 3rem;
       border-bottom-left-radius: 3rem;

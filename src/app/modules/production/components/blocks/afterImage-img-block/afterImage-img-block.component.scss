@@ -4,7 +4,7 @@
 :host {
   display: flex;
   align-items: center;
-  width: 100vw;
+  width: 100%;
 }
 
 .img {
@@ -25,7 +25,7 @@
 }
 
 .main {
-  width: 100vw;
+  width: calc(100% - 200px);
   .img {
     &__2 {
       display: none;
@@ -69,6 +69,18 @@
 
   @include generateStyleByMaxBreakpoint("md") {
     flex-direction: column;
+    width: 100%;
+    & .main__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      &  >div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
     .img {
       &__1 {
         display: none;
@@ -91,6 +103,7 @@
       text-align: center;
     }
     ul {
+      width: calc(100% - 40px);
       display: flex;
       flex-direction: column;
       align-items: center;

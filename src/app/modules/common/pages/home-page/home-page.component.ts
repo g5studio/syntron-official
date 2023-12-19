@@ -1,9 +1,9 @@
-import { Component, HostListener } from '@angular/core';
-import { BasePage } from 'src/utilities/bases';
+import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
+import {BasePage} from 'src/utilities/bases';
 import {News} from "../../../news-center/models/news";
 import {NewsService} from "../../../news-center/services/news.service";
-import {tap} from "rxjs/operators";
 import {Device} from "@shared/enums";
+import {tap} from "rxjs";
 
 @Component({
   selector: 'app-home-page',
@@ -11,6 +11,8 @@ import {Device} from "@shared/enums";
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent extends BasePage {
+
+  @ViewChild('tVideo') tVideo?: ElementRef<HTMLElement>;
 
   get scrollTransformStyle() {
     return { transform: `translateX(-${this._scrollTop}px)` };
@@ -60,10 +62,10 @@ export class HomePageComponent extends BasePage {
               this.videoSrc = 'assets/video/home_pc.mov';
               break;
             case Device.Tablet:
-              this.videoSrc = 'assets/video/home_pc.mov';
+              this.videoSrc = 'assets/video/home_pad.mov';
               break;
             case Device.Mobile:
-              this.videoSrc = 'assets/video/home_pc.mov';
+              this.videoSrc = 'assets/video/home_mobile.mov';
               break;
           }
           video.load();
@@ -77,6 +79,10 @@ export class HomePageComponent extends BasePage {
 
   toNewsCenter() {
     this.router.navigate(['/news-center/news']).then();
+  }
+
+  toProduct(path: string) {
+    this.router.navigate([`/production/${path}`]).then();
   }
 
   @HostListener('wheel', ['$event'])
