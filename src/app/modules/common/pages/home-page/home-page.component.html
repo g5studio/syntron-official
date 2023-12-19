@@ -1,17 +1,15 @@
 <section>
-  <section class="main-img-container position-relative">
-    <div class="d-flex main-img-container__gradient-bg">
+  <section class="video-container position-relative">
+    <div class="d-flex justify-content-between video-container__gradient-bg">
       <p
-        class="main-img-container__syntron-text text-white d-none d-sm-flex justify-content-center align-items-center">
+        class="video-container__syntron-text text-white d-none d-sm-flex justify-content-center align-items-center">
         SYNTRON
       </p>
-      <div class="position-relative w-100">
-        <img
-          src=""
-          alt=""
-          class="w-100 h-100 bg-black main-img-container__img"
-        />
-        <div class="position-absolute main-img-container__title">
+      <div class="position-relative d-flex">
+        <video #tVideo class="video-container__video h-100" muted autoplay loop>
+          <source [src]="videoSrc" type="video/mp4">
+        </video>
+        <div class="position-absolute video-container__title">
           <h1 class="text-white font-3xl font-sm-4xl">全方位的生活體驗</h1>
           <h3 class="text-white font-md font-sm-xl">無縫連接，提供關懷，精確管理，無微不至的照護</h3>
         </div>
@@ -113,31 +111,37 @@
     </div>
   </section>
 
-  <section class="successful-case my-25 text-center pt-15 position-relative">
+  <section class="successful-case mt-25 mb-50 text-center pt-15 position-relative">
     <h2 class="successful-case__text-animation">成功案例</h2>
     <h3 class="successful-case__text-animation">SUCCESSFUL CASE</h3>
-    <div
-      class="d-inline-block d-sm-flex successful-case__playing-animation mt-5"
-    >
-      <ng-container *ngFor="let successfulCase of successfulCases">
-        <app-successful-case class="my-2 mx-1 my-sm-0 mx-sm-2 d-inline-block">
+    <div class="d-inline-block d-sm-none mt-5">
+      <ng-container *ngFor="let displayCase of cases">
+        <app-successful-case class="my-2 mx-1 d-inline-block">
           <img
-            src="assets/img/logo/logo_{{ successfulCase }}.png"
-            alt="successful-case-{{ successfulCase }}"
+            src="assets/img/logo/logo_{{ displayCase }}.png"
+            alt="successful-case-{{ displayCase }}"
           />
         </app-successful-case>
       </ng-container>
     </div>
-    <div
-      class="d-none d-sm-flex d-md-none successful-case__playing-animation-reverse mt-4"
-    >
+    <div class="d-none d-sm-flex successful-case__playing-animation mt-5">
+      <ng-container *ngFor="let displayCase of displayCases">
+        <app-successful-case class="my-sm-0 mx-sm-2">
+          <img
+            src="assets/img/logo/logo_{{ displayCase }}.png"
+            alt="successful-case-{{ displayCase }}"
+          />
+        </app-successful-case>
+      </ng-container>
+    </div>
+    <div class="d-none d-sm-flex d-md-none successful-case__playing-animation-reverse mt-4">
       <ng-container
-        *ngFor="let reverseSuccessfulCase of reverseSuccessfulCases"
+        *ngFor="let reverseDisplayCase of reverseDisplayCases"
       >
         <app-successful-case class="mx-sm-2">
           <img
-            src="assets/img/logo/logo_{{ reverseSuccessfulCase }}.png"
-            alt="reverse-successful-case-{{ reverseSuccessfulCase }}"
+            src="assets/img/logo/logo_{{ reverseDisplayCase }}.png"
+            alt="reverse-successful-case-{{ reverseDisplayCase }}"
           />
         </app-successful-case>
       </ng-container>

@@ -2,6 +2,8 @@ import { Component, HostListener } from '@angular/core';
 import { BasePage } from 'src/utilities/bases';
 import {News} from "../../../news-center/models/news";
 import {NewsService} from "../../../news-center/services/news.service";
+import {tap} from "rxjs/operators";
+import {Device} from "@shared/enums";
 
 @Component({
   selector: 'app-home-page',
@@ -14,9 +16,10 @@ export class HomePageComponent extends BasePage {
     return { transform: `translateX(-${this._scrollTop}px)` };
   }
 
+  videoSrc = 'assets/video/home_pc.mov';
   news: News[] = [];
 
-  readonly successfulCases: string[] = [
+  readonly cases: string[] = [
     'ntuh',
     'twpower',
     'narlabs',
@@ -32,11 +35,11 @@ export class HomePageComponent extends BasePage {
     'new_taipei_gov',
     'taipei_city_hospital',
     'taiwan_oil',
-  ]
-  readonly reverseSuccessfulCases: string[] = [...this.successfulCases].reverse();
+  ];
+  displayCases: string[] = this.cases.concat(this.cases);
+  reverseDisplayCases: string[] = [...this.displayCases].reverse();
 
   private _scrollTop = 0;
-
 
   constructor(
     private $news: NewsService,
@@ -47,6 +50,25 @@ export class HomePageComponent extends BasePage {
   protected override onInit(): void {
     this.$news.fetchNews$()
       .subscribe(() => this.news = this.$news.news.slice(0, 3));
+    this.$window.device$
+      .pipe(
+        tap((res) => {
+          const video = document.querySelector('video')!;
+          video.pause();
+          switch (res) {
+            case Device.Desktop:
+              this.videoSrc = 'assets/video/home_pc.mov';
+              break;
+            case Device.Tablet:
+              this.videoSrc = 'assets/video/home_pc.mov';
+              break;
+            case Device.Mobile:
+              this.videoSrc = 'assets/video/home_pc.mov';
+              break;
+          }
+          video.load();
+        })
+      ).subscribe();
   }
 
   toNewsDetail(id: number) {

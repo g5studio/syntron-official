@@ -1,7 +1,7 @@
 @import "src/styles/colors";
 @import "src/styles/mixins";
 
-.main-img-container {
+.video-container {
   &__gradient-bg {
     background: linear-gradient(180deg, map-get($azure-light, 2) 0%, map-get($cyan-light, 2) 33.3%, map-get($green-light, 2) 66.6%, #FFFb9D 100%);
     height: 570px;
@@ -15,7 +15,7 @@
     writing-mode: vertical-lr;
   }
 
-  &__img {
+  &__video {
     padding-right: 0;
     width: calc(100% - 60px);
     @include generateStyleByBreakpoint("sm") {
@@ -204,11 +204,11 @@
   @include generateStyleByBreakpoint("sm") {
     background-color: map-get($black-light, 9);
     &__playing-animation {
-      animation: infinite successful-case-animation linear 1200s;
+      animation: infinite successful-case-animation linear 95s;
     }
 
     &__playing-animation-reverse {
-      animation: infinite successful-case-animation-reverse linear 1200s;
+      animation: infinite successful-case-animation-reverse linear 95s;
     }
   }
 
