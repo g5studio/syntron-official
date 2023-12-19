@@ -1,10 +1,7 @@
-<div #tHeader>
-  <app-header></app-header>
-</div>
+<app-header></app-header>
 <main
   #tContainer
   appResponsiveViewport
-  [responseBuffers]="[tHeader]"
   class="container overflow-y-auto overflow-x-hidden px-0"
   id="main"
   (scroll)="this.onMainScroll($event)"

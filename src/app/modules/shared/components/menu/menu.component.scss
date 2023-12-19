@@ -1,23 +1,32 @@
 @import "mixins";
 
 .component-menu {
-  &__mask {
-    height: 100vh;
-    width: 100vw;
-  }
-
+  max-height: 100vh;
   &__container {
-    height: 100vh;
-    width: 100vw;
-
     @include generateStyleByBreakpoint("sm") {
+      max-width: 100vw;
       width: 33.75rem !important;
-      left: calc(100vw - 33.75rem) !important;
+      right: 0;
     }
   }
 
   &__divider {
     height: 2px;
+  }
+
+  &__icon::ng-deep {
+    .component-menu-icon,
+    .component-close-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 1.25rem;
+
+      @include generateStyleByBreakpoint("sm") {
+        width: 2.25rem;
+        height: 2.25rem;
+        margin-right: 2.5rem;
+      }
+    }
   }
 
   &__map {

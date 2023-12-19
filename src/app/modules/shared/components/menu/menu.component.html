@@ -1,9 +1,11 @@
-<div class="component-menu position-relative">
+<div
+  appResponsiveViewport
+  class="component-menu bg-black-1_70 vw-100 layer-overlay d-flex flex-row justify-content-end"
+>
   <div
-    class="component-menu__container bg-white z-2 position-absolute top-0 start-0 d-flex flex-column align-items-center overflow-y-auto"
+    class="component-menu__container vw-100 h-100 bg-white d-flex flex-column align-items-center overflow-y-auto"
   >
     <app-header-spacing></app-header-spacing>
-
     <div class="px-5 px-sm-10 w-100 pb-5 pb-sm-10">
       <ul class="mt-10 mt-sm-5 w-100">
         <li class="mb-2">
@@ -22,20 +24,28 @@
           </app-menu-main-button>
           <ul *ngIf="isProductSubmenuOpen">
             <li class="my-2">
-              <app-menu-sub-button (click)="this.navigate.emit('production/care')"
-              >照護服務</app-menu-sub-button>
+              <app-menu-sub-button
+                (click)="this.navigate.emit('production/care')"
+                >照護服務</app-menu-sub-button
+              >
             </li>
             <li class="mb-2">
-              <app-menu-sub-button (click)="this.navigate.emit('production/medicine')"
-              >藥品管理</app-menu-sub-button>
+              <app-menu-sub-button
+                (click)="this.navigate.emit('production/medicine')"
+                >藥品管理</app-menu-sub-button
+              >
             </li>
             <li class="mb-2">
-              <app-menu-sub-button (click)="this.navigate.emit('production/calling')"
-              >叫號系統</app-menu-sub-button>
+              <app-menu-sub-button
+                (click)="this.navigate.emit('production/calling')"
+                >叫號系統</app-menu-sub-button
+              >
             </li>
             <li class="mb-2">
-              <app-menu-sub-button (click)="this.navigate.emit('production/cloud')"
-              >雲端儲存</app-menu-sub-button>
+              <app-menu-sub-button
+                (click)="this.navigate.emit('production/cloud')"
+                >雲端儲存</app-menu-sub-button
+              >
             </li>
           </ul>
         </li>
@@ -90,8 +100,4 @@
       </div>
     </div>
   </div>
-
-  <div
-    class="component-menu__mask top-0 start-0 d-flex bg-black opacity-50 z-1 position-absolute"
-  ></div>
 </div>

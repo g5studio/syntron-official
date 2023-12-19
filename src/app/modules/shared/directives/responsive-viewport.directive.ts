@@ -37,6 +37,7 @@ export class ResponsiveViewportDirective extends BaseComponent {
   }
 
   protected override onInit(): void {
+    this.resizeViewport();
     this.OnInit.emit(this.e.nativeElement);
     this.resize$ = this.$window.resizeObserver(this.resizeViewport.bind(this));
     if (this.breakpoints.length === 0) {
