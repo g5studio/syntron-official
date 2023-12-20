@@ -2,6 +2,21 @@
 
 .component-footer {
   border-bottom-left-radius: 3rem;
+  @media (min-width: 700px) {
+    padding: 3.625rem 3.75rem 2.5rem;
+  }
+
+  @media (min-width: 1028px) {
+    flex-direction: row !important;
+    padding: 3.75rem 2.5rem;
+  }
+
+  &__logo-container {
+    @media (min-width: 1028px) {
+      align-items: start !important;
+      margin-top: 0 !important;
+    }
+  }
 
   &__logo {
     width: 10.911rem;
@@ -11,7 +26,7 @@
   &__map {
     height: 15rem;
     width: 15rem;
-    @include generateStyleByBreakpoint("sm") {
+    @media (min-width: 700px) {
       height: 17.75rem;
       width: 17.75rem;
     }
@@ -19,6 +34,34 @@
 
   &__text-animation {
     animation: fade-in-right 1s ease-in-out, twink 1s ease-in-out;
+    @media (min-width: 700px) {
+      flex-direction: row !important;
+    }
+  }
+
+  &__info {
+    @media (min-width: 700px) {
+      text-align: left !important;
+      margin-right: 6.25rem !important;
+    }
+  }
+
+  &__contact-us {
+    @media (min-width: 700px) {
+      margin-bottom: 2.5rem !important;
+    }
+  }
+
+  &__text-container {
+    @media (min-width: 700px) {
+      justify-content: start !important;
+    }
+  }
+
+  &__address {
+    @media (min-width: 700px) {
+      margin-bottom: 0 !important;
+    }
   }
 }
 

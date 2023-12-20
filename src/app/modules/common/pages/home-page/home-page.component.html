@@ -37,9 +37,7 @@
           *ngFor="let news of news"
           class="d-flex justify-content-between align-items-center cursor-pointer news-list__content bg-primary-5--hover rounded px-4"
           (click)="toNewsDetail(news.id)">
-          <div
-            class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center me-2 mw-100"
-          >
+          <div class="d-flex flex-column align-items-start me-2 mw-100 news-list__news-date">
             <div class="d-flex align-items-center">
               <p class="text-nowrap news-list__date">{{ news.date }}</p>
               <hr
