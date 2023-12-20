@@ -18,7 +18,6 @@ import { SuccessfulCaseComponent } from './components/successful-case/successful
 import { MenuIconComponent } from "./components/menu-icon/menu-icon.component";
 import { MenuComponent } from "./components/menu/menu.component";
 import { MenuMainButtonComponent } from './components/menu-main-button/menu-main-button.component';
-import { HeaderSpacingComponent } from './components/header-spacing/header-spacing.component';
 import { MenuSubButtonComponent } from './components/menu-sub-button/menu-sub-button.component';
 import { AddIconComponent } from './components/add-icon/add-icon.component';
 import { ArrowRightIconComponent } from './components/arrow-right-icon/arrow-right-icon.component';
@@ -72,7 +71,6 @@ import { ArrowDropUpIconComponent } from './components/arrow-drop-up-icon/arrow-
     MenuIconComponent,
     MenuComponent,
     MenuMainButtonComponent,
-    HeaderSpacingComponent,
     MenuSubButtonComponent,
     AddIconComponent,
     ArrowRightIconComponent,
@@ -115,7 +113,6 @@ import { ArrowDropUpIconComponent } from './components/arrow-drop-up-icon/arrow-
     ArrowForwardIconComponent,
     ProductCardComponent,
     SuccessfulCaseComponent,
-    HeaderSpacingComponent,
     BreadcrumbComponent,
     TabListComponent,
     PaginationComponent,

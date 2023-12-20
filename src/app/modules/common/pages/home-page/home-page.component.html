@@ -1,158 +1,187 @@
-<section>
-  <section class="video-container position-relative">
-    <div class="d-flex justify-content-between video-container__gradient-bg">
-      <p
-        class="video-container__syntron-text text-white d-none d-sm-flex justify-content-center align-items-center">
-        SYNTRON
-      </p>
-      <div class="position-relative d-flex">
-        <video #tVideo class="video-container__video h-100" [muted]="true" autoplay loop playsinline [controls]="false">
-          <source [src]="videoSrc" type="video/mp4">
-        </video>
-        <div class="position-absolute video-container__title">
-          <h1 class="text-white font-3xl font-sm-4xl">全方位的生活體驗</h1>
-          <h3 class="text-white font-md font-sm-xl">無縫連接，提供關懷，精確管理，無微不至的照護</h3>
-        </div>
-      </div>
-    </div>
-
-    <app-news [news]="news" class="position-absolute bottom-0 end-0"></app-news>
-  </section>
-
-  <section class="overflow-x-hidden news d-flex justify-content-between">
-    <div class="w-100 d-flex justify-content-between align-items-center p-4 p-sm-8 p-md-12">
-      <div class="d-flex flex-column justify-content-center news__title">
-        <h2 class="px-3 text-nowrap">最新消息</h2>
-        <h3 class="px-3">NEWS</h3>
-        <app-text-button class="news__view-all-button" (click)="toNewsCenter()">
-          瀏覽全部
-          <app-arrow-forward-icon
-            class="news__view-all-arrow-forward-icon ms-1_5"
-          ></app-arrow-forward-icon>
-        </app-text-button>
-      </div>
-
-      <ul class="news-list px-5">
-        <li
-          *ngFor="let news of news"
-          class="d-flex justify-content-between align-items-center cursor-pointer news-list__content bg-primary-5--hover rounded px-4"
-          (click)="toNewsDetail(news.id)">
-          <div class="d-flex flex-column align-items-start me-2 mw-100 news-list__news-date">
-            <div class="d-flex align-items-center">
-              <p class="text-nowrap news-list__date">{{ news.date }}</p>
-              <hr
-                class="news-list__divider-horizontal my-0_5 opacity-100 border-0 bg-black-4 mx-6"
-              />
-            </div>
-            <h6 class="text-black-2 news-list__title">{{ news.title }}</h6>
-          </div>
-          <app-text-button
-            class="d-none d-sm-flex justify-content-center align-items-center news-list__arrow-forward-button"
-          >
-            <app-arrow-forward-icon></app-arrow-forward-icon>
-          </app-text-button>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="my-5 position-relative product">
-    <div
-      class="product__img position-absolute top-0 d-none d-sm-block"
-      [ngStyle]="scrollTransformStyle"
-    ></div>
-    <div class="d-flex flex-column align-items-center product__titles">
-      <h2>專業化產品</h2>
-      <h3>SPECIALIZED OFFERINGS</h3>
-    </div>
-
-    <div class="product__gradient-bg p-4 p-sm-8 p-md-12">
-      <div class="row product__cards">
-        <app-product-card
-          type="healthcare"
-          class="mb-4 d-flex justify-content-center product__card"
-          (click)="toProduct('care')"
-        ></app-product-card>
-        <app-product-card
-          type="pill"
-          class="mb-4 d-flex justify-content-center product__card"
-          (click)="toProduct('medicine')"
-        ></app-product-card>
-        <app-product-card
-          type="dns"
-          class="mb-4 d-flex justify-content-center product__card"
-          (click)="toProduct('calling')"
-        ></app-product-card>
-        <app-product-card
-          type="backup"
-          class="mb-4 d-flex justify-content-center product__card"
-          (click)="toProduct('cloud')"
-        ></app-product-card>
-      </div>
-    </div>
-  </section>
-
-  <section class="position-relative exclusive">
-    <div class="exclusive__img position-absolute top-0 d-none d-sm-block"
-         [ngStyle]="scrollTransformStyle"></div>
-    <div class="px-4 px-sm-8 px-md-12 pt-25 align-items-center row flex-column-reverse flex-md-row">
-      <div class="position-relative col-12 col-md-7 pe-md-0 exclusive__img-animation">
-        <img src="assets/img/iStock/iStock-1082027390.jpg" alt="exclusive-img"
-             class="w-100 border-radius-xl component-product-card__img">
-        <img src="assets/img/illustration/molecular_chain_a.svg" alt="illustration-chain-a"
-             class="position-absolute d-none d-sm-block exclusive__illustration">
-      </div>
-      <div
-        class="exclusive__content border-radius-xl px-md-10 py-md-20 col-12 col-md-5 text-center text-md-start mb-7_5 mb-md-0">
-        <h2 class="exclusive__text-animation">優勢</h2>
-        <h3 class="my-2_5 exclusive__text-animation">EXCLUSIVE</h3>
-        <p class="font-sm exclusive__text-animation">
-          伈創資訊期望以提供客戶驚豔且創新的產品技術為出發點，不斷開創同業之先例，而經營面則持續投注新穎、國際化的概念。本公司目前在台灣、中國都有相關業務進行，近年更預計將業務擴大到周邊國家。
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="successful-case mt-25 mb-50 text-center pt-15 position-relative">
-    <h2 class="successful-case__text-animation">成功案例</h2>
-    <h3 class="successful-case__text-animation">SUCCESSFUL CASE</h3>
-    <div class="d-inline-block d-sm-none mt-5">
-      <ng-container *ngFor="let displayCase of cases">
-        <app-successful-case class="my-2 mx-1 d-inline-block">
-          <img
-            src="assets/img/logo/logo_{{ displayCase }}.png"
-            alt="successful-case-{{ displayCase }}"
-          />
-        </app-successful-case>
-      </ng-container>
-    </div>
-    <div class="d-none d-sm-flex successful-case__playing-animation mt-5">
-      <ng-container *ngFor="let displayCase of displayCases">
-        <app-successful-case class="my-sm-0 mx-sm-2">
-          <img
-            src="assets/img/logo/logo_{{ displayCase }}.png"
-            alt="successful-case-{{ displayCase }}"
-          />
-        </app-successful-case>
-      </ng-container>
-    </div>
-    <div class="d-none d-sm-flex d-md-none successful-case__playing-animation-reverse mt-4">
-      <ng-container
-        *ngFor="let reverseDisplayCase of reverseDisplayCases"
+<section class="video-container position-relative">
+  <div class="d-flex justify-content-between video-container__gradient-bg">
+    <p
+      class="video-container__syntron-text text-white d-none d-sm-flex justify-content-center align-items-center"
+    >
+      SYNTRON
+    </p>
+    <div class="position-relative d-flex">
+      <video
+        #tVideo
+        class="video-container__video h-100"
+        [muted]="true"
+        autoplay
+        loop
+        playsinline
+        [controls]="false"
       >
-        <app-successful-case class="mx-sm-2">
-          <img
-            src="assets/img/logo/logo_{{ reverseDisplayCase }}.png"
-            alt="reverse-successful-case-{{ reverseDisplayCase }}"
-          />
-        </app-successful-case>
-      </ng-container>
+        <source [src]="videoSrc" type="video/mp4" />
+      </video>
+      <div class="position-absolute video-container__title">
+        <h1 class="text-white font-3xl font-sm-4xl">全方位的生活體驗</h1>
+        <h3 class="text-white font-md font-sm-xl">
+          無縫連接，提供關懷，精確管理，無微不至的照護
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <app-news [news]="news" class="position-absolute bottom-0 end-0"></app-news>
+</section>
+
+<section class="overflow-x-hidden news d-flex justify-content-between">
+  <div
+    class="w-100 d-flex justify-content-between align-items-center p-4 p-sm-8 p-md-12"
+  >
+    <div class="d-flex flex-column justify-content-center news__title">
+      <h2 class="px-3 text-nowrap">最新消息</h2>
+      <h3 class="px-3">NEWS</h3>
+      <app-text-button class="news__view-all-button" (click)="toNewsCenter()">
+        瀏覽全部
+        <app-arrow-forward-icon
+          class="news__view-all-arrow-forward-icon ms-1_5"
+        ></app-arrow-forward-icon>
+      </app-text-button>
     </div>
 
-    <img
-      src="assets/img/illustration/molecular_chain_b.svg"
-      alt="illustration-chain-b"
-      class="position-absolute d-none d-sm-block successful-case__illustration"
-    />
-  </section>
+    <ul class="news-list px-5">
+      <li
+        *ngFor="let news of news"
+        class="d-flex justify-content-between align-items-center cursor-pointer news-list__content bg-primary-5--hover rounded px-4"
+        (click)="toNewsDetail(news.id)"
+      >
+        <div
+          class="d-flex flex-column align-items-start me-2 mw-100 news-list__news-date"
+        >
+          <div class="d-flex align-items-center">
+            <p class="text-nowrap news-list__date">{{ news.date }}</p>
+            <hr
+              class="news-list__divider-horizontal my-0_5 opacity-100 border-0 bg-black-4 mx-6"
+            />
+          </div>
+          <h6 class="text-black-2 news-list__title">{{ news.title }}</h6>
+        </div>
+        <app-text-button
+          class="d-none d-sm-flex justify-content-center align-items-center news-list__arrow-forward-button"
+        >
+          <app-arrow-forward-icon></app-arrow-forward-icon>
+        </app-text-button>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="my-5 position-relative product">
+  <div
+    class="product__img position-absolute top-0 d-none d-sm-block"
+    [ngStyle]="scrollTransformStyle"
+  ></div>
+  <div class="d-flex flex-column align-items-center product__titles">
+    <h2>專業化產品</h2>
+    <h3>SPECIALIZED OFFERINGS</h3>
+  </div>
+
+  <div class="product__gradient-bg p-4 p-sm-8 p-md-12">
+    <div class="row product__cards">
+      <app-product-card
+        type="healthcare"
+        class="mb-4 d-flex justify-content-center product__card"
+        (click)="toProduct('care')"
+      ></app-product-card>
+      <app-product-card
+        type="pill"
+        class="mb-4 d-flex justify-content-center product__card"
+        (click)="toProduct('medicine')"
+      ></app-product-card>
+      <app-product-card
+        type="dns"
+        class="mb-4 d-flex justify-content-center product__card"
+        (click)="toProduct('calling')"
+      ></app-product-card>
+      <app-product-card
+        type="backup"
+        class="mb-4 d-flex justify-content-center product__card"
+        (click)="toProduct('cloud')"
+      ></app-product-card>
+    </div>
+  </div>
+</section>
+
+<section class="position-relative exclusive">
+  <div
+    class="exclusive__img position-absolute top-0 d-none d-sm-block"
+    [ngStyle]="scrollTransformStyle"
+  ></div>
+  <div
+    class="px-4 px-sm-8 px-md-12 pt-25 align-items-center row flex-column-reverse flex-md-row"
+  >
+    <div
+      class="position-relative col-12 col-md-7 pe-md-0 exclusive__img-animation"
+    >
+      <img
+        src="assets/img/iStock/iStock-1082027390.jpg"
+        alt="exclusive-img"
+        class="w-100 border-radius-xl component-product-card__img"
+      />
+      <img
+        src="assets/img/illustration/molecular_chain_a.svg"
+        alt="illustration-chain-a"
+        class="position-absolute d-none d-sm-block exclusive__illustration"
+      />
+    </div>
+    <div
+      class="exclusive__content border-radius-xl px-md-10 py-md-20 col-12 col-md-5 text-center text-md-start mb-7_5 mb-md-0"
+    >
+      <h2 class="exclusive__text-animation">優勢</h2>
+      <h3 class="my-2_5 exclusive__text-animation">EXCLUSIVE</h3>
+      <p class="font-sm exclusive__text-animation">
+        伈創資訊期望以提供客戶驚豔且創新的產品技術為出發點，不斷開創同業之先例，而經營面則持續投注新穎、國際化的概念。本公司目前在台灣、中國都有相關業務進行，近年更預計將業務擴大到周邊國家。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section
+  class="successful-case mt-25 mb-50 text-center pt-15 position-relative"
+>
+  <h2 class="successful-case__text-animation">成功案例</h2>
+  <h3 class="successful-case__text-animation">SUCCESSFUL CASE</h3>
+  <div class="d-inline-block d-sm-none mt-5">
+    <ng-container *ngFor="let displayCase of cases">
+      <app-successful-case class="my-2 mx-1 d-inline-block">
+        <img
+          src="assets/img/logo/logo_{{ displayCase }}.png"
+          alt="successful-case-{{ displayCase }}"
+        />
+      </app-successful-case>
+    </ng-container>
+  </div>
+  <div class="d-none d-sm-flex successful-case__playing-animation mt-5">
+    <ng-container *ngFor="let displayCase of displayCases">
+      <app-successful-case class="my-sm-0 mx-sm-2">
+        <img
+          src="assets/img/logo/logo_{{ displayCase }}.png"
+          alt="successful-case-{{ displayCase }}"
+        />
+      </app-successful-case>
+    </ng-container>
+  </div>
+  <div
+    class="d-none d-sm-flex d-md-none successful-case__playing-animation-reverse mt-4"
+  >
+    <ng-container *ngFor="let reverseDisplayCase of reverseDisplayCases">
+      <app-successful-case class="mx-sm-2">
+        <img
+          src="assets/img/logo/logo_{{ reverseDisplayCase }}.png"
+          alt="reverse-successful-case-{{ reverseDisplayCase }}"
+        />
+      </app-successful-case>
+    </ng-container>
+  </div>
+
+  <img
+    src="assets/img/illustration/molecular_chain_b.svg"
+    alt="illustration-chain-b"
+    class="position-absolute d-none d-sm-block successful-case__illustration"
+  />
 </section>

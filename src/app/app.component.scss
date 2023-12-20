@@ -1,3 +1,13 @@
+@import "variables";
+@import "mixins";
+
 .container {
   max-height: 100vh;
+}
+
+.component-header-spacing {
+  padding-top: $header-height;
+  @include generateStyleByMaxBreakpoint("sm") {
+    padding-top: 3.125rem;
+  }
 }

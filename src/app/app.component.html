@@ -1,6 +1,5 @@
-<section #tHeader>
+<section [class.component-header-spacing]="!isHomePage" #tHeader>
   <app-header></app-header>
-  <app-header-spacing></app-header-spacing>
   <app-breadcrumb></app-breadcrumb>
   <app-tab-set
     *ngIf="isProductModule"

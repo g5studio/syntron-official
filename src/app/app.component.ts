@@ -17,6 +17,10 @@ export class AppComponent extends BaseComponent {
     return this.$navigation.currentPath.replace(/^\//, '').split('/')[0] === 'production';
   }
 
+  get isHomePage(): boolean {
+    return this.$navigation.currentPath.includes('common/home');
+  }
+
   constructor(
     private $layout: LayoutService
   ) {
