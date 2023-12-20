@@ -38,20 +38,20 @@ export class AfterImgWordBlockComponent extends BasePage {
   }
 
   protected override onInit(): void {
-    this.device = this.$window.getDevice();
     if (this.data?.img) {
-      this.img = this.getImgs(this.device);
+      this.img = this.getImgs();
     }
   }
 
-  private getImgs(device: Device): string {
-    switch (device) {
-      case Device.Desktop:
-        return this.data!.img.pc;
-      case Device.Tablet:
-        return this.data!.img.pad;
-      case Device.Mobile:
-        return this.data!.img.mb;
+  private getImgs(): string {
+    const width = window.innerWidth;
+
+    if (width >= 1280) {
+      return this.data!.img.pc;
+    } else if (width >= 411) {
+      return this.data!.img.pad;
+    } else {
+      return this.data!.img.mb;
     }
   }
 }
