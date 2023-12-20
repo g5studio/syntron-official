@@ -100,6 +100,16 @@ ul.list-disc {
     }
 
     &__system-feature {
+        @media screen and (max-width: 679px) {
+            .flex-sm-row::ng-deep {
+                flex-direction: column !important;
+            }
+            .align-items-sm-start::ng-deep{
+                align-items: center !important;
+            }
+
+        }
+
         &__circle-block {
             max-width: 5rem;
             width: 100%;
@@ -107,7 +117,7 @@ ul.list-disc {
             border-radius: 50%;
             box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
 
-            @include generateStyleByMaxBreakpoint("sm") {
+            @media screen and (max-width: 679px) {
                 width: 3.75rem;
                 height: 3.75rem;
             }
@@ -120,7 +130,7 @@ ul.list-disc {
                 width: 3.75rem;
             }
 
-            @include generateStyleByMaxBreakpoint("sm") {
+            @media screen and (max-width: 679px) {
                 display: none;
             }
 
@@ -197,8 +207,7 @@ ul.list-disc {
     margin-top: 3.75rem;
     height: 8.125rem;
     background-image: url('~src/assets/product_pc/image_functions_pc.png');
-    background-repeat: repeat;
-    background-size: contain;
+    background-repeat: repeat-x;
 
     @include generateStyleByMaxBreakpoint("md") {
         background-image: url('~src/assets/product_pad/image_functions_pad.png');

@@ -17,15 +17,6 @@ ul.list-disc {
 }
 
 .block {
-  &__afterImg {
-    @include generateStyleByMaxBreakpoint("md") {
-      margin-top: -3.75rem;
-    }
-
-    @include generateStyleByMaxBreakpoint("sm") {
-      margin-top: 0rem;
-    }
-  }
 
   &__1 {
     @include generateStyleByMaxBreakpoint("md") {
@@ -68,22 +59,17 @@ ul.list-disc {
   }
 
   &__2 {
-    // height: 500px;
-
     ul {
       margin-top: -5.625rem;
     }
 
     @include generateStyleByMaxBreakpoint("md") {
-      // height: 2410px;
-
       ul {
         top: 35px;
       }
     }
 
     @include generateStyleByMaxBreakpoint("sm") {
-      // height: 2095px;
       margin-top: 0;
 
       ul {
@@ -164,6 +150,7 @@ ul.list-disc {
       min-width: 20.875rem;
       height: 21rem;
     }
+
     @include generateStyleByMaxBreakpoint("sm") {
       min-width: 0rem;
       height: auto;
@@ -188,9 +175,7 @@ ul.list-disc {
   margin-top: 3.75rem;
   height: 8.125rem;
   background-image: url('~src/assets/product_pc/image_consultation_pc.png');
-  background-repeat: repeat;
-  background-size: cover;
-
+  background-repeat: repeat-x;
   @include generateStyleByMaxBreakpoint("md") {
     background-image: url('~src/assets/product_pad/image_consultation_pad.png');
     height: 4.125rem;
@@ -201,9 +186,7 @@ ul.list-disc {
   margin-top: 3.75rem;
   height: 8.125rem;
   background-image: url('~src/assets/product_pc/image_training_pc.png');
-  background-repeat: repeat;
-  background-size: cover;
-
+  background-repeat: repeat-x;
   @include generateStyleByMaxBreakpoint("md") {
     background-image: url('~src/assets/product_pad/image_training_pad.png');
     height: 4.125rem;

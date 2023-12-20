@@ -2,8 +2,11 @@
 
 .component-breadcrumb {
   height: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 1.5rem;
   @include generateStyleByBreakpoint("sm") {
     height: 3.125rem;
+    padding-top: 7.25rem;
   }
 
   &__icon::ng-deep {

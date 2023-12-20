@@ -4,22 +4,24 @@ import { BasePage } from 'src/utilities/bases';
 
 export interface IAfterImgWordBlockData {
   img: {
-    pc: string,
-    pad: string,
-    mb: string
-  }
-  title: string,
-  subTitle: string,
-  des?: string,
-  content?: string,
+    pc: string;
+    pad: string;
+    mb: string;
+  };
+  title: string;
+  subTitle: string;
+  des?: string;
+  content?: string;
+  listContent?: {
+    title: string;
+    list: string[];
+  };
 }
 
 @Component({
   selector: 'app-after-img-word-block',
   templateUrl: './after-img-word-block.component.html',
-  styleUrls: [
-    './after-img-word-block.component.scss',
-  ],
+  styleUrls: ['./after-img-word-block.component.scss'],
 })
 export class AfterImgWordBlockComponent extends BasePage {
   @Input() data?: IAfterImgWordBlockData;

@@ -7,7 +7,7 @@
 <div class="main d-flex main--{{ this.device }}">
   <div class="d-flex justify-content-center align-items-center mb-5 w-100">
     <div
-      class="d-flex flex-column main__content-block align-items-center align-items-md-start mt-10"
+      class="d-flex flex-column main__content-block align-items-center align-items-md-start mt-10 mx-10"
     >
       <h2 class="mb-2_5 text-break d-none d-sm-flex">
         {{ this.data?.title }}
@@ -18,11 +18,15 @@
       <h3 class="mb-2_5 text-break d-block d-sm-none text-center">
         {{ this.data?.title }}
       </h3>
-      <h4 class="mb-2_5 text-break d-block d-sm-none text-center fw-normal">
+      <h4 class="mb-2_5  text-break d-block d-sm-none text-center fw-normal">
         {{ this.data?.subTitle }}
       </h4>
-      <div class="main__content">
-        <div *ngIf="this.data?.content">
+      <p class="mb-2_5 text-break" *ngIf="this.data?.des">
+        {{ this.data?.des }}
+      </p>
+
+      <div class="main__content" *ngIf="this.data?.content">
+        <div>
           <h5
             class="text-break text-secondary-1 d-block fw-normal text-sm-center text-md-start d-none d-sm-block"
           >
@@ -36,9 +40,37 @@
         </div>
       </div>
       <div
+        *ngIf="this.data?.content"
         class="img img__5 mb-4 d-sm-none d-block"
         [style.backgroundImage]="'url(' + this.img + ')'"
       ></div>
+
+      <div class="main__contentList d-flex flex-column" *ngIf="this.data?.listContent">
+        <div
+          class="img img__5 mb-4 d-sm-none d-block"
+          [style.backgroundImage]="'url(' + this.img + ')'"
+        ></div>
+        <div>
+          <h3 class="text-primary-2 mb-2_5 text-break d-none d-md-flex text-start">
+            {{ this.data?.listContent?.title }}
+          </h3>
+          <h4 class="text-primary-2 mb-2_5 text-break d-block d-sm-none text-center">
+            {{ this.data?.listContent?.title }}
+          </h4>
+          <ul
+            class="list-disc d-flex flex-column"
+          >
+            <li
+              class="text-break"
+              *ngFor="let item of this.data?.listContent?.list"
+            >
+              <h6 class="fw-normal">
+                {{ item }}
+              </h6>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
   <div class="d-flex justify-content-center img__afterImage-block">
@@ -49,7 +81,7 @@
       ></div>
     </div>
     <div
-      class="img img__3 mt-20 d-none d-sm-block"
+      class="img img__3 mt-5 d-none d-sm-block"
       [style.backgroundImage]="'url(' + this.img + ')'"
     ></div>
     <div class="img__4 overflow-hidden d-none d-sm-block d-md-none">

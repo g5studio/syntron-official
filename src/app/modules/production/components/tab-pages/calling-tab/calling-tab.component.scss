@@ -33,27 +33,9 @@
       }
     }
   }
-  &__2 {
-    height: 2025px;
+  &__report{
+    max-width: 29rem;
     width: 100%;
-    ul {
-      top: 93px;
-    }
-    @include generateStyleByMaxBreakpoint("md") {
-      height: 2410px;
-      ul {
-        width: 100%;
-        top: 35px;
-      }
-    }
-    @include generateStyleByMaxBreakpoint("sm") {
-      height: 2095px;
-      margin-top: 0;
-      ul {
-        top: 0;
-      }
-    }
-
   }
 }
 
