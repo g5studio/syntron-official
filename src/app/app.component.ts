@@ -13,6 +13,10 @@ export class AppComponent extends BaseComponent {
   @ViewChild('tContainer') container?: ElementRef;
   @HostListener('window:resize', ['$event']) onResize = () => this.$window.detectWindowSize();
 
+  get isProductModule(): boolean {
+    return this.$navigation.currentPath.replace(/^\//, '').split('/')[0] === 'production';
+  }
+
   constructor(
     private $layout: LayoutService
   ) {
