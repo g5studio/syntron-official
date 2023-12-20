@@ -255,3 +255,7 @@
     transform: translate(-4880px, 2.5rem);
   }
 }
+
+video::-webkit-media-controls-start-playback-button {
+  display: none;
+}

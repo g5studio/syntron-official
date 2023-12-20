@@ -12,7 +12,13 @@
   }
 
   &__container {
-    max-width: calc(9.375rem + 21.719rem + 34.295rem);
+    width: calc(100% - 6.562rem - 1.25rem);
+    @include generateStyleByBreakpoint("sm") {
+      width: calc(100% - 8.75rem - 3rem);
+    }
+    @include generateStyleByBreakpoint("md") {
+      width: calc(100% - 9.375rem - 3rem);
+    }
   }
 
   &__icon::ng-deep {
