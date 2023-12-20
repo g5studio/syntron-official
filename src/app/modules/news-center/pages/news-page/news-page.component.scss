@@ -47,6 +47,16 @@
       -webkit-line-clamp: 4;
     }
   }
+
+  &__description-mobile {
+    height: 66px;
+    width: 335px;
+    @include generateStyleByMaxBreakpoint("sm") {
+      display: -webkit-box !important;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+  }
 }
 
 .tabs {

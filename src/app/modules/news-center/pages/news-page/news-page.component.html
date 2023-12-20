@@ -40,7 +40,7 @@
               <p class="font-sm d-none overflow-hidden news-list__description">{{news.description}}</p>
             </div>
           </div>
-          <p class="font-sm d-sm-none">{{news.description}}</p>
+          <p class="font-sm d-sm-none news-list__description-mobile overflow-hidden">{{news.description}}</p>
           <hr
             *ngIf="i !== filterNews.slice((currentPage - 1) * 8, currentPage * 8).length - 1"
             class="w-100 border-0 bg-black-4 opacity-100 my-6 news-list__divider">
