@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { BaseComponent } from "@utilities/bases";
+import {Component, OnInit} from '@angular/core';
+import {BaseComponent} from "@utilities/bases";
 
 @Component({
   selector: 'app-header',
@@ -12,6 +12,10 @@ export class HeaderComponent extends BaseComponent {
 
   constructor() {
     super();
+  }
+
+  protected override onInit() {
+    this.router.events.subscribe(() => this.isMenuOpen = false);
   }
 
   navigate(path: string) {

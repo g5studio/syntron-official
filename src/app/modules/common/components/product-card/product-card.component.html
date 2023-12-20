@@ -2,12 +2,12 @@
   <span class="d-block component-product-card__spacing"></span>
 
   <img [src]="getImg(type)" alt="product-card-{{type}}-img"
-       class="border-radius-xl component-product-card__img position-absolute top-0 z-2">
+       class="border-radius-xl component-product-card__img position-absolute top-0 layer-cover">
 
   <div
     class="component-product-card__content bg-white border-radius-xl px-3_5 pb-5 overflow-hidden position-relative d-flex flex-column justify-content-between"
     [ngClass]="getPseudoClass()">
-    <div class="d-flex flex-column align-items-center mt-45 mb-md-20 position-relative z-2">
+    <div class="d-flex flex-column align-items-center mt-45 mb-md-20 position-relative layer-cover">
       <p class="font-xl text-black-1 mb-2 component-product-card__text-animation"
          [ngSwitch]="type">
         <ng-container *ngSwitchCase="'healthcare'">照護服務</ng-container>
@@ -27,7 +27,7 @@
     <div class="d-flex d-md-block justify-content-center align-items-center">
       <button
         type="button"
-        class="component-product-card__button position-relative z-2"
+        class="component-product-card__button position-relative layer-cover"
         [ngSwitch]="type">
         <app-healthcare-icon *ngSwitchCase="'healthcare'"
                              class="component-product-card__icon d-flex"></app-healthcare-icon>
