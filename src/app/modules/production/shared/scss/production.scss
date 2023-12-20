@@ -35,10 +35,9 @@ ul.list-disc {
 }
 
 .animation-bg-words {
-  height: 8.25rem;
+  height: 8.125rem;
   background-position: 0 0;
-  background-repeat: repeat;
-  background-size: contain;
+  background-repeat: repeat-x;
 
   @include generateStyleByMaxBreakpoint("md") {
     height: 4.125rem;
