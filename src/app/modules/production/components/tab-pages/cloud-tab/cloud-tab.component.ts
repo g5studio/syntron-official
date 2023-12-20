@@ -6,6 +6,7 @@ import { LayoutService } from '@shared/services/layout.service';
 import { takeUntil } from 'rxjs';
 import { BasePage } from 'src/utilities/bases';
 import { Device } from '@shared/enums';
+import { IAfterImgWordBlockData } from '../../blocks/after-img-word-block/after-img-word-block.component';
 
 @Component({
   selector: 'app-cloud-tab',
@@ -21,7 +22,7 @@ export class CloudTabComponent extends BasePage {
     private renderer: Renderer2
   ) { super() }
 
-  public infoCard: IAfterImgBlockData = {
+  public infoCard: IAfterImgWordBlockData = {
     img: {
       pc: 'assets/product_pc/photo_upload_pc.png',
       pad: 'assets/product_pad/photo_upload_pad.png',
