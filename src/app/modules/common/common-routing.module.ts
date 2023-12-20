@@ -13,10 +13,9 @@ const routes: Routes = [
         pathMatch: 'full',
       },
       { path: 'home', component: HomePageComponent },
-      { path: 'about-us', component: AboutUsPageComponent }
+      { path: 'about-us', component: AboutUsPageComponent },
     ]
-  },
-
+  }
 ];
 
 @NgModule({

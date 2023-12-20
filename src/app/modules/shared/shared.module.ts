@@ -48,10 +48,14 @@ import { StorageSolidIconComponent } from './components/storage-solid-icon/stora
 import { PillSolidIconComponent } from './components/pill-solid-icon/pill-solid-icon.component';
 import { BannerBlockComponent } from './components/banner-block/banner-block.component';
 import { DirectivesModule } from './directives/directives.module';
+import { TabSetComponent } from './components/tab-set/tab-set.component';
+import { ArrowDropUpIconComponent } from './components/arrow-drop-up-icon/arrow-drop-up-icon.component';
 
 
 @NgModule({
   declarations: [
+    ArrowDropUpIconComponent,
+    TabSetComponent,
     HeaderComponent,
     FooterComponent,
     BorderlessButtonComponent,
@@ -134,7 +138,8 @@ import { DirectivesModule } from './directives/directives.module';
     StorageSolidIconComponent,
     PillSolidIconComponent,
     BannerBlockComponent,
-    DirectivesModule
+    DirectivesModule,
+    TabSetComponent
   ]
 })
 export class SharedModule {

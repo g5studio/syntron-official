@@ -1,0 +1,29 @@
+@import "colors";
+@import "variables";
+
+.component-tab-set {
+  height: 5rem;
+  width: 100%;
+}
+
+input[type="radio"] {
+  &:checked {
+    & + label {
+      p {
+        color: map-get($primary-light, 2) !important;
+      }
+    }
+  }
+}
+
+::ng-deep app-arrow-drop-up-icon {
+  position: absolute;
+  z-index: map-get($layer-level, "normal");
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &__path {
+    fill: map-get($primary-light, 2);
+  }
+}

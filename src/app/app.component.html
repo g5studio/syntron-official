@@ -1,8 +1,17 @@
-<app-header></app-header>
-<app-breadcrumb></app-breadcrumb>
+<section #tHeader>
+  <app-header></app-header>
+  <app-header-spacing></app-header-spacing>
+  <app-breadcrumb></app-breadcrumb>
+  <app-tab-set
+    *ngIf="isProductModule"
+    (onTabChange)="this.router.navigateByUrl($event.value)"
+    class="layer-normal"
+  ></app-tab-set>
+</section>
 <main
   #tContainer
   appResponsiveViewport
+  [responseBuffers]="[tHeader]"
   class="container overflow-y-auto overflow-x-hidden px-0"
   id="main"
   (scroll)="this.onMainScroll($event)"

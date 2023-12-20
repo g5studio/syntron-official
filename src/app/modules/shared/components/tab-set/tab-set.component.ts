@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { EProductionTab } from '../../shared/enums/production.enum';
+import { EProductionTab } from '../../../production/shared/enums/production.enum';
 
 export interface ITab {
   title: string;
@@ -13,7 +13,21 @@ export interface ITab {
 })
 export class TabSetComponent implements OnInit {
   @Output() onTabChange = new EventEmitter<ITab>();
-  @Input() tabs: ITab[] = [];
+
+  public tabs: ITab[] = [{
+    title: '照護服務',
+    value: `/production/${EProductionTab.Care}`,
+  }, {
+    title: '藥品管理',
+    value: `/production/${EProductionTab.Medicine}`,
+  }, {
+    title: '叫號系統',
+    value: `/production/${EProductionTab.Calling}`,
+  }, {
+    title: '雲端儲存',
+    value: `/production/${EProductionTab.Cloud}`,
+  },
+  ]
 
   constructor(private router: Router) {
     router.events.subscribe(() => {
