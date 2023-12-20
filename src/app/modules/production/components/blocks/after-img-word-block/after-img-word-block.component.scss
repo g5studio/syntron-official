@@ -3,12 +3,42 @@
 
 :host {
   display: flex;
-  // align-items: center;
+
+  @media screen and (max-width: 1279px) {
+    margin-top: -3.75rem;
+  }
+}
+
+ul.list-disc {
+
+  align-items: start;
+
+  @media screen and (min-width: 430px) and (max-width:1279px) {
+    align-items: center;
+    margin: 0 20px;
+  }
+
+  @media screen and (max-width:429px) {
+    margin: 0 20px;
+  }
+
+  li {
+    position: relative;
+    padding-left: 0.6rem;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 0.5em;
+    }
+  }
 }
 
 .img {
   &.img-afterImage {
-    filter: blur(10px);
+    filter: blur(2px);
     opacity: 40%;
   }
 
@@ -18,6 +48,7 @@
     margin-bottom: 20px;
     border-radius: 0 28px 28px 0;
     margin-top: -3.75rem;
+    background: white;
 
     & .img {
       min-width: 595px;
@@ -33,15 +64,18 @@
   &__content-block {
     max-width: 27.5rem;
     animation: fade-in-right 1s ease-in-out,
-    twink 1s ease-in-out;
-    @include generateStyleByMaxBreakpoint("md") {
+      twink 1s ease-in-out;
+
+    @media screen and (max-width: 1279px) {
       max-width: 43rem;
+      text-align: center;
     }
 
     @include generateStyleByMaxBreakpoint("sm") {
       margin-right: 5rem;
       margin-left: 5rem;
     }
+
   }
 
   .img {
@@ -65,10 +99,11 @@
       border-radius: 28px 0 0 28px;
       background-position: left !important;
 
-      @include generateStyleByMaxBreakpoint("md") {
+      @media screen and (max-width: 1279px) {
         width: 468px;
         height: 400px;
       }
+
     }
 
     &__4 {
@@ -92,7 +127,7 @@
   }
 
 
-  @include generateStyleByMaxBreakpoint("md") {
+  @media screen and (max-width: 1279px) {
     flex-direction: column;
 
     .img {
@@ -114,6 +149,24 @@
       border-radius: 20px;
     }
 
+    & .main__contentList {
+      width: 332px;
+      margin: 0 20px;
+      padding-bottom: 20px;
+      border-radius: 20px;
+
+      @media screen and (min-width: 430px) and (max-width:1279px) {
+        align-items: center;
+      }
+
+      @include generateStyleByMaxBreakpoint("sm") {
+        text-align: start;
+        width: calc(100% - 40px);
+        background-color: map-get($black-light, 9);
+        border-radius: 30px 30px 20px 20px;
+      }
+    }
+
     .img {
       &__5 {
         margin-top: unset !important;
@@ -121,5 +174,52 @@
         box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
       }
     }
+  }
+}
+
+//custom block & none 
+
+@media screen and (min-width: 1279px) {
+
+  .d-md-block {
+    display: block !important;
+  }
+
+  .d-md-flex {
+    display: flex !important;
+  }
+
+  .d-md-none {
+    display: none !important;
+  }
+
+  .text-md-start {
+    text-align: left !important;
+  }
+}
+
+
+
+@media screen and (min-width: 430px) and (max-width:1279px) {
+  .d-sm-block {
+    display: block !important;
+  }
+
+  .d-sm-flex {
+    display: flex !important;
+  }
+
+  .d-sm-none,
+  .d-md-block,
+  .d-md-flex {
+    display: none !important;
+  }
+
+  .align-items-md-start {
+    align-items: center !important;
+  }
+
+  .text-sm-center {
+    text-align: center !important;
   }
 }

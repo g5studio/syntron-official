@@ -4,6 +4,7 @@ import { LayoutService } from 'src/app/modules/shared/services/layout.service';
 import { takeUntil } from 'rxjs';
 import { BasePage } from 'src/utilities/bases';
 import { Device } from '@shared/enums';
+import { IAfterImgWordBlockData } from '../../blocks/after-img-word-block/after-img-word-block.component';
 
 @Component({
   selector: 'app-calling-tab',
@@ -20,7 +21,7 @@ export class CallingTabComponent extends BasePage implements OnInit {
 
   public coverImg = '';
 
-  public cards: IAfterImgBlockData[] = [
+  public cards: IAfterImgWordBlockData[] = [
     {
       img: {
         pc: 'assets/product_pc/photo_queue_pc.png',
@@ -57,7 +58,7 @@ export class CallingTabComponent extends BasePage implements OnInit {
       }
     }, {
       img: {
-        pc: 'assets/product_pc/photo_server_pc.png',
+        pc: 'assets/product_pc/photo_server_pc2.png',
         pad: 'assets/product_pad/photo_server_pad.png',
         mb: 'assets/product_mobile/photo_server_mobile.png'
       },
