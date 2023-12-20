@@ -1,8 +1,11 @@
-import { tap, takeUntil } from 'rxjs/operators';
+import { tap, takeUntil, filter, map, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Directive, ElementRef, Renderer2, Input, HostListener, Output, EventEmitter } from '@angular/core';
 
 import { Device } from '@shared/enums';
 import { BaseComponent } from '@utilities/bases';
+import { NavigationEnd } from '@angular/router';
+import { formatAbsolutePath } from '@utilities/helpers';
+import { timer } from 'rxjs';
 
 @Directive({
   selector: '[appResponsiveViewport]',
@@ -21,7 +24,7 @@ export class ResponsiveViewportDirective extends BaseComponent {
 
   constructor(
     private e: ElementRef,
-    private render: Renderer2
+    private render: Renderer2,
   ) {
     super();
   }
@@ -48,6 +51,16 @@ export class ResponsiveViewportDirective extends BaseComponent {
         tap((device) => this.onDeviceChanged(device))
       ).subscribe();
     }
+
+    this.router.events.pipe(
+      filter(e => e instanceof NavigationEnd),
+      map((e) => formatAbsolutePath((e as NavigationEnd).urlAfterRedirects)),
+      distinctUntilChanged(),
+      takeUntil(this.onDestroy$),
+      switchMap(() => timer(300))
+    ).subscribe(() => {
+      this.resizeViewport();
+    })
   }
 
   private onDeviceChanged(device: Device) {
