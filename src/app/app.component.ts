@@ -9,7 +9,6 @@ import { BaseComponent } from 'src/utilities/bases';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent extends BaseComponent {
-  title = 'syntron-official';
   @ViewChild('tContainer') container?: ElementRef;
   @HostListener('window:resize', ['$event']) onResize = () => this.$window.detectWindowSize();
 
