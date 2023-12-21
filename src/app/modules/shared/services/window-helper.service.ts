@@ -1,11 +1,11 @@
-import { Injectable, ElementRef } from '@angular/core';
-import { Device } from '@shared/enums/common.enum';
-import { Subject, BehaviorSubject } from 'rxjs';
-import { distinctUntilChanged } from 'rxjs/operators';
+import {Injectable, ElementRef} from '@angular/core';
+import {Device} from '@shared/enums/common.enum';
+import {Subject, BehaviorSubject} from 'rxjs';
+import {distinctUntilChanged} from 'rxjs/operators';
 
 const DEVICE = {
   XS: 0,
-  MD: 411,
+  MD: 430,
   XL: 768,
   XXL: 1440
 };
@@ -18,9 +18,12 @@ const MOBILE_AGENT = ['Android', 'webOS', 'iPhone', 'iPad', 'iPod', 'BlackBerry'
 
 export class WindowHelperService {
 
-  constructor() { }
+  constructor() {
+  }
 
-  get isMobileDevice() { return MOBILE_AGENT.some(agent => window.navigator.userAgent.includes(agent)); }
+  get isMobileDevice() {
+    return MOBILE_AGENT.some(agent => window.navigator.userAgent.includes(agent));
+  }
 
   private device: BehaviorSubject<Device> = new BehaviorSubject(this.getDevice());
   public device$ = this.device.asObservable().pipe(
@@ -30,7 +33,9 @@ export class WindowHelperService {
   private scrollTop: Subject<number> = new Subject();
   public scrollTop$ = this.scrollTop.asObservable();
 
-  public scrollTo(top: number) { this.scrollTop.next(top); }
+  public scrollTo(top: number) {
+    this.scrollTop.next(top);
+  }
 
   public detectWindowSize() {
     this.device.next(this.getDevice());
@@ -38,8 +43,8 @@ export class WindowHelperService {
 
   public getDevice() {
     const width = window.innerWidth;
-    return (width >= DEVICE.XL ? Device.Desktop :
-      (width < DEVICE.XL && width >= DEVICE.MD) ? Device.Tablet : Device.Mobile);
+    return width > DEVICE.XXL ? Device.LARGE_DESKTOP :
+      (width >= DEVICE.XL ? Device.Desktop : (width < DEVICE.XL && width >= DEVICE.MD) ? Device.Tablet : Device.Mobile);
   }
 
   public getInnerBox(targetDOM: Element): { height: number, width: number } {

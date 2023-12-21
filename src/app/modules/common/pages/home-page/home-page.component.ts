@@ -58,6 +58,9 @@ export class HomePageComponent extends BasePage {
           const video = document.querySelector('video')!;
           video.pause();
           switch (res) {
+            case Device.LARGE_DESKTOP:
+              this.videoSrc = 'assets/video/home_large_pc.mp4';
+              break;
             case Device.Desktop:
               this.videoSrc = 'assets/video/home_pc.mov';
               break;

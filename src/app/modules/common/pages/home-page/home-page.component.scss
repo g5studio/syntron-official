@@ -3,6 +3,7 @@
 
 .video-container {
   &__gradient-bg {
+    box-sizing: content-box;
     padding-top: $header-height;
     @include generateStyleByMaxBreakpoint("sm") {
       padding-top: 3.125rem;
@@ -21,8 +22,14 @@
   }
 
   &__syntron-text {
-    min-width: 60px;
+    width: 60px;
     writing-mode: vertical-lr;
+  }
+
+  &__container {
+    @include generateStyleByBreakpoint("sm") {
+      width: calc(100% - 60px) !important;
+    }
   }
 
   &__video {

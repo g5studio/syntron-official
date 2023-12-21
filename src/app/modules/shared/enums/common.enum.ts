@@ -1,6 +1,10 @@
 export enum Device {
   /**
-   * great than 768px
+   * great than 1440px
+   */
+  LARGE_DESKTOP = 'large-desktop',
+  /**
+   * 768px - 1440px
    */
   Desktop = 'desktop',
   /**
