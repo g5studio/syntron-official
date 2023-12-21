@@ -71,7 +71,7 @@ export class HomePageComponent extends BasePage {
               this.videoSrc = 'assets/video/home_mobile.mp4';
               break;
           }
-          video.load();
+          setTimeout(() => video.load(), 1000);
         })
       ).subscribe();
   }

@@ -8,16 +8,16 @@
     @include generateStyleByMaxBreakpoint("sm") {
       padding-top: 3.125rem;
     }
-    background: linear-gradient(
-      180deg,
-      map-get($azure-light, 2) 0%,
-      map-get($cyan-light, 2) 33.3%,
-      map-get($green-light, 2) 66.6%,
-      #fffb9d 100%
-    );
     height: 570px;
     @include generateStyleByBreakpoint("sm") {
       height: 742px;
+      background: linear-gradient(
+          180deg,
+          map-get($azure-light, 2) 0%,
+          map-get($cyan-light, 2) 33.3%,
+          map-get($green-light, 2) 66.6%,
+          #fffb9d 100%
+      );
     }
   }
 
