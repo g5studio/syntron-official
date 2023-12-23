@@ -6,7 +6,7 @@
     box-sizing: content-box;
     padding-top: $header-height;
     @include generateStyleByMaxBreakpoint("sm") {
-      padding-top: 3.125rem;
+      padding-top: 0rem;
     }
     background: linear-gradient(
       180deg,
