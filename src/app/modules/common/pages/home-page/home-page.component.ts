@@ -1,9 +1,9 @@
-import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
-import {BasePage} from 'src/utilities/bases';
-import {News} from "../../../news-center/models/news";
-import {NewsService} from "../../../news-center/services/news.service";
-import {Device} from "@shared/enums";
-import {tap} from "rxjs";
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { BasePage } from 'src/utilities/bases';
+import { News } from "../../../news-center/models/news";
+import { NewsService } from "../../../news-center/services/news.service";
+import { Device } from "@shared/enums";
+import { distinctUntilChanged, takeUntil, tap } from "rxjs";
 
 @Component({
   selector: 'app-home-page',
@@ -12,16 +12,16 @@ import {tap} from "rxjs";
 })
 export class HomePageComponent extends BasePage {
 
-  @ViewChild('tVideo') tVideo?: ElementRef<HTMLElement>;
+  @ViewChild('tVideo') tVideo?: ElementRef<HTMLVideoElement>;
 
   get scrollTransformStyle() {
     return { transform: `translateX(-${this._scrollTop}px)` };
   }
 
-  videoSrc = 'assets/video/home_pc.mov';
-  news: News[] = [];
+  public videoSrc = 'assets/video/home_pc.mov';
+  public news: News[] = [];
 
-  readonly cases: string[] = [
+  public readonly cases: string[] = [
     'ntuh',
     'twpower',
     'narlabs',
@@ -38,10 +38,17 @@ export class HomePageComponent extends BasePage {
     'taipei_city_hospital',
     'taiwan_oil',
   ];
-  displayCases: string[] = this.cases.concat(this.cases);
-  reverseDisplayCases: string[] = [...this.displayCases].reverse();
+  public displayCases: string[] = this.cases.concat(this.cases);
+  public reverseDisplayCases: string[] = [...this.displayCases].reverse();
 
   private _scrollTop = 0;
+  private reloadTimer?: NodeJS.Timeout;
+  private videMap: Record<Device, string> = {
+    [Device.LARGE_DESKTOP]: 'assets/video/home_large_pc.mp4',
+    [Device.Desktop]: 'assets/video/home_pc.mp4',
+    [Device.Tablet]: 'assets/video/home_pad.mp4',
+    [Device.Mobile]: 'assets/video/home_mobile.mp4',
+  }
 
   constructor(
     private $news: NewsService,
@@ -54,30 +61,22 @@ export class HomePageComponent extends BasePage {
       .subscribe(() => this.news = this.$news.news.slice(0, 3));
     this.$window.device$
       .pipe(
-        tap((res) => {
-          const video = document.querySelector('video')!;
-          video.pause();
-          switch (res) {
-            case Device.LARGE_DESKTOP:
-              this.videoSrc = 'assets/video/home_large_pc.mp4';
-              break;
-            case Device.Desktop:
-              this.videoSrc = 'assets/video/home_pc.mp4';
-              break;
-            case Device.Tablet:
-              this.videoSrc = 'assets/video/home_pad.mp4';
-              break;
-            case Device.Mobile:
-              this.videoSrc = 'assets/video/home_mobile.mp4';
-              break;
-          }
-          video.load();
-        })
-      ).subscribe();
+        distinctUntilChanged(),
+        takeUntil(this.onDestroy$)
+      ).subscribe(device => {
+        this.tVideo?.nativeElement.pause();
+        this.videoSrc = this.videMap[device];
+        if (this.reloadTimer) {
+          clearTimeout(this.reloadTimer);
+        }
+        this.reloadTimer = setTimeout(() => {
+          this.tVideo?.nativeElement.load();
+        }, 0);
+      });
   }
 
   toNewsDetail(id: number) {
-    this.router.navigate([`/news-center/news/all/detail/`], {queryParams: {id}}).then();
+    this.router.navigate([`/news-center/news/all/detail/`], { queryParams: { id } }).then();
   }
 
   toNewsCenter() {
