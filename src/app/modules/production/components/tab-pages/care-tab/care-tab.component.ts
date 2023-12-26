@@ -114,7 +114,6 @@ export class CareTabComponent extends BasePage implements OnInit {
       title: '長輩 / 家屬',
       img: 'app-diversity-one-solid-icon',
       contentList: [
-        '平日有活動的地方',
         '日常有固定的生理量測記錄',
         '有醫護相關團隊了解狀況',
         '失能/失智/疾病預防與日常生活相結合',
@@ -122,7 +121,7 @@ export class CareTabComponent extends BasePage implements OnInit {
       ],
     },
     {
-      title: '護員/志工',
+      title: '照服員',
       img: 'app-diversity-four-solid-icon',
       contentList: [
         '可將長輩的生理量測指數及日常生理狀況整合提供醫護團隊觀測，給予課程/飲食之照護建議',
