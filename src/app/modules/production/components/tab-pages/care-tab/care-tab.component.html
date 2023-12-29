@@ -23,20 +23,20 @@
   </div>
 </section>
 <section class="pb-20 pb-md-10">
-  <div class="d-flex flex-column text-center align-items-center">
+  <div class="d-flex flex-column text-left align-items-center">
     <div class="care-system w-100 mb-5 px-10">
       <div class="d-none d-sm-flex flex-column gap-5">
         <h2>照護系統</h2>
         <h3 class="text-secondary-1">CARE SYSTEM</h3>
-        <h5 class="text-secondary-1 fw-normal">
-          照護系統是一套以「人」為主軸的系統，期望隨著「人」的老化年齡及需求變化，在不同機構都可以了解被照護者的過去及現在狀況，評估未來可能發生風險，並可以讓後勤照護者及醫療團隊建立一套彼此溝通、紀錄照護／用藥的共通平台
-        </h5>
+        <h4 class="text-secondary-1 fw-normal">
+          照護系統是一套以「人」為主軸的系統，期望隨著「人」的老化年齡及需求變化，在不同機構都可以了解被照護者的過去及現在狀況，評估未來可能發生風險，並可以讓後勤照護者及醫療團隊建立一套彼此溝通、紀錄照護、用藥的共通平台
+        </h4>
       </div>
       <div class="d-flex d-sm-none flex-column gap-2_5">
         <h3>照護系統</h3>
         <h4 class="text-secondary-1">CARE SYSTEM</h4>
         <h6 class="text-secondary-1 fw-normal">
-          照護系統是一套以「人」為主軸的系統，期望隨著「人」的老化年齡及需求變化，在不同機構都可以了解被照護者的過去及現在狀況，評估未來可能發生風險，並可以讓後勤照護者及醫療團隊建立一套彼此溝通、紀錄照護／用藥的共通平台
+          照護系統是一套以「人」為主軸的系統，期望隨著「人」的老化年齡及需求變化，在不同機構都可以了解被照護者的過去及現在狀況，評估未來可能發生風險，並可以讓後勤照護者及醫療團隊建立一套彼此溝通、紀錄照護、用藥的共通平台
         </h6>
       </div>
     </div>
@@ -44,15 +44,12 @@
       class="d-flex flex-column flex-md-row care-system__block bg-primary-5 w-100 justify-content-center align-items-md-start align-items-center pt-15"
     >
       <div
-        class="d-flex flex-column gap-2 care-system__block__sub-block-1 align-items-center ms-lg-20 gap-2 w-100"
+        class="d-flex flex-column care-system__block__sub-block-1 align-items-start  w-100 px-10 pe-md-0"
       >
         <h3 class="text-primary-2 mb-5">現行長照機構問題</h3>
         <div class="mb-2_5">
           <h5 class="text-secondary-1 fw-normal">
-            長輩的日常紀錄與醫療相關紀錄無法串連
-          </h5>
-          <h5 class="text-secondary-1 fw-normal">
-            醫療團隊無法從日常狀況了解長輩身體狀況
+            長輩的日常紀錄與醫療相關紀錄無法串連  醫療團隊無法從日常狀況了解長輩身體狀況
           </h5>
         </div>
         <div
@@ -81,7 +78,7 @@
         class="d-block d-md-none icon__arrow"
       ></app-arrow-drop-down-icon>
       <div
-        class="d-flex flex-column gap-2 care-system__block__sub-block-2 align-items-center me-0 w-100"
+        class="d-flex flex-column gap-2 care-system__block__sub-block-2 align-items-start px-10 pl-md-0 w-100"
       >
         <h3 class="text-primary-2 mb-5">智慧醫療照護平台設計理念</h3>
         <div
@@ -155,7 +152,7 @@
       </div>
       <h4>{{ people.title }}</h4>
       <ul
-        class="list-disc align-items-center d-flex flex-column px-2 text-center justify-content-center"
+        class="list-disc align-self-start d-flex flex-column px-5 text-left justify-content-center"
       >
         <li *ngFor="let content of people.contentList">
           <h6 class="fw-normal">{{ content }}</h6>

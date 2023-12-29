@@ -83,7 +83,7 @@ ul.list-disc {
 .care-system {
   animation: fade-in-right 1s ease-in-out,
     twink 1s ease-in-out;
-  max-width: 50rem;
+  max-width: 80rem;
 
   &__block {
     margin-top: 1.25rem;
@@ -96,7 +96,7 @@ ul.list-disc {
       max-width: 28.75rem;
 
       @include generateStyleByMaxBreakpoint("md") {
-        max-width: 40.625rem;
+        max-width: 44.625rem;
       }
 
       @include generateStyleByMaxBreakpoint("sm") {
@@ -109,16 +109,21 @@ ul.list-disc {
       max-width: 34.5rem;
 
       @include generateStyleByMaxBreakpoint("md") {
-        max-width: 40.625rem;
+        max-width: 44.625rem;
       }
     }
 
     &__question-block {
-      background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
       height: 0;
-      padding-top: calc(360%/460 * 100);
+      padding-top: calc(400%/460 * 100);
+      @include generateStyleByMaxBreakpoint("md") {
+        padding-top: calc(420%/650 * 100);
+      }
+      @include generateStyleByMaxBreakpoint("sm") {
+        padding-top: calc(334%/334 * 100);
+      }
     }
 
     &__setting-block {
@@ -128,6 +133,9 @@ ul.list-disc {
       background-size: contain;
       height: 0;
       padding-top: calc(422%/552 * 100);
+      @include generateStyleByMaxBreakpoint("sm") {
+        padding-top: calc(334%/334 * 100);
+      }
     }
   }
 
