@@ -17,11 +17,11 @@ ul.list-disc {
 
 .medicine {
     &__main-content {
-        max-width: 50rem;
+        max-width: 80rem;
 
-        @include generateStyleByMaxBreakpoint("md") {
-            max-width: 43rem;
-        }
+        // @include generateStyleByMaxBreakpoint("md") {
+        //     max-width: 43rem;
+        // }
     }
 
     &__text-animation {
@@ -61,11 +61,6 @@ ul.list-disc {
                 max-width: 20.75rem;
             }
 
-            &__content {
-                @include generateStyleByMaxBreakpoint("md") {
-                    max-width: 28.5rem;
-                }
-            }
         }
 
         &__circle {
@@ -100,16 +95,27 @@ ul.list-disc {
     }
 
     &__system-feature {
+        max-width: 80rem;
+        align-items: center;
         @media screen and (max-width: 679px) {
             .flex-sm-row::ng-deep {
                 flex-direction: column !important;
             }
-            .align-items-sm-start::ng-deep{
-                align-items: center !important;
-            }
+             align-items: start;
 
         }
 
+        &__content {
+            flex-direction: column;
+            align-items: center;
+            @media screen and (max-width: 679px) {
+                flex-direction: row;
+                align-items: start;
+                gap:1.25rem;
+
+            }
+
+        }
         &__circle-block {
             max-width: 5rem;
             width: 100%;
@@ -136,7 +142,9 @@ ul.list-disc {
 
         }
     }
-
+    &__system-rfid{
+        max-width: 80rem;
+    }
     &__system-rfid-card {
         max-width: 77.5rem;
         width: 100%;
