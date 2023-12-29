@@ -76,7 +76,7 @@
     class="product__img position-absolute top-0 d-none d-sm-block"
     [ngStyle]="scrollTransformStyle"
   ></div>
-  <div class="d-flex flex-column align-items-center product__titles">
+  <div class="d-flex flex-column align-items-start product__titles px-7 px-sm-11 px-md-15">
     <h2>專業化產品</h2>
     <h3>SPECIALIZED OFFERINGS</h3>
   </div>
@@ -113,7 +113,7 @@
     [ngStyle]="scrollTransformStyle"
   ></div>
   <div
-    class="px-4 px-sm-8 px-md-12 pt-25 align-items-center row flex-column-reverse flex-md-row"
+    class="px-7 px-sm-11 px-md-15 pt-25 align-items-center row flex-column-reverse flex-md-row"
   >
     <div
       class="position-relative col-12 col-md-7 pe-md-0 exclusive__img-animation"
@@ -130,7 +130,7 @@
       />
     </div>
     <div
-      class="exclusive__content border-radius-xl px-md-10 py-md-20 col-12 col-md-5 text-center text-md-start mb-7_5 mb-md-0"
+      class="exclusive__content border-radius-xl px-md-10 py-md-20 col-12 col-md-5 text-start mb-7_5 mb-md-0"
     >
       <h2 class="exclusive__text-animation">優勢</h2>
       <h3 class="my-2_5 exclusive__text-animation">EXCLUSIVE</h3>
@@ -144,8 +144,8 @@
 <section
   class="successful-case mt-25 mb-50 text-center pt-15 position-relative"
 >
-  <h2 class="successful-case__text-animation">成功案例</h2>
-  <h3 class="successful-case__text-animation">SUCCESSFUL CASE</h3>
+  <h2 class="successful-case__text-animation text-start px-7 px-sm-11 px-md-15">成功案例</h2>
+  <h3 class="successful-case__text-animation text-start px-7 px-sm-11 px-md-15">SUCCESSFUL CASE</h3>
   <div class="d-inline-block d-sm-none mt-5">
     <ng-container *ngFor="let displayCase of cases">
       <app-successful-case class="my-2 mx-1 d-inline-block">

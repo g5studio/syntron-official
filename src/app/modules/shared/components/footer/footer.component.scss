@@ -8,12 +8,12 @@
 
   @media (min-width: 1028px) {
     flex-direction: row !important;
+    align-items: center !important;
     padding: 3.75rem 2.5rem;
   }
 
   &__logo-container {
     @media (min-width: 1028px) {
-      align-items: start !important;
       margin-top: 0 !important;
     }
   }
@@ -36,6 +36,7 @@
     animation: fade-in-right 1s ease-in-out, twink 1s ease-in-out;
     @media (min-width: 700px) {
       flex-direction: row !important;
+      align-items: center !important;
     }
   }
 
