@@ -1,44 +1,30 @@
-<app-cover-block
-  class="block-bottom-gap"
-  [imgUrl]="'assets/product_pc/banner_news_queue_pc.png'"
-  title="叫號系統"
+<app-cover-block class="block-bottom-gap" [imgUrl]="'assets/product_pc/banner_news_queue_pc.png'" title="叫號系統"
   [contentInnerHtml]="
     '智慧排隊，報到自動化，降低等待時間，同時保障病患隱私，為每位用戶提供更便捷的服務體驗'
-  "
->
-</app-cover-block>
+  "></app-cover-block>
 
 <ul class="block__1 d-flex block-bottom-gap">
   <li
-    class="w-50 d-flex flex-column align-items-center justify-content-center px-10 py-15 border-right-1 border-black-4"
-  >
-    <h2 class="text-center text-black-1 mb-5">叫號</h2>
-    <h5 class="text-center text-secondary-1 fw-normal">
-      廣泛應用於醫院掛號批價櫃檯、檢驗室、藥局領藥政府機關及銀行的服務叫號等不同場景。
+    class="w-50 d-flex flex-column align-items-start justify-content-center px-10 py-15 border-right-1 border-black-4">
+    <h2 class="text-black-1 mb-5">叫號</h2>
+    <h5 class="text-secondary-1 fw-normal">
+      廣泛應用於醫院掛號批價櫃檯、檢驗室、藥局領藥、政府機關及銀行的服務叫號等不同場景。
     </h5>
-    <h5 class="text-center text-secondary-1 fw-normal mb-5">
+    <h5 class="text-secondary-1 fw-normal mb-5">
       叫號系統還可以與公播系統及手機App整合，分散等待民眾，降低疾病傳染風險
     </h5>
-    <ul
-      class="list-disc d-flex flex-column align-items-center justify-content-center"
-    >
-      <li
-        class="d-flex align-items-center text-center text-primary-2 font-sm lh-4"
-      >
+    <ul class="list-disc d-flex flex-column align-items-start justify-content-center ms-1">
+      <li class="d-flex align-items-center text-primary-2 font-sm lh-4">
         提供分流、服務時段、服務內容等不同的自動化設定及切換，提高人員效率
       </li>
-      <li
-        class="d-flex align-items-center text-center text-primary-2 font-sm lh-4"
-      >
+      <li class="d-flex align-items-center text-primary-2 font-sm lh-4">
         後臺即時監控可以讓主管人員第一時間掌控現場狀況及時調整，降低民眾等待
       </li>
     </ul>
   </li>
-  <li
-    class="w-50 d-flex flex-column align-items-center justify-content-center px-10 py-15"
-  >
-    <h2 class="text-center text-black-1 mb-5">診間報到</h2>
-    <h5 class="text-center text-secondary-1 fw-normal block__report">
+  <li class="w-50 d-flex flex-column align-items-start justify-content-center px-10 py-15">
+    <h2 class="text-black-1 mb-5">診間報到</h2>
+    <h5 class="text-secondary-1 fw-normal block__report">
       診間報到系統廣泛應用於醫院診間插卡報到，讓民眾報到自動化，降低診間民眾診間等待時間與診間開門次數保障病患隱私
     </h5>
   </li>
@@ -48,9 +34,7 @@
   <div #tBgWords class="w-100 animation-bg-words"></div>
   <ul class="position-relative ">
     <li *ngFor="let card of this.cards" class="block-bottom-gap pb-sm-15 pb-0">
-      <app-after-img-word-block
-        [data]="this.card"
-      ></app-after-img-word-block>
+      <app-after-img-word-block [data]="this.card"></app-after-img-word-block>
     </li>
   </ul>
 </div>
