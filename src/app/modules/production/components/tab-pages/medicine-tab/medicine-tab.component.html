@@ -38,17 +38,17 @@
         </div>
         <h4>{{ medicine.title }}</h4>
         <div
-          class="align-items-center d-flex flex-column text-center justify-content-center medicine__list__detail__content"
+          class="align-self-start d-flex flex-column text-left justify-content-center medicine__list__detail__content"
         >
           <ul
             *ngIf="medicine.contentList.length > 1"
-            class="list-disc align-items-center d-flex flex-column px-2 text-center justify-content-center"
+            class="list-disc align-self-start d-flex flex-column px-5 text-left justify-content-center"
           >
             <li *ngFor="let content of medicine.contentList">
               <h6 class="fw-normal">{{ content }}</h6>
             </li>
           </ul>
-          <h6 *ngIf="medicine.contentList.length === 1" class="fw-normal px-2">
+          <h6 *ngIf="medicine.contentList.length === 1" class="fw-normal px-5">
             {{ medicine.contentList[0] }}
           </h6>
         </div>
@@ -57,8 +57,8 @@
   </div>
 </section>
 
-<section class="d-flex justify-content-center text-center pb-5">
-  <div class="medicine__main-content mb-5 mx-10 mx-sm-20 w-100">
+<section class="d-flex justify-content-center text-left pb-5">
+  <div class="medicine__main-content mb-5 w-100 px-10">
     <div class="d-flex flex-column d-sm-flex d-none gap-5">
       <h2>SNQ國家級認證</h2>
       <h3 class="text-secondary-1 fw-normal">SYMBOL OF NATIONAL QUALITY</h3>
@@ -84,37 +84,43 @@
   </div>
 </section>
 
-<section class="d-flex justify-content-center text-center pb-10">
+<section class="d-flex justify-content-center text-center pb-10 bg-black-9">
   <div
-    class="bg-black-9 medicine__system-feature align-items-center d-flex flex-column w-100 pt-10"
+    class="medicine__system-feature  d-flex flex-column w-100 pt-10 px-10"
   >
     <div class="w-100 medicine__text-animation">
-      <div class="d-flex flex-column d-sm-flex d-none gap-5">
+      <div class="d-flex flex-column d-sm-flex d-none gap-5 align-items-start">
         <h2>系統功能</h2>
         <h3 class="text-secondary-1 fw-normal">SYSTEM FUNCTIONS</h3>
       </div>
-      <div class="d-flex flex-column d-block d-sm-none gap-2_5">
+      <div
+        class="d-flex flex-column d-block d-sm-none gap-2_5 align-items-start"
+      >
         <h3>系統功能</h3>
         <h4 class="text-secondary-1">SYSTEM FUNCTIONS</h4>
       </div>
     </div>
 
     <div
-      class="d-flex flex-sm-row flex-column justify-content-between align-items-center align-items-sm-start pt-10"
+      class="d-flex flex-sm-row flex-column justify-content-between align-items-center align-items-sm-start pt-10 px-md-10"
     >
       <div *ngFor="let item of system_list; index as i" class="d-flex pb-10">
-        <div class="d-flex flex-column align-items-center">
+        <div class="d-flex  medicine__system-feature__content">
           <div
-            class="medicine__system-feature__circle-block bg-white d-flex justify-content-center align-items-center"
+            class="medicine__system-feature__circle-block bg-white d-flex justify-content-center align-items-center mb-5"
           >
             <h3 class="text-primary-2">{{ i + 1 }}</h3>
           </div>
-          <div>
-            <h3 class="fw-normal pt-4 pb-2">{{ item.title }}</h3>
+          <div class="d-flex text-left flex-column align-items-start">
+            <h3 class="fw-normal pb-2">{{ item.title }}</h3>
             <ul
-              class="list-disc align-items-center align-items-sm-start d-flex flex-column pe-sm-5 pe-4 text-center"
+              class="list-disc d-flex flex-column pe-sm-5 pe-4 align-items-start"
             >
-              <li class="p-sm-0" *ngFor="let content of item.contentList">
+              <li
+                class="p-sm-0"
+                *ngFor="let content of item.contentList"
+                class="text-nowrap"
+              >
                 <h5 class="fw-normal text-start ps-5 d-sm-block d-none">
                   {{ content }}
                 </h5>
@@ -135,23 +141,27 @@
 </section>
 
 <section class="d-flex justify-content-center text-center pb-10">
-  <div class="align-items-center d-flex flex-column w-100 pt-10">
+  <div
+    class="align-items-start d-flex flex-column w-100 pt-10 medicine__system-rfid px-10"
+  >
     <div class="w-100 medicine__text-animation">
-      <div class="d-flex flex-column d-sm-flex d-none gap-5">
+      <div class="d-flex flex-column d-sm-flex d-none gap-5 align-items-start">
         <h2>RFID智慧藥櫃系統優勢</h2>
         <h3 class="text-secondary-1 fw-normal">SYSTEM EXCLUSIVE</h3>
       </div>
-      <div class="d-flex flex-column d-block d-sm-none gap-2_5">
+      <div
+        class="d-flex flex-column d-block d-sm-none gap-2_5 align-items-start"
+      >
         <h3>RFID智慧藥櫃系統優勢</h3>
         <h4 class="text-secondary-1">SYSTEM EXCLUSIVE</h4>
       </div>
     </div>
     <div
-      class="d-flex justify-content-center align-items-center medicine__system-rfid-card px-4 pt-10 flex-md-row flex-column"
+      class="d-flex justify-content-center align-self-center medicine__system-rfid-card gap-5 pt-10 flex-md-row flex-column"
     >
       <div
         *ngFor="let rfid of rfid_list"
-        class="medicine__system-rfid-card__block bg-black-9 mx-4 align-items-center d-flex flex-column pb-5 mb-10"
+        class="medicine__system-rfid-card__block bg-black-9 align-items-center d-flex flex-column pb-5 mb-10"
       >
         <div
           class="medicine__system-rfid-card__img-container d-md-block d-none"
@@ -165,10 +175,10 @@
           class="medicine__system-rfid-card__img-container d-block d-sm-none"
           [style.backgroundImage]="'url(' + rfid.img_mobile + ')'"
         ></div>
-        <div>
+        <div class="w-100">
           <h3 class="fw-normal pt-4 pb-2">{{ rfid.title }}</h3>
           <ul
-            class="list-disc align-items-center d-flex flex-column pe-md-5 pe-4 text-center"
+            class="list-disc align-items-start d-flex flex-column pe-md-5 pe-4 text-left px-5"
           >
             <li class="p-md-0" *ngFor="let content of rfid.contentList">
               <h5 class="fw-normal ps-5 d-md-block d-none">

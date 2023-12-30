@@ -5,9 +5,9 @@
   ></div>
 </div>
 <div class="main d-flex main--{{ this.device }}">
-  <div class="d-flex justify-content-center align-items-center mb-5 w-100">
+  <div class="d-flex px-10 align-items-center justify-content-md-center mb-5 w-100">
     <div
-      class="d-flex flex-column main__content-block align-items-center align-items-md-start mt-10 mx-10"
+      class="d-flex flex-column main__content-block align-items-start mt-10"
     >
       <h2 class="mb-2_5 text-break d-none d-sm-flex">
         {{ this.data?.title }}
@@ -15,10 +15,10 @@
       <h3 class="mb-2_5 text-break d-none d-sm-flex fw-normal">
         {{ this.data?.subTitle }}
       </h3>
-      <h3 class="mb-2_5 text-break d-block d-sm-none text-center">
+      <h3 class="mb-2_5 text-break d-block d-sm-none text-left">
         {{ this.data?.title }}
       </h3>
-      <h4 class="mb-2_5  text-break d-block d-sm-none text-center fw-normal">
+      <h4 class="mb-2_5  text-break d-block d-sm-none text-left fw-normal">
         {{ this.data?.subTitle }}
       </h4>
       <p class="mb-2_5 text-break" *ngIf="this.data?.des">
@@ -28,12 +28,12 @@
       <div class="main__content" *ngIf="this.data?.content">
         <div>
           <h5
-            class="text-break text-secondary-1 d-block fw-normal text-sm-center text-md-start d-none d-sm-block"
+            class="text-break text-secondary-1 d-block fw-normal text-start d-none d-sm-block "
           >
             {{ this.data?.content }}
           </h5>
           <h6
-            class="text-break text-secondary-1 d-block fw-normal text-sm-center text-center d-block d-sm-none mb-10"
+            class="text-break text-secondary-1 d-block fw-normal text-start d-block d-sm-none mb-10"
           >
             {{ this.data?.content }}
           </h6>
@@ -41,7 +41,7 @@
       </div>
       <div
         *ngIf="this.data?.content"
-        class="img img__5 mb-4 d-sm-none d-block"
+        class="img img__5 mb-4 d-sm-none d-block align-self-center"
         [style.backgroundImage]="'url(' + this.img + ')'"
       ></div>
 
@@ -84,7 +84,7 @@
       class="img img__3 mt-5 d-none d-sm-block"
       [style.backgroundImage]="'url(' + this.img + ')'"
     ></div>
-    <div class="img__4 overflow-hidden d-none d-sm-block d-md-none">
+    <div class="img__4 overflow-hidden d-none d-sm-block d-md-none ">
       <div
         class="img img-afterImage"
         [style.backgroundImage]="'url(' + this.img + ')'"
