@@ -101,7 +101,7 @@ ul.list-disc {
             .flex-sm-row::ng-deep {
                 flex-direction: column !important;
             }
-             align-items: start;
+             align-items: flex-start;
 
         }
 
@@ -110,7 +110,7 @@ ul.list-disc {
             align-items: center;
             @media screen and (max-width: 679px) {
                 flex-direction: row;
-                align-items: start;
+                align-items: flex-start;
                 gap:1.25rem;
 
             }
