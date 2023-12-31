@@ -55,7 +55,7 @@
 
   &__text-container {
     @media (min-width: 700px) {
-      justify-content: start !important;
+      justify-content: flex-start !important;
     }
   }
 

@@ -11,10 +11,9 @@
 
 ul.list-disc {
 
-  align-items: start;
+  align-items: flex-start;
 
   @media screen and (min-width: 430px) and (max-width:1279px) {
-    align-items: center;
     margin: 0 20px;
   }
 
@@ -121,7 +120,6 @@ ul.list-disc {
     }
 
     &__5 {
-      width: 332px;
       height: 300px;
       border-radius: 28px;
       background-position: center !important;
@@ -146,7 +144,6 @@ ul.list-disc {
 
     & .main__contentList {
       width: 332px;
-      margin: 0 20px;
       padding-bottom: 20px;
       border-radius: 20px;
 
@@ -155,8 +152,8 @@ ul.list-disc {
       }
 
       @include generateStyleByMaxBreakpoint("sm") {
-        text-align: start;
-        width: calc(100% - 40px);
+        text-align: flex-start;
+        width: 100%;
         background-color: map-get($black-light, 9);
         border-radius: 30px 30px 20px 20px;
       }
@@ -172,7 +169,7 @@ ul.list-disc {
   }
 }
 
-//custom block & none 
+//custom block & none
 
 @media screen and (min-width: 1279px) {
 
