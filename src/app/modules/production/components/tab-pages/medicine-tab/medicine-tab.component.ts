@@ -46,7 +46,7 @@ export class MedicineTabComponent extends BasePage implements OnInit {
       img: 'app-storage-solid-icon',
       contentList: [
         '智慧藥櫃可依據需求不同提供識別證、指紋、人臉辨識等不同的登入機制',
-        '藥品的自動化進出管理整合RFID、雷射、紅外線等自動化辨視機制，降低人為錯誤發生機率',
+        '藥品的自動化進出管理整合RFID、雷射、紅外線等自動化辨識機制，降低人為錯誤發生機率',
         '不同櫃體提供不同藥品應用',
         '搭配監視系統，可以更直覺的追蹤問題',
       ],
